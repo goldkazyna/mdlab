@@ -395,4 +395,5 @@ h2.ip-title:after, h1.ip-title:after {
 }  
       
 </style>
+@include('partials.rateit')
 @endsection

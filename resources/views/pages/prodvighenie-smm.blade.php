@@ -1398,4 +1398,5 @@
     </div>
 </section>
 </div>
+@include('partials.rateit')
 @endsection

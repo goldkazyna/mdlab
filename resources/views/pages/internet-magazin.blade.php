@@ -519,5 +519,5 @@ h2.ip-title:after, h1.ip-title:after {
 </style>
     <!--***ПОДВАЛ***-->
    <meta itemprop="datePublished" content="2017-09-09">
-
+@include('partials.rateit')
 @endsection

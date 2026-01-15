@@ -507,4 +507,5 @@ h3.ip-title:after{
 
 }        
 </style>
+@include('partials.rateit')
 @endsection

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RatingController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/landing-page', function () {
@@ -129,3 +130,6 @@ Route::get('/kontakty', function () {
 
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/{slug}', [ArticleController::class, 'show']);
+
+Route::post('/api/rating', [RatingController::class, 'store']);
+Route::get('/api/rating', [RatingController::class, 'get']);

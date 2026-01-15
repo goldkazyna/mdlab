@@ -175,49 +175,63 @@
     justify-content: center;
 }
 
-.pagination {
+.pagination-wrapper nav {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrapper nav > div {
     display: flex;
     align-items: center;
-    gap: 8px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: 5px;
 }
 
-.pagination li {
-    display: inline-block;
+.pagination-wrapper nav > div:first-child {
+    display: none;
 }
 
-.pagination .page-link {
-    display: flex;
+.pagination-wrapper svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pagination-wrapper a,
+.pagination-wrapper span {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 45px;
-    height: 45px;
-    padding: 0 15px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
     border-radius: 10px;
     border: 2px solid #eee;
     background: #fff;
     color: #333;
     font-weight: 500;
+    font-size: 14px;
     text-decoration: none;
     transition: all 0.3s;
 }
 
-.pagination .page-link:hover {
+.pagination-wrapper a:hover {
     border-color: #0098D6;
     color: #0098D6;
 }
 
-.pagination .page-item.active .page-link {
+.pagination-wrapper span[aria-current="page"] span {
     background: #0098D6;
     border-color: #0098D6;
     color: #fff;
 }
 
-.pagination .page-item.disabled .page-link {
+.pagination-wrapper span[aria-disabled="true"] {
     opacity: 0.4;
     pointer-events: none;
+}
+
+/* Скрыть "Showing 1 to 10" текст */
+.pagination-wrapper p {
+    display: none;
 }
 
 /* Пустое состояние */

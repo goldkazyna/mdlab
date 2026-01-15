@@ -521,5 +521,5 @@ h2 {
 }
       </style>
    <meta itemprop="datePublished" content="2017-09-09">
-
+@include('partials.rateit')
 @endsection

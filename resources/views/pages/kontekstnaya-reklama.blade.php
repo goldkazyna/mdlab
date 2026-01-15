@@ -653,4 +653,5 @@
             </div>
         </div>
     </section>
+	@include('partials.rateit')
 @endsection
