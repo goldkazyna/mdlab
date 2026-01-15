@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/landing-page', function () {
@@ -123,3 +124,8 @@ Route::get('/kontakty', function () {
         'description' => 'Свяжитесь с нами ⭐ Алматы, ул. Назарбаева 50, офис 209 ⭐ +7 777 433 38 22 ⭐ info@mdlab.kz'
     ]);
 });
+
+
+
+Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles/{slug}', [ArticleController::class, 'show']);
