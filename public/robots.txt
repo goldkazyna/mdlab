@@ -1,2 +1,17 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Закрываем служебные папки
+Disallow: /application/
+Disallow: /system/
+Disallow: /admin/
+Disallow: /*.php$
+
+# Разрешаем CSS, JS, изображения
+Allow: /assets/
+
+# Указываем sitemap
+Sitemap: https://mdlab.kz/sitemap.xml
+
+# Дополнительно для Яндекса
+Host: mdlab.kz
