@@ -70,6 +70,7 @@
                             <li class="nav-main__subitem"><a itemprop="url" href="/podderghka-sayta" class="nav-main__sublink">Поддержка сайта</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/tehnicheskoe-zadaniya" class="nav-main__sublink">Разработка тех. задания</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/razrabotka-telegram-botov" class="nav-main__sublink">Разработка Telegram-ботов</a></li>
+							<li class="nav-main__subitem"><a itemprop="url" href="/razrabotka-mobilnyh-prilozheniy" class="nav-main__sublink">Разработка мобильных приложений</a></li>
                         </ul>
                     </li>
                     <li class="nav-main__item">

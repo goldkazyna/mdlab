@@ -126,7 +126,12 @@ Route::get('/kontakty', function () {
         'description' => 'Свяжитесь с нами ⭐ Алматы, ул. Назарбаева 50, офис 209 ⭐ +7 777 433 38 22 ⭐ info@mdlab.kz'
     ]);
 });
-
+Route::get('/razrabotka-mobilnyh-prilozheniy', function () {
+    return view('pages.razrabotka-mobilnyh-prilozheniy', [
+        'title' => 'Разработка мобильных приложений в Алматы | iOS и Android под ключ',
+        'description' => 'Профессиональная разработка мобильных приложений в Алматы ⭐ iOS и Android ⭐ Нативные и кроссплатформенные решения ⭐ От 1 500 000 ₸ ⭐ Срок от 30 дней'
+    ]);
+});
 
 
 Route::get('/articles', [ArticleController::class, 'index']);

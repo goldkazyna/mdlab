@@ -32,6 +32,8 @@
                                         class="fa-solid fa-angle-right"></i>Доработка сайта</a></li>
                         <li class="nav-footer__item"><a href="/razrabotka-telegram-botov" class="nav-footer__link"><i
                                         class="fa-solid fa-angle-right"></i>Разработка Telegram-ботов</a></li>
+						<li class="nav-footer__item"><a href="/razrabotka-mobilnyh-prilozheniy" class="nav-footer__link"><i
+                                        class="fa-solid fa-angle-right"></i>Разработка мобильных приложений</a></li>
                     </ul>
                 </div>
             </div>
