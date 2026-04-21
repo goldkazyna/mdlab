@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'stocks_api' => [
+        'token' => env('STOCKS_API_TOKEN'),
+    ],
+
 ];

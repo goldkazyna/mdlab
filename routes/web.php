@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StocksController;
+use App\Http\Middleware\VerifyStocksApiToken;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/landing-page', function () {
@@ -142,3 +144,6 @@ Route::get('/api/rating', [RatingController::class, 'get']);
 
 
 Route::post('/api/contact', [ContactController::class, 'send']);
+
+Route::post('/api/stocks', [StocksController::class, 'store'])
+    ->middleware(VerifyStocksApiToken::class);
