@@ -37,6 +37,17 @@
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
 </url>
+<url>
+	<loc>https://mdlab.kz/razrabotka-mobilnyh-prilozheniy</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-14</lastmod>
+</url>
+<url>
+	<loc>https://mdlab.kz/razrabotka-telegram-botov</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
 
 <!-- Дизайн услуги -->
 <url>
