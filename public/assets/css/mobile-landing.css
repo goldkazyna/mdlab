@@ -1,0 +1,971 @@
+/* ========================================
+   ОБЩИЕ СТИЛИ ЛЕНДИНГОВ РАЗРАБОТКИ ПРИЛОЖЕНИЙ
+   Используется страницей-хабом и всеми под-страницами
+======================================== */
+
+/* ========================================
+   CSS ПЕРЕМЕННЫЕ
+======================================== */
+:root {
+    --primary: #0098D6;
+    --primary-light: #d6f3ff;
+    --primary-dark: #007ab8;
+    --dark: #1a1a2e;
+    --gray: #666;
+    --gray-light: #f8f9fa;
+    --white: #fff;
+    --accent: #ff5722;
+    --gradient: linear-gradient(135deg, #0098D6 0%, #00c4ff 100%);
+}
+
+/* ========================================
+   КНОПКИ
+======================================== */
+.btn-primary-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.home-hero{
+		min-height:inherit;
+}
+.home-hero__title {
+    font-size: 48px;
+}
+.btn-primary-mobile:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 152, 214, 0.3);
+    color: var(--white);
+}
+
+.btn-whatsapp {
+    background: #25D366 !important;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A !important;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3) !important;
+}
+
+.btn-outline-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--primary);
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    transition: all 0.3s;
+}
+
+.btn-outline-mobile:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ========================================
+   СЕКЦИЯ ТИПЫ ПРИЛОЖЕНИЙ
+======================================== */
+.mobile-types {
+    padding: 80px 0;
+    background: var(--gray-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .types-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.type-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.type-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 152, 214, 0.15);
+}
+
+.type-card__icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.type-card__icon i {
+    font-size: 28px;
+    color: var(--primary);
+}
+
+.type-card__icon-placeholder {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 2px dashed var(--primary);
+}
+
+.type-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.type-card p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.type-card__price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.type-card__price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+/* ========================================
+   СЕКЦИЯ ПРЕИМУЩЕСТВА
+======================================== */
+.mobile-advantages {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.advantage-card {
+    background: var(--gray-light);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.advantage-card:hover {
+    background: var(--primary-light);
+    transform: translateY(-10px);
+}
+
+.advantage-card__icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.advantage-card__icon i {
+    font-size: 32px;
+    color: var(--white);
+}
+
+.advantage-card__icon-placeholder {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 2px dashed var(--primary);
+}
+
+.advantage-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.advantage-card p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* ========================================
+   СЕКЦИЯ ЧТО ВХОДИТ
+======================================== */
+.mobile-includes {
+    padding: 80px 0;
+    background: var(--primary-light);
+}
+
+.includes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .includes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.include-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.include-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 152, 214, 0.15);
+}
+
+.include-item__icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.include-item__icon i {
+    color: var(--white);
+    font-size: 20px;
+}
+
+.include-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.include-item p {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   СЕКЦИЯ ЭТАПЫ
+======================================== */
+.mobile-steps {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.steps-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.step-item:last-child {
+    margin-bottom: 0;
+}
+
+.step-item__number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.step-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 60px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: var(--primary-light);
+}
+
+.step-item__content {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.step-item__content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.step-item__content p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.step-item__time {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .step-item {
+        gap: 20px;
+    }
+    .step-item__number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .step-item:not(:last-child)::before {
+        left: 24px;
+        top: 50px;
+    }
+}
+
+/* ========================================
+   СЕКЦИЯ ТАРИФЫ
+======================================== */
+.mobile-pricing {
+    padding: 80px 0;
+    background: var(--gray-light);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+@media (max-width: 992px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+	.home-hero__title {
+		font-size: 30px;
+}	
+}
+
+.pricing-card {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 40px 35px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 152, 214, 0.2);
+}
+
+.pricing-card.featured {
+    border-color: var(--primary);
+    position: relative;
+}
+
+.pricing-card.featured::before {
+    content: 'Популярный';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--white);
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.pricing-card__price {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.pricing-card__price span {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.pricing-card__desc {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+.pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    text-align: left;
+    flex: 1;
+}
+
+.pricing-card__features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: var(--dark);
+}
+
+.pricing-card__features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card__features li i {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+/* ========================================
+   СЕКЦИЯ ТЕХНОЛОГИИ
+======================================== */
+.mobile-tech {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 992px) {
+    .tech-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tech-item {
+    background: var(--gray-light);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.tech-item:hover {
+    background: var(--primary-light);
+    transform: translateY(-5px);
+}
+
+.tech-item__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-item__icon-placeholder {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border-radius: 12px;
+    margin: 0 auto 15px;
+    border: 2px dashed var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-item__icon-placeholder span {
+    font-size: 10px;
+    color: var(--primary);
+    opacity: 0.7;
+}
+
+.tech-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* ========================================
+   СЕКЦИЯ FAQ
+======================================== */
+.mobile-faq {
+    padding: 80px 0;
+    background: var(--primary-light);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.faq-item__question:hover {
+    background: var(--gray-light);
+}
+
+.faq-item__question h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0;
+    flex: 1;
+    padding-right: 20px;
+}
+
+.faq-item__question i {
+    color: var(--primary);
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-item__question i {
+    transform: rotate(180deg);
+}
+
+.faq-item__answer {
+    display: none;
+    padding: 0 30px 25px;
+}
+
+.faq-item.active .faq-item__answer {
+    display: block;
+}
+
+.faq-item__answer p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   СЕКЦИЯ CTA
+======================================== */
+.mobile-cta {
+    padding: 80px 0;
+    background: var(--gradient);
+    text-align: center;
+}
+
+.mobile-cta h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.mobile-cta p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobile-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-white {
+    background: var(--white) !important;
+    color: var(--primary) !important;
+}
+
+.btn-white:hover {
+    background: var(--gray-light) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   SEO КОНТЕНТ
+======================================== */
+.seo-content {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.seo-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.seo-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 30px 0 15px;
+}
+
+.seo-content p {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.seo-content ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.seo-content ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.seo-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.seo-content a {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-light);
+    transition: border-color 0.2s;
+}
+
+.seo-content a:hover {
+    border-bottom-color: var(--primary);
+}
+
+.seo-content__source {
+    font-size: 13px;
+    color: #999;
+    margin-top: -10px;
+}
+
+/* ========================================
+   ХЛЕБНЫЕ КРОШКИ
+======================================== */
+.breadcrumbs {
+    padding: 18px 0;
+    background: var(--gray-light);
+}
+
+.breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs__list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+}
+
+.breadcrumbs__list a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumbs__list a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs__list li[aria-current="page"] {
+    color: var(--gray);
+}
+
+.breadcrumbs__sep {
+    color: #bbb;
+}
+
+/* ========================================
+   БЛОК ПРЯМОГО ОТВЕТА (для ИИ-поиска)
+======================================== */
+.mobile-summary {
+    padding: 50px 0;
+    background: var(--white);
+}
+
+.summary-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--gray-light);
+    border-left: 4px solid var(--primary);
+    border-radius: 14px;
+    padding: 30px 35px;
+}
+
+.summary-box p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--dark);
+    margin: 0 0 20px;
+}
+
+.summary-box p:last-of-type {
+    margin-bottom: 0;
+}
+
+.summary-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .summary-facts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.summary-fact {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+}
+
+.summary-fact__value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.summary-fact__label {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.4;
+}
+
+/* ========================================
+   БРЕНДОВЫЕ ИКОНКИ ТЕХНОЛОГИЙ
+======================================== */
+.tech-item__logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-item__logo svg {
+    width: 44px;
+    height: 44px;
+}
+
+/* ========================================
+   БЛОК ССЫЛОК НА НАПРАВЛЕНИЯ (перелинковка)
+======================================== */
+.related-services {
+    padding: 70px 0;
+    background: var(--gray-light);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 992px) {
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .related-grid { grid-template-columns: 1fr; }
+}
+
+.related-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    padding: 20px 24px;
+    border-radius: 14px;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: all 0.25s;
+}
+
+.related-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 152, 214, 0.14);
+}
+
+.related-link i {
+    color: var(--primary);
+    font-size: 20px;
+    flex-shrink: 0;
+}

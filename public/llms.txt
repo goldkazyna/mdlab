@@ -6,7 +6,21 @@
 
 ## Разработка мобильных приложений
 
-- [Разработка мобильных приложений в Алматы](https://mdlab.kz/razrabotka-mobilnyh-prilozheniy): Нативные (Swift, Kotlin) и кроссплатформенные (React Native, Flutter) приложения для iOS и Android под ключ, с публикацией в App Store и Google Play. Стоимость: от 750 000 ₸ (MVP на одной платформе), от 1 250 000 ₸ (iOS + Android), от 3 500 000 ₸ (сложные проекты с интеграциями и ML). Срок: от 30 дней (1–6 месяцев в зависимости от сложности). Пакеты: Стартап (750 000 ₸), Бизнес (1 250 000 ₸), Энтерпрайз (от 3 500 000 ₸).
+- [Разработка мобильных приложений в Алматы](https://mdlab.kz/razrabotka-mobilnyh-prilozheniy): Главная страница-хаб. Нативные (Swift, Kotlin) и кроссплатформенные (React Native, Flutter) приложения для iOS и Android под ключ, с публикацией в App Store и Google Play. Стоимость: от 750 000 ₸ (MVP на одной платформе), от 1 250 000 ₸ (iOS + Android), от 3 500 000 ₸ (сложные проекты с интеграциями и ML). Срок: от 30 дней (1–6 месяцев в зависимости от сложности). Пакеты: Стартап (750 000 ₸), Бизнес (1 250 000 ₸), Энтерпрайз (от 3 500 000 ₸).
+
+Профильные направления разработки приложений:
+
+- [Приложения для iOS](https://mdlab.kz/razrabotka-prilozheniya-dlya-ios): Нативная разработка на Swift/SwiftUI для iPhone и iPad, публикация в App Store. От 1 000 000 ₸.
+- [Приложения для Android](https://mdlab.kz/razrabotka-prilozheniya-dlya-android): Нативная разработка на Kotlin, публикация в Google Play, охват 80% рынка. От 900 000 ₸.
+- [Кроссплатформенная разработка](https://mdlab.kz/krossplatformennaya-razrabotka): Одно приложение для iOS и Android на Flutter/React Native, экономия до 40%. От 750 000 ₸.
+- [Разработка MVP](https://mdlab.kz/razrabotka-mvp-prilozheniya): Минимально жизнеспособный продукт для стартапа, запуск за 4–8 недель. От 750 000 ₸.
+- [Приложение для интернет-магазина](https://mdlab.kz/razrabotka-prilozheniya-internet-magazina): Каталог, корзина, онлайн-оплата, интеграция с 1С и CRM. От 1 250 000 ₸.
+- [Приложение для доставки еды](https://mdlab.kz/razrabotka-prilozheniya-dlya-dostavki): GPS-трекинг, карты, приложение курьера, онлайн-оплата. От 1 500 000 ₸.
+- [Приложение для такси](https://mdlab.kz/razrabotka-prilozheniya-dlya-taksi): Приложения водителя и пассажира, геолокация, тарификация. От 1 500 000 ₸.
+- [Корпоративные приложения для бизнеса](https://mdlab.kz/razrabotka-prilozheniya-dlya-biznesa): Автоматизация процессов, интеграция с CRM/ERP/1С, HR. От 2 000 000 ₸.
+- [Приложение для фитнеса](https://mdlab.kz/razrabotka-prilozheniya-dlya-fitnesa): Тренировки, расписание, онлайн-запись, подписки, трекинг. От 1 250 000 ₸.
+- [Приложение для ресторана и кафе](https://mdlab.kz/razrabotka-prilozheniya-dlya-restorana): Меню, онлайн-заказ, бронирование, программа лояльности. От 1 000 000 ₸.
+- [Приложение с онлайн-оплатой](https://mdlab.kz/razrabotka-prilozheniya-s-oplatoy): Интеграция Kaspi, Halyk, эквайринг, безопасные платежи, подписки. От 1 250 000 ₸.
 
 ## Создание сайтов
 

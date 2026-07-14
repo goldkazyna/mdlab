@@ -135,6 +135,74 @@ Route::get('/razrabotka-mobilnyh-prilozheniy', function () {
     ]);
 });
 
+// --- Под-страницы разработки мобильных приложений ---
+Route::get('/razrabotka-prilozheniya-dlya-ios', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-ios', [
+        'title' => 'Разработка приложений для iOS в Алматы | Swift, iPhone и iPad',
+        'description' => 'Разработка нативных приложений для iOS в Алматы ⭐ Swift и SwiftUI ⭐ iPhone и iPad ⭐ Публикация в App Store под ключ ⭐ От 1 000 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-android', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-android', [
+        'title' => 'Разработка приложений для Android в Алматы | Kotlin, Google Play',
+        'description' => 'Разработка нативных приложений для Android в Алматы ⭐ Kotlin и Jetpack Compose ⭐ Публикация в Google Play ⭐ Охват 80% рынка ⭐ От 900 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-internet-magazina', function () {
+    return view('pages.razrabotka-prilozheniya-internet-magazina', [
+        'title' => 'Разработка приложения для интернет-магазина в Алматы под ключ',
+        'description' => 'Мобильное приложение для интернет-магазина в Алматы ⭐ Каталог, корзина, онлайн-оплата ⭐ Интеграция с 1С и CRM ⭐ От 1 250 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-dostavki', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-dostavki', [
+        'title' => 'Разработка приложения для доставки еды в Алматы | Курьерский сервис',
+        'description' => 'Приложение для доставки еды и курьерских сервисов в Алматы ⭐ GPS-трекинг, карты, онлайн-оплата ⭐ Приложение курьера ⭐ От 1 500 000 ₸'
+    ]);
+});
+Route::get('/krossplatformennaya-razrabotka', function () {
+    return view('pages.krossplatformennaya-razrabotka', [
+        'title' => 'Кроссплатформенная разработка приложений в Алматы | Flutter, React Native',
+        'description' => 'Кроссплатформенная разработка приложений в Алматы ⭐ Flutter и React Native ⭐ Одно приложение для iOS и Android ⭐ Экономия до 40% ⭐ От 750 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-mvp-prilozheniya', function () {
+    return view('pages.razrabotka-mvp-prilozheniya', [
+        'title' => 'Разработка MVP мобильного приложения в Алматы для стартапа',
+        'description' => 'Разработка MVP мобильного приложения в Алматы ⭐ Быстрый запуск за 4-8 недель ⭐ Проверка бизнес-идеи с минимальным бюджетом ⭐ От 750 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-taksi', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-taksi', [
+        'title' => 'Разработка приложения для такси в Алматы | Сервис заказа поездок',
+        'description' => 'Разработка приложения для такси в Алматы ⭐ Приложения водителя и пассажира ⭐ Геолокация, тарификация, онлайн-оплата ⭐ От 1 500 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-biznesa', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-biznesa', [
+        'title' => 'Разработка корпоративных мобильных приложений в Алматы для бизнеса',
+        'description' => 'Корпоративные мобильные приложения в Алматы ⭐ Автоматизация процессов ⭐ Интеграция с CRM, ERP, 1С ⭐ Документооборот и HR ⭐ От 2 000 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-fitnesa', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-fitnesa', [
+        'title' => 'Разработка приложения для фитнеса и спорта в Алматы',
+        'description' => 'Разработка приложения для фитнеса в Алматы ⭐ Тренировки, расписание, онлайн-запись ⭐ Подписки и трекинг прогресса ⭐ От 1 250 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-dlya-restorana', function () {
+    return view('pages.razrabotka-prilozheniya-dlya-restorana', [
+        'title' => 'Разработка приложения для ресторана и кафе в Алматы',
+        'description' => 'Разработка приложения для ресторана и кафе в Алматы ⭐ Электронное меню, онлайн-заказ, бронирование ⭐ Программа лояльности ⭐ От 1 000 000 ₸'
+    ]);
+});
+Route::get('/razrabotka-prilozheniya-s-oplatoy', function () {
+    return view('pages.razrabotka-prilozheniya-s-oplatoy', [
+        'title' => 'Разработка приложения с онлайн-оплатой в Алматы | Kaspi, эквайринг',
+        'description' => 'Разработка приложения с онлайн-оплатой в Алматы ⭐ Интеграция Kaspi, Halyk, эквайринг ⭐ Безопасные платежи, подписки ⭐ От 1 250 000 ₸'
+    ]);
+});
+
 
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/{slug}', [ArticleController::class, 'show']);
