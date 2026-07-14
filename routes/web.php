@@ -130,7 +130,7 @@ Route::get('/kontakty', function () {
 });
 Route::get('/razrabotka-mobilnyh-prilozheniy', function () {
     return view('pages.razrabotka-mobilnyh-prilozheniy', [
-        'title' => 'Разработка мобильных приложений в Алматы | iOS и Android под ключ',
+        'title' => 'Разработка и создание мобильных приложений в Алматы | iOS и Android',
         'description' => 'Профессиональная разработка мобильных приложений в Алматы ⭐ iOS и Android ⭐ Нативные и кроссплатформенные решения ⭐ От 750 000 ₸ ⭐ Срок от 30 дней'
     ]);
 });
