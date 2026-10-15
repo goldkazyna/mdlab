@@ -1,0 +1,237 @@
+// Страница «Продвижение в социальных сетях» (/prodvighenie-v-socialynyh-setyah).
+// Макет: mdlab-smm. Все стили изолированы под .smm-page, чтобы не задевать хедер/футер сайта.
+// Сборка: npx sass resources/scss/smm.scss public/assets/css/smm.css --no-source-map
+
+@use 'sass:meta';
+
+// Используемые на странице font-size утилиты (fs-*, fs-md-*, fs-xl-*)
+$fs: 14, 15, 17, 18, 20, 21, 25, 30;
+$fs-md: 20, 22, 25, 27, 30, 35, 40;
+$fs-xl: 18, 25, 27, 30, 35, 40, 45, 50;
+
+.smm-page {
+    --color-primary: #0092FF;
+    --color-gray: #373737;
+    --color-dark: #000;
+    --ff-headings: 'Montserrat', sans-serif;
+    --ff-main: 'Anonymous Pro', monospace;
+
+    font-family: var(--ff-main);
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--color-dark);
+    background: #fff;
+
+    // Нейтрализуем глобальные стили сайта (main-home.css)
+    a::after {
+        display: none;
+    }
+
+    // --- Утилиты макета ---
+    .ff-headings { font-family: var(--ff-headings); }
+    .ff-main { font-family: var(--ff-main); }
+    .color-gray { color: var(--color-gray); }
+    .color-primary { color: var(--color-primary); }
+    .fw-semi { font-weight: 600; }
+
+    @each $i in $fs {
+        .fs-#{$i} { font-size: #{$i}px; }
+    }
+
+    @media (min-width: 768px) {
+        @each $i in $fs-md {
+            .fs-md-#{$i} { font-size: #{$i}px; }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        @each $i in $fs-xl {
+            .fs-xl-#{$i} { font-size: #{$i}px; }
+        }
+    }
+
+    @include meta.load-css('smm/base');
+    @include meta.load-css('smm/sections');
+
+    // --- Адаптация под шапку сайта (в макете хедер был position: absolute) ---
+    // Отступ под фиксированную шапку даёт .inner-page (header.css)
+    .main {
+        .m-block {
+            padding-top: 40px;
+        }
+
+        @media (max-width: 767px) {
+
+            .txt .for-btn {
+                margin: 15px 0 0 0;
+
+                .cl-btn {
+                    min-height: 50px;
+                    width: 100%;
+                    max-width: 380px;
+                }
+            }
+        }
+    }
+
+    .breadcrumbs {
+        position: relative;
+        z-index: 2;
+        color: #8a8a8a;
+        font-family: var(--ff-headings);
+
+        a {
+            color: var(--color-primary);
+        }
+
+        span {
+            margin: 0 4px;
+        }
+    }
+
+    .works .work-btn {
+        padding: 4px;
+        cursor: pointer;
+    }
+
+    .subscribers .s-row .s-block:not(:last-child) {
+        margin-bottom: 30px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .mobile-works .list li {
+        list-style: disc;
+    }
+
+    // --- Блок прямого ответа (для ИИ-поиска) ---
+    .summary {
+        padding: 50px 0 40px 0;
+
+        .summary-block {
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0 15px 15px 0;
+            background: #EFF5FA;
+            padding: 25px 30px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #363636;
+        }
+
+        @media (max-width: 767px) {
+            padding: 20px 0 0 0;
+
+            .summary-block {
+                padding: 15px 18px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    // --- Форма в блоке анализа ---
+    .analysis .form-msg {
+        margin: 10px 0 0 0;
+        font-size: 15px;
+        text-align: center;
+
+        &.success { color: #6fd38a; }
+        &.error { color: #ff7b7b; }
+    }
+
+    .analysis .form.loading .cl-btn {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    // --- FAQ ---
+    .faq {
+        padding: 0 0 100px 0;
+
+        .title {
+            margin: 0 0 40px 0;
+        }
+
+        .faq-list {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .faq-item {
+            border-radius: 15px;
+            background: #FFF;
+            box-shadow: 0px 0px 10px 0px #ECF3F9;
+            border: 2px solid transparent;
+            transition: 0.3s;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            &[open],
+            &:hover {
+                border-color: var(--color-primary);
+            }
+
+            summary {
+                cursor: pointer;
+                list-style: none;
+                padding: 20px 60px 20px 25px;
+                font-size: 20px;
+                position: relative;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '+';
+                    right: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 30px;
+                    font-weight: 400;
+                    color: var(--color-primary);
+                }
+            }
+
+            &[open] summary:after {
+                content: '−';
+            }
+
+            p {
+                padding: 0 25px 20px 25px;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #363636;
+            }
+        }
+
+        @media (max-width: 767px) {
+            padding: 20px 0 40px 0;
+
+            .title {
+                margin: 0 0 20px 0;
+            }
+
+            .faq-item {
+                summary {
+                    padding: 15px 45px 15px 15px;
+                    font-size: 15px;
+
+                    &:after {
+                        right: 15px;
+                        font-size: 24px;
+                    }
+                }
+
+                p {
+                    padding: 0 15px 15px 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
