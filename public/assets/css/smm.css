@@ -1159,6 +1159,22 @@
     margin-bottom: 15px;
   }
 }
+@media (max-width: 767px) {
+  .smm-page .business .b-block {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    column-gap: 15px;
+    padding: 8px 15px 8px 8px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.25;
+    box-shadow: 0px 0px 10px 0px #ECF3F9;
+  }
+  .smm-page .business .b-block .icon {
+    width: 56px;
+    height: 56px;
+  }
+}
 .smm-page .mobile-works .list li {
   list-style: disc;
 }

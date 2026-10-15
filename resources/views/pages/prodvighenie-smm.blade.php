@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/smm.css?v=1.0">
+<link rel="stylesheet" href="/assets/css/smm.css?v=1.1">
 @endpush
 
 @push('schema')
@@ -103,13 +103,13 @@
 @section('content')
 @php
     $businesses = [
-        'Косметология, медицина. <br> Косметика, бьюти процедуры',
-        'Рестораны,<br> кафе, бары,<br> кофейни',
+        'Косметология, медицина, косметика, бьюти-процедуры',
+        'Рестораны, кафе, бары, кофейни',
         'Клубы, караоке, мероприятия',
         'Отдых, турагентства, путешествия',
         'Гостиничный бизнес',
-        'Спорт <br> Фитнес',
-        'Одежда <br> Аксессуары',
+        'Спорт, фитнес',
+        'Одежда, аксессуары',
         'Товары и услуги для детей',
         'Химчистка, уборка',
         'Парикмахерские, барбершопы',
@@ -545,9 +545,9 @@
                 В каких бизнесах отлично работает реклама в Instagram
             </h2>
             <div class="b-row">
-                <div class="row g-3 g-md-4">
+                <div class="row g-2 g-md-4">
                     @foreach($businesses as $i => $business)
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <div class="b-block">
                             <p>{!! $business !!}</p>
                             <div class="icon">

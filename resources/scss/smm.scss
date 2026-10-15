@@ -102,6 +102,25 @@ $fs-xl: 18, 25, 27, 30, 35, 40, 45, 50;
         }
     }
 
+    // Бизнесы на мобильном: по одному в строку, иконка слева
+    @media (max-width: 767px) {
+        .business .b-block {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            column-gap: 15px;
+            padding: 8px 15px 8px 8px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.25;
+            box-shadow: 0px 0px 10px 0px #ECF3F9;
+
+            .icon {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+
     .mobile-works .list li {
         list-style: disc;
     }
