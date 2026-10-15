@@ -1147,6 +1147,29 @@
 .smm-page .breadcrumbs span {
   margin: 0 4px;
 }
+.smm-page .packet-block .packet-bottom .for-price .price {
+  white-space: nowrap;
+}
+.smm-page .packet-block.hit .packet-body {
+  padding-bottom: 120px;
+}
+@media (max-width: 1199px) {
+  .smm-page .packet-block.hit .packet-body {
+    padding-bottom: 90px;
+  }
+}
+.smm-page .packets .packets-note {
+  margin: 25px auto 0;
+  max-width: 900px;
+  text-align: center;
+  font-size: 15px;
+  color: #6b6b6b;
+}
+@media (max-width: 767px) {
+  .smm-page .packets .packets-note {
+    font-size: 13px;
+  }
+}
 .smm-page .works .work-btn {
   padding: 4px;
   cursor: pointer;

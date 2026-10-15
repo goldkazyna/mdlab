@@ -89,6 +89,33 @@ $fs-xl: 18, 25, 27, 30, 35, 40, 45, 50;
         }
     }
 
+    .packet-block {
+        .packet-bottom .for-price .price {
+            white-space: nowrap;
+        }
+
+        // Место под штамп «Рекомендуем», чтобы он не наезжал на список
+        &.hit .packet-body {
+            padding-bottom: 120px;
+
+            @media (max-width: 1199px) {
+                padding-bottom: 90px;
+            }
+        }
+    }
+
+    .packets .packets-note {
+        margin: 25px auto 0;
+        max-width: 900px;
+        text-align: center;
+        font-size: 15px;
+        color: #6b6b6b;
+
+        @media (max-width: 767px) {
+            font-size: 13px;
+        }
+    }
+
     .works .work-btn {
         padding: 4px;
         cursor: pointer;
