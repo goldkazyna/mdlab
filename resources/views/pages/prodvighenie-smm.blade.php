@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/smm.css?v=1.4">
+<link rel="stylesheet" href="/assets/css/smm.css?v=1.5">
 @endpush
 
 @push('schema')
@@ -284,7 +284,7 @@
                             </div>
                         </div>
                         <div class="for-btn fs-xl-30 fs-md-25 fs-20 fw-semi d-none d-md-block">
-                            <a class="cl-btn" href="#recallModal" data-fancybox>
+                            <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">
                                 Получить предложение
                             </a>
                         </div>
@@ -299,7 +299,7 @@
             <div class="txt fs-14 d-md-none text-center fw-bold">
                 <p>Заказать SMM c конверсией до 150% <br> Получите первых клиентов уже на следующий день</p>
                 <div class="for-btn fs-17 mt-3">
-                    <a class="cl-btn" href="#recallModal" data-fancybox>Получить предложение</a>
+                    <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">Получить предложение</a>
                 </div>
                 <div class="line"></div>
             </div>
@@ -376,7 +376,7 @@
                                     <div class="price">{{ $packet['price'] }}</div>
                                 </div>
                                 <div class="for-btn">
-                                    <a class="cl-btn" href="#recallModal" data-fancybox>
+                                    <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">
                                         Написать нам
                                     </a>
                                 </div>
@@ -428,7 +428,7 @@
                                     <div class="for-price">
                                         <div class="price">от 25 000 тг</div>
                                         <div class="link">
-                                            <a class="bd-link" href="#recallModal" data-fancybox>Заказать</a>
+                                            <a class="bd-link" href="https://wa.me/77774333822" target="_blank" rel="noopener">Заказать</a>
                                         </div>
                                     </div>
                                 </div>
@@ -448,7 +448,7 @@
                                     <div class="for-price">
                                         <div class="price">от 20 000 тг</div>
                                         <div class="link">
-                                            <a class="bd-link" href="#recallModal" data-fancybox>Заказать</a>
+                                            <a class="bd-link" href="https://wa.me/77774333822" target="_blank" rel="noopener">Заказать</a>
                                         </div>
                                     </div>
                                 </div>
@@ -483,28 +483,13 @@
                     </div>
                     <div class="col-12 col-xl d-xl-flex align-items-center">
                         <div class="for-tit fw-semi fs-xl-25 fs-md-22 fs-18 me-xl-5 mb-4 mb-xl-0 lh-1 py-3">
-                            или <br> заполните <br> форму
+                            или <br> напишите <br> в WhatsApp
                         </div>
-                        <form class="form flex-grow-1" id="smmForm">
-                            <div class="row gx-3">
-                                <div class="col-12 col-md-4">
-                                    <div class="inputblock">
-                                        <input type="text" name="name" placeholder="Ваше имя" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-4">
-                                    <div class="inputblock">
-                                        <input type="tel" name="phone" placeholder="Номер телефона" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-4">
-                                    <button class="cl-btn w-100 h-100" type="submit">
-                                        Отправить
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="form-msg" id="smmFormMessage"></div>
-                        </form>
+                        <div class="flex-grow-1">
+                            <a class="cl-btn wa-btn w-100" href="https://wa.me/77774333822" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -532,7 +517,7 @@
                 </div>
             </div>
             <div class="link text-center d-none d-md-block">
-                <a href="#recallModal" data-fancybox class="bd-link">Заказать аналитику бесплатно</a>
+                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="bd-link">Заказать аналитику бесплатно</a>
             </div>
         </div>
     </section>

@@ -28,43 +28,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Форма «Проанализируем вашу ситуацию» — та же отправка в Telegram, что и у модалки звонка
-    const form = document.getElementById('smmForm');
-    const message = document.getElementById('smmFormMessage');
-    if (!form) return;
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        form.classList.add('loading');
-        message.className = 'form-msg';
-        message.textContent = '';
-
-        const formData = new FormData(form);
-
-        fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
-            body: JSON.stringify({
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                page: window.location.href + ' (форма анализа SMM)'
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            form.classList.remove('loading');
-            message.className = 'form-msg ' + (data.success ? 'success' : 'error');
-            message.textContent = data.message || 'Ошибка отправки. Позвоните нам напрямую.';
-            if (data.success) form.reset();
-        })
-        .catch(() => {
-            form.classList.remove('loading');
-            message.className = 'form-msg error';
-            message.textContent = 'Ошибка соединения. Позвоните нам напрямую.';
-        });
-    });
 });

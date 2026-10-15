@@ -71,8 +71,7 @@
                         количество клиентов для вашего бизнеса.</p>
 
                     <div class="hero__contact">
-                        <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать звонок</a>
-                        <a href="#" class="btn btn_whatsapp"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_whatsapp"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
                     </div>
                     <p class="hero__explanation"><a href="/">Партнер Google Ads</a>
                         Работем с Google Ads более 10-ти лет.<br>Регулярно сдаем необходимые экзамены и аттестации</p>
@@ -472,9 +471,7 @@
                         <a href="tel:+77774333822">+7 (777) 433-38-22</a>
                     </div>
                     <div class="connect__contact">
-                        <a href="javascript:;" class="btn" data-bs-toggle="modal" data-bs-target="#recallModal">Заказать
-                            звонок</a>
-                        <a href="#" class="btn btn_whatsapp"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_whatsapp"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
                     </div>
                 </div>
             </div>

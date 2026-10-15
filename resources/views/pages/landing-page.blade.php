@@ -1215,7 +1215,7 @@
                     <li><i class="fa-solid fa-check"></i> Базовая SEO-оптимизация</li>
                     <li><i class="fa-solid fa-check"></i> Срок: 5 дней</li>
                 </ul>
-                <a href="#" class="btn-primary-lp" data-fancybox data-src="#modal-consultation">Заказать</a>
+                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn-primary-lp">Заказать</a>
             </div>
 
             <div class="pricing-card pricing-card--popular">
@@ -1231,7 +1231,7 @@
                     <li><i class="fa-solid fa-check"></i> Google Analytics</li>
                     <li><i class="fa-solid fa-check"></i> Срок: 7 дней</li>
                 </ul>
-                <a href="#" class="btn-primary-lp" data-fancybox data-src="#modal-consultation">Заказать</a>
+                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn-primary-lp">Заказать</a>
             </div>
 
             <div class="pricing-card">
@@ -1246,7 +1246,7 @@
                     <li><i class="fa-solid fa-check"></i> A/B тестирование</li>
                     <li><i class="fa-solid fa-check"></i> Срок: 10 дней</li>
                 </ul>
-                <a href="#" class="btn-primary-lp" data-fancybox data-src="#modal-consultation">Заказать</a>
+                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn-primary-lp">Заказать</a>
             </div>
         </div>
     </div>
@@ -1400,7 +1400,7 @@
     <div class="container">
         <h2>Готовы заказать Landing Page?</h2>
         <p>Оставьте заявку и получите бесплатную консультацию. Обсудим ваш проект и рассчитаем стоимость за 15 минут.</p>
-        <a href="#" class="btn-white" data-fancybox data-src="#modal-consultation">
+        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn-white">
             <i class="fa-solid fa-paper-plane"></i>
             Получить консультацию
         </a>

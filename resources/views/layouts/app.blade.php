@@ -219,7 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     @include('partials.footer')
 </div>
 
-@include('partials.modals')
+@include('partials.whatsapp-float')
 
 <!-- Все внешние скрипты с defer -->
 <script src="/assets/lib/jquery-3.3.1.min.js"></script>

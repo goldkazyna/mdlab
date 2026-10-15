@@ -207,6 +207,31 @@
     transition: all 0.3s;
 }
 
+.contacts-form__text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.contacts-form__wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    text-decoration: none;
+}
+
+.contacts-form__wa:hover {
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(37,211,102,0.4) !important;
+}
+
+.contacts-form__wa i {
+    font-size: 22px;
+}
+
 .form-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(255,87,34,0.4);
@@ -382,31 +407,13 @@
                 </div>
             </div>
 
-            <!-- Форма обратной связи -->
+            <!-- Написать в WhatsApp -->
             <div class="contacts-form">
                 <h2 class="contacts-form__title">Напишите нам</h2>
-                
-                <div id="contact-message" class="form-message"></div>
-                
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="contact_name">Ваше имя</label>
-                        <input type="text" id="contact_name" name="name" placeholder="Как к вам обращаться?" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_phone">Телефон</label>
-                        <input type="tel" id="contact_phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_email">Email</label>
-                        <input type="email" id="contact_email" name="email" placeholder="example@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_message">Сообщение</label>
-                        <textarea id="contact_message" name="message" placeholder="Расскажите о вашем проекте..."></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">Отправить сообщение</button>
-                </form>
+                <p class="contacts-form__text">Расскажите о вашем проекте в WhatsApp — ответим в рабочее время и подскажем, с чего начать.</p>
+                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="form-submit contacts-form__wa">
+                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+                </a>
             </div>
         </div>
 
@@ -436,37 +443,5 @@ function loadYandexMap() {
     mapContainer.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A210fb1c1f4d0f50ad15453dac51f5fce5d45701735ffff7be9ddfec2c241d61c&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>';
 }
 
-// Форма контактов
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    var form = this;
-    var messageBlock = document.getElementById('contact-message');
-    var submitBtn = form.querySelector('.form-submit');
-    var originalText = submitBtn.textContent;
-    
-    // Валидация
-    var name = document.getElementById('contact_name').value;
-    var phone = document.getElementById('contact_phone').value;
-    
-    if(name.trim() === '' || phone.trim() === '') {
-        messageBlock.className = 'form-message error';
-        messageBlock.textContent = 'Пожалуйста, заполните обязательные поля';
-        return;
-    }
-    
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
-    
-    // TODO: Отправка на сервер
-    // Пока просто имитация
-    setTimeout(function() {
-        messageBlock.className = 'form-message success';
-        messageBlock.textContent = 'Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.';
-        form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1000);
-});
 </script>
 @endpush

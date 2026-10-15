@@ -176,19 +176,21 @@ $fs-xl: 18, 25, 27, 30, 35, 40, 45, 50;
         }
     }
 
-    // --- Форма в блоке анализа ---
-    .analysis .form-msg {
-        margin: 10px 0 0 0;
-        font-size: 15px;
-        text-align: center;
+    // --- Кнопка WhatsApp в блоке анализа ---
+    .analysis .wa-btn {
+        min-height: 60px;
+        column-gap: 10px;
+        font-size: 18px;
+        background: #25D366;
+        color: #fff;
 
-        &.success { color: #6fd38a; }
-        &.error { color: #ff7b7b; }
-    }
+        i {
+            font-size: 26px;
+        }
 
-    .analysis .form.loading .cl-btn {
-        opacity: 0.7;
-        pointer-events: none;
+        &:hover {
+            background: #20BA5A;
+        }
     }
 
     // --- FAQ ---

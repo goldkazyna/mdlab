@@ -12,7 +12,7 @@
                         <a href="tel:+77774333822">+7 (777) 433-38-22</a>
                     </div>
                     <div class="header__buttons d-none d-md-flex">
-                        <a href="#recallModal" data-fancybox class="btn btn_sm"><i class="fa-solid fa-phone"></i>Заказать звонок</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_sm btn_whatsapp1"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
                     </div>
                 </div>
                 <div class="header__toggle d-flex d-xl-none col-2 col-sm-2 col-md-1 justify-content-end">
@@ -29,7 +29,7 @@
                         <a href="tel:+77774333822">+7 (777) 433-38-22</a>
                     </div>
                     <div class="header__buttons">
-                        <a href="#recallModal" data-fancybox class="btn btn_sm"><i class="fa-solid fa-phone"></i>Заказать звонок</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_sm btn_whatsapp1"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
                     </div>
                 </div>
                 <a href="javascript:;" class="toggle-btn toggle-btn_close btn btn_sm d-flex d-xl-none"><i class="fa-solid fa-xmark"></i></a>

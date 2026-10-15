@@ -470,7 +470,7 @@
                     <a href="tel:+77774333822" class="home-contacts__link">+7 777 433 38 22</a>
                     <a href="mailto:info@mdlab.kz" class="home-contacts__link">info@mdlab.kz</a>
                     <div class="home-contacts__footer">
-                        <a href="#recallModal" data-fancybox class="btn btn_accent">Заказать консультацию</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Заказать консультацию</a>
                     </div>
                 </div>
                 <div class="home-contacts__map">

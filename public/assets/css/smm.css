@@ -1222,20 +1222,18 @@
     font-size: 14px;
   }
 }
-.smm-page .analysis .form-msg {
-  margin: 10px 0 0 0;
-  font-size: 15px;
-  text-align: center;
+.smm-page .analysis .wa-btn {
+  min-height: 60px;
+  column-gap: 10px;
+  font-size: 18px;
+  background: #25D366;
+  color: #fff;
 }
-.smm-page .analysis .form-msg.success {
-  color: #6fd38a;
+.smm-page .analysis .wa-btn i {
+  font-size: 26px;
 }
-.smm-page .analysis .form-msg.error {
-  color: #ff7b7b;
-}
-.smm-page .analysis .form.loading .cl-btn {
-  opacity: 0.7;
-  pointer-events: none;
+.smm-page .analysis .wa-btn:hover {
+  background: #20BA5A;
 }
 .smm-page .faq {
   padding: 0 0 100px 0;

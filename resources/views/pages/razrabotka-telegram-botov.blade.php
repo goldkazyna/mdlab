@@ -79,7 +79,7 @@
                     <p class="bots-hero__subtitle">автоматизация бизнеса с mdlab</p>
 
                     <div class="bots-hero__contact">
-                        <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать звонок</a>
+                        <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Написать в WhatsApp</a>
                         <a href="#" class="btn btn_whatsapp"><i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp</a>
                     </div>
                     <div class="bots-hero__explanation">
@@ -197,7 +197,7 @@
                                     <p class="bots-whom__description">Онлайн-бронирование, доставка, сбор отзывов.</p>
                                 </div>
                                 <div class="bots-whom__item">
-                                    <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать консультацию</a>
+                                    <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Заказать консультацию</a>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +382,7 @@
                         <div class="bots-tariffs__footer">
                             <div class="bots-tariffs__price">от 50 000 ₸</div>
                             <div class="bots-tariffs__term">2-3 недели</div>
-                            <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать звонок</a>
+                            <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Написать в WhatsApp</a>
                         </div>
                     </div>
 
@@ -396,7 +396,7 @@
                         <div class="bots-tariffs__footer">
                             <div class="bots-tariffs__price">от 250 000 ₸</div>
                             <div class="bots-tariffs__term">3-6 недель</div>
-                            <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать звонок</a>
+                            <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Написать в WhatsApp</a>
                         </div>
                     </div>
 
@@ -410,7 +410,7 @@
                         <div class="bots-tariffs__footer">
                             <div class="bots-tariffs__price">Договорная</div>
                             <div class="bots-tariffs__term">от 6 недель</div>
-                            <a href="#recallModal" data-fancybox="" class="btn btn_accent">Заказать звонок</a>
+                            <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="btn btn_accent">Написать в WhatsApp</a>
                         </div>
                     </div>
 
