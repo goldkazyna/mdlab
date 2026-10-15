@@ -106,7 +106,7 @@ Route::get('/kontekstnaya-reklama', function () {
 Route::get('/prodvighenie-v-socialynyh-setyah', function () {
     return view('pages.prodvighenie-smm', [
         'title' => 'SMM-продвижение Инстаграм в Алматы — от 350 000 ₸/мес | MD Lab',
-        'description' => 'Продвижение и ведение Instagram в Алматы и по Казахстану: стратегия, Reels и AI-ролики, съемка, сторис, таргетированная реклама. 3 пакета: 350 000, 550 000 и от 750 000 ₸/мес.'
+        'description' => 'Ведение и продвижение Instagram в Алматы и Казахстане: Reels, AI-ролики, сторис, съемка и таргет. Пакеты 350 000, 550 000 и от 750 000 ₸/мес.'
     ]);
 });
 

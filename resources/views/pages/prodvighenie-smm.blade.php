@@ -370,12 +370,12 @@
     <section class="packets">
         <div class="for-title">
             <div class="container">
-                <h2 class="title fs-xl-40 fs-md-35 fs-30 ff-headings fw-semi d-none d-md-block mb-3">
+                <div class="title fs-xl-40 fs-md-35 fs-30 ff-headings fw-semi d-none d-md-block mb-3">
                     Создаем <br> сбалансированные <br> и безопасные решения
+                </div>
+                <h2 class="sub-title fs-xl-30 fs-md-25 fs-17 fw-bold color-gray">
+                    Пакеты и цены на продвижение Instagram
                 </h2>
-                <h3 class="sub-title fs-xl-30 fs-md-25 fs-17 fw-bold color-gray">
-                    Пакеты продвижения Instagram
-                </h3>
             </div>
         </div>
         <div class="packets-row">
@@ -787,9 +787,9 @@
     <section class="incredible">
         <div class="container big">
             <div class="for-title text-center ff-headings">
-                <h2 class="title fs-xl-45 fs-md-35 fs-17 fw-bold text-uppercase">
+                <div class="title fs-xl-45 fs-md-35 fs-17 fw-bold text-uppercase">
                     НЕВЕРОЯТНЫЙ ЭФФЕКТ ЗА МИНИМАЛЬНУЮ ЦЕНУ!
-                </h2>
+                </div>
                 <div class="sub-title fs-xl-27 fs-md-22 fs-15 fw-semi mt-2">
                     Не откладывайте продвижение <br class="d-none d-md-inline d-xl-none"> в Instagram, получайте заказы <span class="lines">уже завтра.</span>
                 </div>
@@ -803,5 +803,5 @@
 @endsection
 
 @push('scripts')
-<script defer src="/assets/js/smm.js?v=1.0"></script>
+<script defer src="/assets/js/smm.js?v=1.1"></script>
 @endpush
