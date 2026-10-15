@@ -166,6 +166,12 @@ $fs-xl: 18, 25, 27, 30, 35, 40, 45, 50;
             color: #363636;
         }
 
+        .summary-date {
+            margin: 8px 0 0 0;
+            font-size: 14px;
+            color: #8a8a8a;
+        }
+
         @media (max-width: 767px) {
             padding: 20px 0 0 0;
 

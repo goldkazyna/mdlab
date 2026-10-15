@@ -41,6 +41,21 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 User-agent: Applebot
 Allow: /
 

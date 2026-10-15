@@ -1213,6 +1213,11 @@
   line-height: 1.5;
   color: #363636;
 }
+.smm-page .summary .summary-date {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #8a8a8a;
+}
 @media (max-width: 767px) {
   .smm-page .summary {
     padding: 20px 0 0 0;

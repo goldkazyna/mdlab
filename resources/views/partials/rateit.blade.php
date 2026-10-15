@@ -9,6 +9,7 @@
 {
     "@@context": "https://schema.org",
     "@@type": "WebPage",
+    "@@id": "https://mdlab.kz{{ request()->getPathInfo() }}#webpage",
     "name": "{{ $title ?? config('app.name') }}",
     "description": "{{ $description ?? '' }}",
     "aggregateRating": {

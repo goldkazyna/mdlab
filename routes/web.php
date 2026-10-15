@@ -103,6 +103,12 @@ Route::get('/kontekstnaya-reklama', function () {
     ]);
 });
 
+// Markdown-версия страницы SMM для ИИ-ассистентов (ссылка в llms.txt)
+Route::get('/prodvighenie-v-socialynyh-setyah.md', function () {
+    return response(view('pages.prodvighenie-smm-md')->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+});
+
 Route::get('/prodvighenie-v-socialynyh-setyah', function () {
     return view('pages.prodvighenie-smm', [
         'title' => 'SMM-продвижение Инстаграм в Алматы — от 350 000 ₸/мес | MD Lab',
