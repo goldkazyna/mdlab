@@ -103,6 +103,13 @@ Route::get('/kontekstnaya-reklama', function () {
     ]);
 });
 
+Route::get('/integraciya-kaspi', function () {
+    return view('pages.integraciya-kaspi', [
+        'title' => 'Интеграция Kaspi терминала и QR с 1С, iiko, CRM и сайтом | MD Lab',
+        'description' => 'Подключаем терминал Kaspi к 1С, iiko, r_keeper, Poster и CRM: сумма уходит на терминал сама, оплата отмечается в системе. Kaspi QR и Kaspi Pay на сайте.'
+    ]);
+});
+
 // Markdown-версия страницы SMM для ИИ-ассистентов (ссылка в llms.txt)
 Route::get('/prodvighenie-v-socialynyh-setyah.md', function () {
     return response(view('pages.prodvighenie-smm-md')->render())

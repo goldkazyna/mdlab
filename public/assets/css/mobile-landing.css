@@ -592,6 +592,11 @@
     justify-content: center;
 }
 
+.tech-item__icon i {
+    font-size: 36px;
+    color: var(--primary);
+}
+
 .tech-item__icon-placeholder {
     width: 60px;
     height: 60px;

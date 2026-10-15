@@ -785,6 +785,8 @@
             <a href="https://mdlab.kz/razrabotka-prilozheniya-internet-magazina">приложение интернет-магазина</a> и подходит
             для <a href="https://mdlab.kz/razrabotka-prilozheniya-dlya-biznesa">приложения для бизнеса</a>, где оплата
             встроена во внутренние процессы. Подбираем провайдеров и маршрутизацию платежей под ваши комиссии и обороты.
+            Если нужно связать терминал Kaspi на кассе с 1С, iiko или CRM, посмотрите
+            <a href="https://mdlab.kz/integraciya-kaspi">интеграцию Kaspi</a>.
         </p>
         <p>
             Работаем по методологии Agile с фиксированной стоимостью в договоре и поэтапной оплатой. Вы видите результат
