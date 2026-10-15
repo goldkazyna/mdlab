@@ -4,45 +4,24 @@
     $pageUrl = 'https://mdlab.kz/integraciya-kaspi';
     $waUrl = 'https://wa.me/77774333822?text=' . rawurlencode('Здравствуйте! Интересует интеграция Kaspi');
 
-    $faq = [
-        [
-            'q' => 'Сколько стоит интеграция Kaspi?',
-            'a' => 'Стоимость зависит от системы (1С, iiko, r_keeper, Poster, сайт или CRM), количества терминалов и сценариев оплаты. Разбор задачи бесплатный: напишите в WhatsApp, какая у вас система и что нужно сделать, — назовём точную цену и срок.',
-        ],
-        [
-            'q' => 'Можно ли подключить терминал Kaspi к 1С?',
-            'a' => 'Да. Связываем терминал Kaspi с 1С: сумма из документа продажи передаётся на терминал автоматически, а после оплаты результат фиксируется в 1С. Кассиру не нужно вводить сумму вручную, а бухгалтерии — сверять оплаты с выпиской.',
-        ],
-        [
-            'q' => 'Работает ли интеграция Kaspi с iiko, r_keeper и Poster?',
-            'a' => 'Да. Для ресторанов, кафе и кофеен подключаем терминал Kaspi к iiko, r_keeper и Poster: кассир или официант закрывает заказ, сумма уходит на терминал, а оплата отмечается в системе.',
-        ],
-        [
-            'q' => 'Как подключить оплату Kaspi на сайте или в интернет-магазине?',
-            'a' => 'Подключаем оплату через Kaspi QR и Kaspi Pay: покупатель оплачивает заказ в приложении Kaspi, а сайт автоматически получает подтверждение и меняет статус заказа. Для подключения нужен бизнес-аккаунт Kaspi Pay. Работаем с сайтами на WordPress, Laravel, 1С-Битрикс и самописными.',
-        ],
-        [
-            'q' => 'Нужно ли менять кассовую программу или CRM?',
-            'a' => 'Нет. Интеграцию делаем под систему, в которой вы уже работаете: 1С, iiko, r_keeper, Poster, amoCRM, Битрикс24 или ваш собственный софт. Если у системы есть API или доступ к базе, Kaspi к ней подключить можно.',
-        ],
-        [
-            'q' => 'Что делать, если интеграция уже есть, но работает с ошибками?',
-            'a' => 'Разберём текущую интеграцию: найдём причину зависших или задвоенных оплат, расхождения сумм и сбоев связи с терминалом, исправим и проверим на реальных оплатах.',
-        ],
-    ];
-
-    $steps = [
-        ['name' => 'Бесплатный разбор задачи', 'text' => 'Выясняем, какая у вас система, сколько терминалов и касс, где нужна оплата: на кассе, на сайте или в CRM. Называем стоимость и срок.'],
-        ['name' => 'Доступы и подготовка', 'text' => 'Получаем доступ к системе и кабинету Kaspi, проверяем подключение терминалов к сети и версию вашей программы.'],
-        ['name' => 'Разработка интеграции', 'text' => 'Пишем модуль для 1С, подключение к iiko, r_keeper или Poster, обработчик оплат для сайта или CRM — под ваши сценарии.'],
-        ['name' => 'Проверка на реальных оплатах', 'text' => 'Проверяем оплату, отмену, повторную попытку и обрыв связи, чтобы не было зависших и задвоенных платежей.'],
-        ['name' => 'Запуск и поддержка', 'text' => 'Запускаем в работу, показываем кассирам и менеджерам, как всё работает, и остаёмся на связи после запуска.'],
-    ];
+    extract(require resource_path('data/kaspi.php'));
 
     $schemas = [
         [
             '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            '@id' => $pageUrl . '#webpage',
+            'url' => $pageUrl,
+            'name' => $title,
+            'description' => $description,
+            'inLanguage' => 'ru',
+            'dateModified' => $updated,
+            'mainEntity' => ['@id' => $pageUrl . '#service'],
+        ],
+        [
+            '@context' => 'https://schema.org',
             '@type' => 'Service',
+            '@id' => $pageUrl . '#service',
             'name' => 'Интеграция Kaspi терминала и Kaspi QR с 1С, iiko, CRM и сайтом',
             'description' => 'Подключение терминала Kaspi и оплаты Kaspi QR / Kaspi Pay к кассовым и учётным системам: 1С, iiko, r_keeper, Poster, amoCRM, Битрикс24, сайтам и собственному софту. Сумма передаётся на терминал автоматически, результат оплаты возвращается в систему.',
             'serviceType' => 'Интеграция платёжных терминалов Kaspi',
@@ -65,6 +44,15 @@
             'areaServed' => [
                 ['@type' => 'City', 'name' => 'Алматы'],
                 ['@type' => 'Country', 'name' => 'Казахстан'],
+            ],
+            'audience' => ['@type' => 'BusinessAudience', 'audienceType' => 'Магазины, рестораны, кафе, интернет-магазины, сервисные компании'],
+            'hasOfferCatalog' => [
+                '@type' => 'OfferCatalog',
+                'name' => 'Интеграция Kaspi',
+                'itemListElement' => array_map(fn ($t) => [
+                    '@type' => 'Offer',
+                    'itemOffered' => ['@type' => 'Service', 'name' => $t['name'], 'description' => $t['text']],
+                ], $types),
             ],
         ],
         [
@@ -99,10 +87,11 @@
 @endphp
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.1">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.2">
 @endpush
 
 @push('schema')
+<link rel="alternate" type="text/markdown" href="/integraciya-kaspi.md" title="Markdown-версия страницы для ИИ">
 @foreach($schemas as $schema)
 <script type="application/ld+json">{!! json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endforeach
@@ -176,6 +165,9 @@
                     <div class="summary-fact__label">разбор задачи и расчёт</div>
                 </div>
             </div>
+            <p class="summary-date">
+                Обновлено: <time datetime="{{ $updated }}">{{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }}</time>
+            </p>
         </div>
     </div>
 </section>
@@ -189,53 +181,15 @@
         </div>
 
         <div class="types-grid">
+            @foreach($types as $item)
             <div class="type-card">
                 <div class="type-card__icon">
-                    <i class="fa-solid fa-cash-register"></i>
+                    <i class="fa-solid {{ $item['icon'] }}"></i>
                 </div>
-                <h3>Терминал Kaspi + касса</h3>
-                <p>Кассир пробивает заказ в программе — сумма сама появляется на терминале Kaspi. После оплаты чек закрывается в системе автоматически.</p>
+                <h3>{{ $item['name'] }}</h3>
+                <p>{{ $item['text'] }}</p>
             </div>
-
-            <div class="type-card">
-                <div class="type-card__icon">
-                    <i class="fa-solid fa-file-invoice"></i>
-                </div>
-                <h3>Терминал Kaspi + 1С</h3>
-                <p>Оплата фиксируется прямо в документе продажи 1С. Не нужно перебивать сумму и сверять поступления с выпиской Kaspi вручную.</p>
-            </div>
-
-            <div class="type-card">
-                <div class="type-card__icon">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-                <h3>iiko, r_keeper, Poster</h3>
-                <p>Для ресторанов, кафе и кофеен: заказ закрывается на кассе, оплата проходит через терминал Kaspi и сразу отмечается в системе.</p>
-            </div>
-
-            <div class="type-card">
-                <div class="type-card__icon">
-                    <i class="fa-solid fa-qrcode"></i>
-                </div>
-                <h3>Kaspi QR и Kaspi Pay на сайте</h3>
-                <p>Покупатель оплачивает заказ в приложении Kaspi, а сайт или интернет-магазин сам получает подтверждение и меняет статус заказа.</p>
-            </div>
-
-            <div class="type-card">
-                <div class="type-card__icon">
-                    <i class="fa-solid fa-diagram-project"></i>
-                </div>
-                <h3>CRM и свой софт</h3>
-                <p>amoCRM, Битрикс24, самописные системы: оплата привязывается к сделке или заказу, менеджер видит её без звонков в бухгалтерию.</p>
-            </div>
-
-            <div class="type-card">
-                <div class="type-card__icon">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                </div>
-                <h3>Исправление интеграции</h3>
-                <p>Если интеграция уже есть, но сбоит: зависшие и задвоенные оплаты, расхождения сумм, обрывы связи с терминалом — найдём причину и исправим.</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -249,53 +203,15 @@
         </div>
 
         <div class="advantages-grid">
+            @foreach($advantages as $item)
             <div class="advantage-card">
                 <div class="advantage-card__icon">
-                    <i class="fa-solid fa-keyboard"></i>
+                    <i class="fa-solid {{ $item['icon'] }}"></i>
                 </div>
-                <h3>Нет ошибок кассира</h3>
-                <p>Сумма не вводится руками — значит, не будет лишнего нуля, недоплаты или оплаты не того заказа.</p>
+                <h3>{{ $item['name'] }}</h3>
+                <p>{{ $item['text'] }}</p>
             </div>
-
-            <div class="advantage-card">
-                <div class="advantage-card__icon">
-                    <i class="fa-solid fa-gauge-high"></i>
-                </div>
-                <h3>Быстрее очередь</h3>
-                <p>Кассир не переключается между программой и терминалом: закрыл заказ — клиент сразу оплачивает.</p>
-            </div>
-
-            <div class="advantage-card">
-                <div class="advantage-card__icon">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                </div>
-                <h3>Сверка без ручной работы</h3>
-                <p>Каждая оплата Kaspi уже привязана к чеку или заказу в системе — не нужно сверять выписку построчно.</p>
-            </div>
-
-            <div class="advantage-card">
-                <div class="advantage-card__icon">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3>Статусы в реальном времени</h3>
-                <p>Сайт, CRM или учётная система узнают об оплате сразу — заказ уходит в работу без ожидания подтверждения.</p>
-            </div>
-
-            <div class="advantage-card">
-                <div class="advantage-card__icon">
-                    <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <h3>Честные отчёты</h3>
-                <p>Все оплаты через Kaspi видны в отчётах вашей системы вместе с наличными и другими способами оплаты.</p>
-            </div>
-
-            <div class="advantage-card">
-                <div class="advantage-card__icon">
-                    <i class="fa-solid fa-plug-circle-check"></i>
-                </div>
-                <h3>Ваш текущий софт</h3>
-                <p>Не нужно переходить на другую кассовую программу или CRM — подключаем Kaspi к той, в которой вы уже работаете.</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -309,30 +225,12 @@
         </div>
 
         <div class="tech-grid">
+            @foreach($systems as $item)
             <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-calculator"></i></div>
-                <span>1С</span>
+                <div class="tech-item__icon"><i class="fa-solid {{ $item['icon'] }}"></i></div>
+                <span>{{ $item['name'] }}</span>
             </div>
-            <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-mug-hot"></i></div>
-                <span>iiko</span>
-            </div>
-            <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-bell-concierge"></i></div>
-                <span>r_keeper</span>
-            </div>
-            <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
-                <span>Poster</span>
-            </div>
-            <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-address-book"></i></div>
-                <span>amoCRM, Битрикс24</span>
-            </div>
-            <div class="tech-item">
-                <div class="tech-item__icon"><i class="fa-solid fa-code"></i></div>
-                <span>Сайты и свой софт</span>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -409,11 +307,9 @@
 
         <h3>Кому нужна интеграция Kaspi</h3>
         <ul>
-            <li>Магазинам и розничным сетям на 1С — оплата сразу в документе продажи</li>
-            <li>Ресторанам, кафе и кофейням на iiko, r_keeper и Poster</li>
-            <li>Сервисам и клиникам, где оплата привязана к записи или заказу в CRM</li>
-            <li>Интернет-магазинам и сайтам, которые принимают оплату через Kaspi QR и Kaspi Pay</li>
-            <li>Компаниям с собственным софтом, которым нужна связка с Kaspi по API</li>
+            @foreach($audience as $item)
+            <li>{{ $item }}</li>
+            @endforeach
         </ul>
 
         <h3>Оплата Kaspi на сайте и в приложении</h3>

@@ -103,6 +103,12 @@ Route::get('/kontekstnaya-reklama', function () {
     ]);
 });
 
+// Markdown-версия страницы Kaspi для ИИ-ассистентов (ссылка в llms.txt)
+Route::get('/integraciya-kaspi.md', function () {
+    return response(view('pages.integraciya-kaspi-md')->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+});
+
 Route::get('/integraciya-kaspi', function () {
     return view('pages.integraciya-kaspi', [
         'title' => 'Интеграция Kaspi терминала и QR с 1С, iiko, CRM и сайтом | MD Lab',

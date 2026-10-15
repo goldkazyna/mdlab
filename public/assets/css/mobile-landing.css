@@ -875,6 +875,12 @@
     margin-bottom: 0;
 }
 
+.summary-box .summary-date {
+    margin: 15px 0 0;
+    font-size: 14px;
+    color: var(--gray, #8a8a8a);
+}
+
 .summary-facts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
