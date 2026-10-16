@@ -103,6 +103,19 @@ Route::get('/kontekstnaya-reklama', function () {
     ]);
 });
 
+// Markdown-версия страницы интеграции 1С для ИИ-ассистентов (ссылка в llms.txt)
+Route::get('/integraciya-s-1c.md', function () {
+    return response(view('pages.integraciya-s-1c-md')->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+});
+
+Route::get('/integraciya-s-1c', function () {
+    return view('pages.integraciya-s-1c', [
+        'title' => 'Интеграция 1С с сайтом, Kaspi Магазином, приложением и CRM | MD Lab',
+        'description' => 'Связываем 1С с интернет-магазином, Kaspi Магазином, Wildberries, Ozon, приложением, Telegram-ботом и CRM: товары, цены, остатки и заказы без ручного ввода.'
+    ]);
+});
+
 // Markdown-версия страницы эквайринга для ИИ-ассистентов (ссылка в llms.txt)
 Route::get('/podklyuchenie-ekvayringa.md', function () {
     return response(view('pages.podklyuchenie-ekvayringa-md')->render())

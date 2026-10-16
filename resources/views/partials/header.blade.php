@@ -70,6 +70,7 @@
                             <li class="nav-main__subitem"><a itemprop="url" href="/podderghka-sayta" class="nav-main__sublink">Поддержка сайта</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/tehnicheskoe-zadaniya" class="nav-main__sublink">Разработка тех. задания</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/razrabotka-telegram-botov" class="nav-main__sublink">Разработка Telegram-ботов</a></li>
+                            <li class="nav-main__subitem"><a itemprop="url" href="/integraciya-s-1c" class="nav-main__sublink">Интеграция с 1С</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/integraciya-kaspi" class="nav-main__sublink">Интеграция Kaspi</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/podklyuchenie-ekvayringa" class="nav-main__sublink">Подключение эквайринга</a></li>
 							<li class="nav-main__subitem"><a itemprop="url" href="/razrabotka-mobilnyh-prilozheniy" class="nav-main__sublink">Разработка мобильных приложений</a></li>
