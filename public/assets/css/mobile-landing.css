@@ -566,7 +566,8 @@
 
 @media (max-width: 576px) {
     .tech-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
     }
 }
 
@@ -616,6 +617,7 @@
 }
 
 .tech-item span {
+    overflow-wrap: anywhere;
     font-size: 14px;
     font-weight: 600;
     color: var(--dark);
@@ -890,7 +892,20 @@
 
 @media (max-width: 768px) {
     .summary-facts {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .summary-box {
+        padding: 22px 18px;
+    }
+
+    .summary-fact {
+        padding: 14px 10px;
+    }
+
+    .summary-fact__value {
+        font-size: 17px;
     }
 }
 

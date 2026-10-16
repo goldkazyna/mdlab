@@ -87,7 +87,7 @@
 @endphp
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.2">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
 @endpush
 
 @push('schema')
@@ -318,8 +318,9 @@
             <a href="https://mdlab.kz/internet-magazin">интернет-магазину</a>: заказ автоматически отмечается оплаченным,
             а менеджер получает уведомление. Если нужна оплата внутри мобильного приложения, посмотрите
             <a href="https://mdlab.kz/razrabotka-prilozheniya-s-oplatoy">разработку приложения с онлайн-оплатой</a>.
-            Доработать существующий сайт под приём оплаты можно в рамках
-            <a href="https://mdlab.kz/dorabotka-sayta">доработки сайта</a>.
+            Оплату картами через Halyk ePay, Freedom Pay или CloudPayments подключаем в рамках
+            <a href="https://mdlab.kz/podklyuchenie-ekvayringa">подключения эквайринга</a>, а доработать существующий сайт
+            под приём оплаты можно в рамках <a href="https://mdlab.kz/dorabotka-sayta">доработки сайта</a>.
         </p>
 
         <h3>Как заказать интеграцию Kaspi</h3>

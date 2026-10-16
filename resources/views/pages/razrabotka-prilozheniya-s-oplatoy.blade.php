@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.0">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
 @endpush
 
 @push('schema')
@@ -786,7 +786,8 @@
             для <a href="https://mdlab.kz/razrabotka-prilozheniya-dlya-biznesa">приложения для бизнеса</a>, где оплата
             встроена во внутренние процессы. Подбираем провайдеров и маршрутизацию платежей под ваши комиссии и обороты.
             Если нужно связать терминал Kaspi на кассе с 1С, iiko или CRM, посмотрите
-            <a href="https://mdlab.kz/integraciya-kaspi">интеграцию Kaspi</a>.
+            <a href="https://mdlab.kz/integraciya-kaspi">интеграцию Kaspi</a>, а если приложение или сайт уже есть
+            и нужно только добавить оплату — <a href="https://mdlab.kz/podklyuchenie-ekvayringa">подключение эквайринга</a>.
         </p>
         <p>
             Работаем по методологии Agile с фиксированной стоимостью в договоре и поэтапной оплатой. Вы видите результат

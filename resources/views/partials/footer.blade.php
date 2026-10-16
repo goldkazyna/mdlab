@@ -34,6 +34,8 @@
                                         class="fa-solid fa-angle-right"></i>Разработка Telegram-ботов</a></li>
                         <li class="nav-footer__item"><a href="/integraciya-kaspi" class="nav-footer__link"><i
                                         class="fa-solid fa-angle-right"></i>Интеграция Kaspi</a></li>
+                        <li class="nav-footer__item"><a href="/podklyuchenie-ekvayringa" class="nav-footer__link"><i
+                                        class="fa-solid fa-angle-right"></i>Подключение эквайринга</a></li>
 						<li class="nav-footer__item"><a href="/razrabotka-mobilnyh-prilozheniy" class="nav-footer__link"><i
                                         class="fa-solid fa-angle-right"></i>Разработка мобильных приложений</a></li>
                     </ul>

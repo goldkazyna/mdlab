@@ -151,6 +151,12 @@
     <changefreq>weekly</changefreq>
 </url>
 <url>
+	<loc>https://mdlab.kz/podklyuchenie-ekvayringa</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
 	<loc>https://mdlab.kz/integraciya-kaspi</loc>
     <lastmod>2026-10-15</lastmod>
     <priority>0.8</priority>

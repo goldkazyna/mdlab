@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.0">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
 @endpush
 
 @push('schema')

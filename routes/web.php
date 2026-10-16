@@ -103,6 +103,19 @@ Route::get('/kontekstnaya-reklama', function () {
     ]);
 });
 
+// Markdown-версия страницы эквайринга для ИИ-ассистентов (ссылка в llms.txt)
+Route::get('/podklyuchenie-ekvayringa.md', function () {
+    return response(view('pages.podklyuchenie-ekvayringa-md')->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+});
+
+Route::get('/podklyuchenie-ekvayringa', function () {
+    return view('pages.podklyuchenie-ekvayringa', [
+        'title' => 'Подключение эквайринга и онлайн-оплаты на сайт и в приложение | MD Lab',
+        'description' => 'Подключаем онлайн-оплату на сайт, в приложение и Telegram-бот: Kaspi Pay, Halyk ePay, Freedom Pay, CloudPayments. Помощь с договором, онлайн-чеки, 1С и CRM.'
+    ]);
+});
+
 // Markdown-версия страницы Kaspi для ИИ-ассистентов (ссылка в llms.txt)
 Route::get('/integraciya-kaspi.md', function () {
     return response(view('pages.integraciya-kaspi-md')->render())

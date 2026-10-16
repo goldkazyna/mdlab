@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6f3ff"/>
+      <stop offset="1" stop-color="#eefaff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0098D6"/>
+      <stop offset="1" stop-color="#0a5f8f"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0098D6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="270" r="240" fill="url(#bg)"/>
+
+  <!-- Окно браузера: оформление заказа -->
+  <g filter="url(#sh)">
+    <rect x="30" y="90" width="340" height="300" rx="14" fill="#fff"/>
+    <rect x="30" y="90" width="340" height="34" rx="14" fill="#eef3f7"/>
+    <rect x="30" y="110" width="340" height="14" fill="#eef3f7"/>
+    <circle cx="50" cy="107" r="5" fill="#f14635"/>
+    <circle cx="66" cy="107" r="5" fill="#f5b400"/>
+    <circle cx="82" cy="107" r="5" fill="#22b35e"/>
+    <rect x="100" y="99" width="250" height="16" rx="8" fill="#fff"/>
+    <text x="50" y="158" font-size="16" font-weight="800" fill="#1a1a2e">Оплата заказа</text>
+    <text x="50" y="190" font-size="13" font-weight="600" fill="#666">К оплате</text>
+    <text x="350" y="191" font-size="20" font-weight="800" fill="#1a1a2e" text-anchor="end">24 900 ₸</text>
+    <line x1="50" y1="206" x2="350" y2="206" stroke="#e3edf3" stroke-width="2"/>
+
+    <!-- Способы оплаты -->
+    <rect x="50" y="220" width="300" height="40" rx="10" fill="#fff" stroke="#0098D6" stroke-width="2"/>
+    <circle cx="72" cy="240" r="8" fill="none" stroke="#0098D6" stroke-width="2"/>
+    <circle cx="72" cy="240" r="4" fill="#0098D6"/>
+    <text x="90" y="245" font-size="13" font-weight="700" fill="#1a1a2e">Kaspi Pay</text>
+    <rect x="290" y="230" width="46" height="20" rx="6" fill="#f14635"/>
+    <text x="313" y="244" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">QR</text>
+
+    <rect x="50" y="268" width="300" height="40" rx="10" fill="#fff" stroke="#e3edf3" stroke-width="2"/>
+    <circle cx="72" cy="288" r="8" fill="none" stroke="#c9dbe5" stroke-width="2"/>
+    <text x="90" y="293" font-size="13" font-weight="700" fill="#1a1a2e">Банковская карта</text>
+    <rect x="290" y="279" width="20" height="14" rx="3" fill="#1a1a2e"/>
+    <rect x="314" y="279" width="22" height="14" rx="3" fill="#f5b400"/>
+
+    <rect x="50" y="324" width="300" height="44" rx="12" fill="#22b35e"/>
+    <text x="200" y="352" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">Оплатить</text>
+  </g>
+
+  <!-- Банковская карта -->
+  <g filter="url(#sh)" transform="rotate(-10 470 200)">
+    <rect x="380" y="140" width="190" height="118" rx="14" fill="url(#card)"/>
+    <rect x="398" y="168" width="32" height="24" rx="5" fill="#f5c84b"/>
+    <g fill="#fff" opacity=".9">
+      <rect x="398" y="210" width="34" height="8" rx="4"/><rect x="440" y="210" width="34" height="8" rx="4"/>
+      <rect x="482" y="210" width="34" height="8" rx="4"/><rect x="524" y="210" width="28" height="8" rx="4"/>
+    </g>
+    <circle cx="526" cy="238" r="11" fill="#f14635" opacity=".9"/>
+    <circle cx="542" cy="238" r="11" fill="#f5b400" opacity=".9"/>
+  </g>
+
+  <!-- Телефон: оплата прошла -->
+  <g filter="url(#sh)">
+    <rect x="400" y="270" width="130" height="220" rx="20" fill="#1a1a2e"/>
+    <rect x="409" y="286" width="112" height="190" rx="12" fill="#fff"/>
+    <circle cx="465" cy="340" r="28" fill="#22b35e"/>
+    <path d="M452 340 l9 9 l17 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="465" y="392" font-size="12" font-weight="800" fill="#1a1a2e" text-anchor="middle">Оплата прошла</text>
+    <text x="465" y="414" font-size="13" font-weight="800" fill="#0098D6" text-anchor="middle">24 900 ₸</text>
+    <rect x="425" y="430" width="80" height="10" rx="5" fill="#e3edf3"/>
+    <rect x="435" y="448" width="60" height="10" rx="5" fill="#e3edf3"/>
+  </g>
+
+  <!-- Платёжные системы -->
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <rect x="40" y="415" width="100" height="30" rx="15" fill="#fff" stroke="#0098D6" stroke-width="2"/>
+    <text x="90" y="435" fill="#0098D6">Halyk ePay</text>
+    <rect x="150" y="415" width="110" height="30" rx="15" fill="#fff" stroke="#0098D6" stroke-width="2"/>
+    <text x="205" y="435" fill="#0098D6">Freedom Pay</text>
+    <rect x="270" y="415" width="120" height="30" rx="15" fill="#fff" stroke="#0098D6" stroke-width="2"/>
+    <text x="330" y="435" fill="#0098D6">CloudPayments</text>
+  </g>
+</svg>

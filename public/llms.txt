@@ -29,6 +29,7 @@
 - [Интернет-магазин](https://mdlab.kz/internet-magazin): Разработка интернет-магазинов, от 60 000 ₸, домен и хостинг на год в подарок.
 - [Интернет-каталог](https://mdlab.kz/internet-katalog): Создание сайтов-каталогов.
 - [Интеграция Kaspi](https://mdlab.kz/integraciya-kaspi): Подключение терминала Kaspi и оплаты Kaspi QR / Kaspi Pay к 1С, iiko, r_keeper, Poster, amoCRM, Битрикс24, сайтам и собственному софту по API: сумма передаётся на терминал автоматически, результат оплаты возвращается в систему. Исправление существующих интеграций. Стоимость — после бесплатного разбора задачи. Полное описание и FAQ в markdown: https://mdlab.kz/integraciya-kaspi.md
+- [Подключение эквайринга и онлайн-оплаты](https://mdlab.kz/podklyuchenie-ekvayringa): Подключение приёма оплаты картами и через Kaspi Pay к сайтам (WordPress, WooCommerce, Tilda, 1С-Битрикс, OpenCart, Laravel, самописные), мобильным приложениям и Telegram-ботам. Платёжные системы: Kaspi Pay, Halyk ePay, Freedom Pay, CloudPayments, ForteBank, Jusan, Bereke и другие банки по API. Помощь с договором и проверкой сайта банком, онлайн-чеки (ОФД), подписки и рекуррентные платежи, связка с 1С и CRM. Стоимость — после бесплатного разбора задачи. Полное описание и FAQ в markdown: https://mdlab.kz/podklyuchenie-ekvayringa.md
 - [Разработка Telegram-ботов](https://mdlab.kz/razrabotka-telegram-botov): Боты для автоматизации бизнеса и продаж.
 
 ## Дизайн
