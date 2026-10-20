@@ -13,6 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->validateCsrfTokens(except: [
             'api/stocks',
+            'api/v',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

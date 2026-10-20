@@ -6,7 +6,10 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StocksController;
+use App\Http\Controllers\VisitLogController;
+use App\Http\Controllers\VisitTrackController;
 use App\Http\Middleware\VerifyStocksApiToken;
+use App\Http\Middleware\VisitLogAuth;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/landing-page', function () {
@@ -260,3 +263,14 @@ Route::post('/api/contact', [ContactController::class, 'send']);
 
 Route::post('/api/stocks', [StocksController::class, 'store'])
     ->middleware(VerifyStocksApiToken::class);
+// --- Журнал заходов (поиск скликивания рекламы) ---
+Route::post('/api/v', [VisitTrackController::class, 'store'])->middleware('throttle:120,1');
+
+Route::get('/visits/login', [VisitLogController::class, 'loginForm'])->name('visits.login');
+Route::post('/visits/login', [VisitLogController::class, 'login']);
+Route::middleware(VisitLogAuth::class)->prefix('visits')->group(function () {
+    Route::get('/', [VisitLogController::class, 'index'])->name('visits.index');
+    Route::post('/logout', [VisitLogController::class, 'logout'])->name('visits.logout');
+    Route::get('/device/{fingerprint}', [VisitLogController::class, 'device'])->name('visits.device');
+    Route::post('/device/{fingerprint}', [VisitLogController::class, 'updateDevice'])->name('visits.device.update');
+});

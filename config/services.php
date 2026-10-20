@@ -39,4 +39,12 @@ return [
         'token' => env('STOCKS_API_TOKEN'),
     ],
 
+    // Журнал заходов /visits
+    'visits' => [
+        'password' => env('VISITS_PASSWORD'),
+        'keep_days' => 90,
+        'suspicious_paid' => 3,     // платных кликов за период
+        'suspicious_avg_sec' => 15, // среднее время на сайте меньше
+    ],
+
 ];

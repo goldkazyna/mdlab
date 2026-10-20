@@ -239,6 +239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script defer src="/assets/js/quiz.js?v=1.1"></script>
 <script defer src="/assets/js/animate.js?v=1.1"></script>
 <script defer src="/assets/js/main.js?v=1.1"></script>
+<script defer src="/assets/js/visit-tracker.js?v=1"></script>
 <script src="/assets/js/rated/jquery.rateit.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
