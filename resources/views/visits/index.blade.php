@@ -78,7 +78,7 @@
                                 <span class="muted">нет</span>
                             @endif
                         </td>
-                        <td>{{ \Illuminate\Support\Carbon::parse($d->last_seen)->format('d.m H:i') }}</td>
+                        <td>{{ \Illuminate\Support\Carbon::parse($d->last_seen)->timezone('Asia/Almaty')->format('d.m H:i') }}</td>
                     </tr>
                 @empty
                     <tr><td colspan="9" class="muted">За этот период заходов нет.</td></tr>

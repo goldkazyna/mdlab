@@ -26,7 +26,7 @@
         </div>
         <p class="muted" style="margin-bottom:0">
             {{ $first->device_type }} · {{ $first->os }} · {{ $first->browser }} · экран {{ $first->screen }} · {{ $first->language }} · {{ $first->timezone }}<br>
-            Первый заход: {{ $first->created_at->format('d.m.Y H:i') }}<br>
+            Первый заход: {{ $first->created_at->timezone('Asia/Almaty')->format('d.m.Y H:i') }}<br>
             <span class="fp">{{ $first->user_agent }}</span>
         </p>
     </div>

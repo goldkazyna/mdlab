@@ -1,7 +1,7 @@
 {{-- Строка таблицы заходов; $showDevice — показывать колонку устройства --}}
 @php($ip = $visit->ip)
 <tr class="{{ ($blocked ?? collect())->contains($visit->fingerprint) ? 'blocked' : '' }}">
-    <td>{{ $visit->created_at->format('d.m H:i:s') }}</td>
+    <td>{{ $visit->created_at->timezone('Asia/Almaty')->format('d.m H:i:s') }}</td>
     <td>@include('visits._ip')</td>
     @if($showDevice)
         <td>
