@@ -79,19 +79,7 @@
                             <img src="/assets/img/logo-light.png" alt="Modern Design Lab"></a>
                     </div>
                 </div>
-                <div class="col-md-6">Copyright © 2025 «MD lab». Все права защищены</div>
-                <div class="col-md-3">
-                    <ul class="nav-soc">
-                        <li class="nav-soc__item"><a href="/" class="nav-soc__link"><i
-                                        class="fa-brands fa-twitter"></i></a></li>
-                        <li class="nav-soc__item"><a href="/" class="nav-soc__link"><i
-                                        class="fa-solid fa-b"></i></a></li>
-                        <li class="nav-soc__item"><a href="/" class="nav-soc__link"><i
-                                        class="fa-brands fa-facebook-f"></i></a></li>
-                        <li class="nav-soc__item"><a href="/" class="nav-soc__link"><i
-                                        class="fa-brands fa-instagram"></i></a></li>
-                    </ul>
-                </div>
+                <div class="col-md-9">Copyright © 2014–{{ date('Y') }} «MD lab». Все права защищены</div>
 
             </div>
         </div>

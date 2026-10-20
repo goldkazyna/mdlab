@@ -78,11 +78,6 @@
 			"@@type": "City",
 			"name": "Алматы"
 		},
-		"sameAs": [
-			"https://www.instagram.com/mdlabkz/",
-			"https://www.facebook.com/MD-Lab-351217825313347/",
-			"https://vk.com/public151532814"
-		],
 		"priceRange": "$$"
 	}
 	</script>

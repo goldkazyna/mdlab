@@ -389,17 +389,8 @@
                 </div>
 
                 <div class="contacts-social">
-                    <div class="contacts-social__title">Мы в соцсетях</div>
+                    <div class="contacts-social__title">Напишите нам</div>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/mdlabkz/" target="_blank" title="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/MD-Lab-351217825313347/" target="_blank" title="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="https://vk.com/public151532814" target="_blank" title="VK">
-                            <i class="fa-brands fa-vk"></i>
-                        </a>
                         <a href="https://wa.me/77774333822" target="_blank" title="WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
