@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Visit;
+use Illuminate\Database\QueryException;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,14 @@ class VisitTrackController extends Controller
             'submitted_form' => !empty($data['form']),
         ];
 
-        $visit = Visit::where('session_id', $data['s'])->first();
+        try {
+            $visit = Visit::where('session_id', $data['s'])->first();
+        } catch (QueryException) {
+            // Таблиц ещё нет — создаём, данные этого запроса пропускаем
+            Visit::ensureTables();
+
+            return response()->noContent();
+        }
 
         if ($visit) {
             // Значения накопительные: берём максимум, флаги только включаются

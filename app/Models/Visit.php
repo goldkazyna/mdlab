@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schema;
 
 class Visit extends Model
 {
@@ -15,6 +17,17 @@ class Visit extends Model
         'clicked_telegram' => 'boolean',
         'submitted_form' => 'boolean',
     ];
+
+    // Создать таблицы журнала, если миграцию ещё не запускали (на хостинге нет shell)
+    public static function ensureTables(): void
+    {
+        if (!Schema::hasTable('visits')) {
+            Artisan::call('migrate', [
+                '--path' => 'database/migrations/2026_10_20_120000_create_visits_tables.php',
+                '--force' => true,
+            ]);
+        }
+    }
 
     // Было ли хоть одно целевое действие
     public function hasAction(): bool

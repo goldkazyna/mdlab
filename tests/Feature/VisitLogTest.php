@@ -5,7 +5,9 @@ namespace Tests\Feature;
 use App\Models\Visit;
 use App\Models\VisitDevice;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class VisitLogTest extends TestCase
@@ -80,6 +82,28 @@ class VisitLogTest extends TestCase
         $this->post('/visits/login', ['password' => 'secret'])
             ->assertRedirect('/visits')
             ->assertCookie('vl_ignore');
+    }
+
+    public function test_login_by_password_hash_when_env_password_is_empty(): void
+    {
+        config(['services.visits.password' => null, 'services.visits.password_hash' => password_hash('fromhash', PASSWORD_BCRYPT)]);
+
+        $this->post('/visits/login', ['password' => 'wrong'])->assertSessionHasErrors('password');
+        $this->post('/visits/login', ['password' => 'fromhash'])->assertRedirect('/visits');
+    }
+
+    public function test_tables_are_created_automatically_without_migrate(): void
+    {
+        Schema::drop('visits');
+        Schema::drop('visit_devices');
+        Schema::drop('visit_ip_infos');
+        DB::table('migrations')->where('migration', '2026_10_20_120000_create_visits_tables')->delete();
+
+        $this->track(['url' => 'https://mdlab.kz/?gclid=x'])->assertNoContent();
+        $this->assertTrue(Schema::hasTable('visits'));
+
+        $this->track(['url' => 'https://mdlab.kz/?gclid=x'])->assertNoContent();
+        $this->assertSame(1, Visit::count());
     }
 
     public function test_own_visits_are_not_tracked_after_login(): void

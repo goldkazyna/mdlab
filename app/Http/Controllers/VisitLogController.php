@@ -17,22 +17,28 @@ class VisitLogController extends Controller
 
     public function loginForm()
     {
+        Visit::ensureTables();
+
         return response()->view('visits.login')->header('X-Robots-Tag', 'noindex, nofollow');
     }
 
     public function login(Request $request)
     {
         $password = (string) config('services.visits.password');
+        $hash = (string) config('services.visits.password_hash');
+        $input = (string) $request->input('password');
         $key = 'visit-log-login:' . $request->ip();
 
         if (RateLimiter::tooManyAttempts($key, 5)) {
             return back()->withErrors(['password' => 'Слишком много попыток, подождите минуту.']);
         }
 
-        if ($password === '' || !hash_equals($password, (string) $request->input('password'))) {
+        $valid = $password !== '' ? hash_equals($password, $input) : ($hash !== '' && password_verify($input, $hash));
+
+        if (!$valid) {
             RateLimiter::hit($key, 60);
 
-            return back()->withErrors(['password' => $password === '' ? 'VISITS_PASSWORD не задан в .env' : 'Неверный пароль']);
+            return back()->withErrors(['password' => 'Неверный пароль']);
         }
 
         RateLimiter::clear($key);

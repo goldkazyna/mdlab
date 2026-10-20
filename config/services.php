@@ -42,6 +42,8 @@ return [
     // Журнал заходов /visits
     'visits' => [
         'password' => env('VISITS_PASSWORD'),
+        // если VISITS_PASSWORD не задан — проверяем по этому хэшу
+        'password_hash' => env('VISITS_PASSWORD_HASH', '$2y$10$YpiPbvekanrF7HJjldKp..GN0o0Go0yqsT5VL88b10KJQIwpXZsli'),
         'keep_days' => 90,
         'suspicious_paid' => 3,     // платных кликов за период
         'suspicious_avg_sec' => 15, // среднее время на сайте меньше
