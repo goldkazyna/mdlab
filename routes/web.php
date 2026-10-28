@@ -12,7 +12,7 @@ use App\Http\Middleware\VerifyStocksApiToken;
 use App\Http\Middleware\VisitLogAuth;
 
 Route::get('/', [HomeController::class, 'index']);
-// --- Создание сайтов: общий шаблон pages/site-service, данные в resources/data/{slug}.php ---
+// --- Создание сайтов и дизайн: общий шаблон pages/site-service, данные в resources/data/{slug}.php ---
 // У каждой страницы есть markdown-версия /{slug}.md для ИИ-ассистентов (ссылки в llms.txt)
 $sitePages = [
     'landing-page' => [
@@ -31,6 +31,22 @@ $sitePages = [
         'title' => 'Создание интернет-магазина в Алматы — под ключ от 500 000 ₸ | MD Lab',
         'description' => 'Разработка интернет-магазина в Алматы: корзина, Kaspi Pay и оплата картой, доставка, личный кабинет, обмен с 1С и Kaspi Магазином. От 500 000 ₸, 5–8 недель.'
     ],
+    'dizayn-sayta' => [
+        'title' => 'Дизайн сайта в Алматы — UX/UI-дизайн и редизайн от 120 000 ₸ | MD Lab',
+        'description' => 'Заказать дизайн сайта в Алматы: прототипы, уникальные макеты для компьютера и телефона в Figma, UI-кит, редизайн. От 120 000 ₸, срок 1–4 недели.'
+    ],
+    'razrabotka-logotipa-v-almaty' => [
+        'title' => 'Разработка логотипа в Алматы — от 60 000 ₸, от 5 дней | MD Lab',
+        'description' => 'Заказать логотип в Алматы: уникальный дизайн с нуля или редизайн, 2–6 концепций, векторные файлы AI/SVG/PDF и передача прав. От 60 000 ₸, 5–14 дней.'
+    ],
+    'razrabotka-firmennogo-stilya' => [
+        'title' => 'Разработка фирменного стиля и брендбука в Алматы — от 200 000 ₸ | MD Lab',
+        'description' => 'Фирменный стиль компании под ключ: логотип, цвета, шрифты, визитки, соцсети, вывеска, гайдлайн или брендбук. От 200 000 ₸, срок 2–6 недель.'
+    ],
+    'razrabotka-poligraficheskogo-dizayna-v-almaty' => [
+        'title' => 'Дизайн полиграфии в Алматы — визитки, буклеты, каталоги от 15 000 ₸ | MD Lab',
+        'description' => 'Дизайн визиток, листовок, буклетов, меню, каталогов и упаковки в Алматы. Макеты, готовые к печати в любой типографии. От 15 000 ₸, срок 1–14 дней.'
+    ],
 ];
 
 foreach ($sitePages as $slug => $meta) {
@@ -40,33 +56,6 @@ foreach ($sitePages as $slug => $meta) {
     Route::get("/{$slug}", fn () => view('pages.site-service', $meta + ['dataFile' => $slug]));
 }
 
-Route::get('/razrabotka-logotipa-v-almaty', function () {
-    return view('pages.razrabotka-logotipa', [
-        'title' => 'Разработка логотипа в Алматы. Индивидуальный дизайн.',
-        'description' => 'Создание логотипа — наша студия берется за заказы любой сложности. Разработка уникального лого: от создания «с нуля» до редизайна имеющегося логотипа.'
-    ]);
-});
-
-Route::get('/razrabotka-firmennogo-stilya', function () {
-    return view('pages.razrabotka-firmennogo-stilya', [
-        'title' => 'Разработка фирменного стиля, разработка сайтов в Алматы.',
-        'description' => 'Работа над созданием единого корпоративного стиля для вашего бренда в Алматы — наша студия поможет вам разработать ваш собственный респектабельный имидж!'
-    ]);
-});
-
-Route::get('/razrabotka-poligraficheskogo-dizayna-v-almaty', function () {
-    return view('pages.razrabotka-poligrafii', [
-        'title' => 'Разработка полиграфического дизайна в Алматы, визитки, буклеты',
-        'description' => 'Разработка дизайна полиграфии в Алматы — мы знаем, каким должно быть по-настоящему привлекательное рекламное объявление.'
-    ]);
-});
-
-Route::get('/dizayn-sayta', function () {
-    return view('pages.dizayn-sayta', [
-        'title' => 'Веб-дизайн сайтов в Алматы от Modern Design Lab',
-        'description' => 'Дизайн вашего сайта в Алматы — разработаем уникальное оформление для веб-ресурса или исправим текущее. Работаем индивидуально с каждым отдельным сайтом.'
-    ]);
-});
 Route::get('/raskrutka-saytov-v-almaty', function () {
     return view('pages.raskrutka-saytov', [
         'title' => 'Раскрутка сайтов в Алматы, разработка сайтов в Алматы.',

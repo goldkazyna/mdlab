@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- Общий шаблон страниц «создание сайтов» (лендинг, корпоративный, каталог, магазин).
+{{-- Общий шаблон страниц услуг: создание сайтов (лендинг, корпоративный, каталог, магазин) и дизайн (сайт, логотип, фирменный стиль, полиграфия).
      Тексты, цены и FAQ — в resources/data/{$dataFile}.php; из них же строится JSON-LD и markdown-версия. --}}
 
 @php
@@ -297,6 +297,7 @@
 </section>
 
 <!-- ПОРТФОЛИО -->
+@if(!empty($portfolio))
 <section class="mobile-portfolio">
     <div class="container">
         <div class="section-header">
@@ -318,6 +319,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <!-- FAQ -->
 <section class="mobile-faq">
