@@ -12,38 +12,34 @@ use App\Http\Middleware\VerifyStocksApiToken;
 use App\Http\Middleware\VisitLogAuth;
 
 Route::get('/', [HomeController::class, 'index']);
-// Markdown-версия страницы лендинга для ИИ-ассистентов (ссылка в llms.txt)
-Route::get('/landing-page.md', function () {
-    return response(view('pages.landing-page-md')->render())
-        ->header('Content-Type', 'text/markdown; charset=UTF-8');
-});
-
-Route::get('/landing-page', function () {
-    return view('pages.landing-page', [
+// --- Создание сайтов: общий шаблон pages/site-service, данные в resources/data/{slug}.php ---
+// У каждой страницы есть markdown-версия /{slug}.md для ИИ-ассистентов (ссылки в llms.txt)
+$sitePages = [
+    'landing-page' => [
         'title' => 'Создание Landing Page в Алматы — лендинг под ключ от 200 000 ₸ | MD Lab',
         'description' => 'Заказать продающий лендинг в Алматы: структура, тексты, уникальный дизайн, адаптив под телефоны и аналитика для рекламы. От 200 000 ₸, срок 5–10 дней.'
-    ]);
-});
-Route::get('/korporativnyy-sayt', function () {
-    return view('pages.korporativnyy-sayt', [
-        'title' => 'Создание Корпоративного Сайта - в рассрочку без процентов.',
-        'description' => 'Заказывайте разработку корпоративного сайта в Алматы у Modern Design Lab. Высокая конверсия. Скидки на полный комплект.'
-    ]);
-});
+    ],
+    'korporativnyy-sayt' => [
+        'title' => 'Создание корпоративного сайта в Алматы — под ключ от 260 000 ₸ | MD Lab',
+        'description' => 'Разработка корпоративного сайта компании в Алматы: структура под SEO, тексты, уникальный дизайн, панель управления, CRM. От 260 000 ₸, срок 3–6 недель.'
+    ],
+    'internet-katalog' => [
+        'title' => 'Создание интернет-каталога в Алматы — сайт-каталог от 340 000 ₸ | MD Lab',
+        'description' => 'Разработка сайта-каталога товаров в Алматы: фильтры, карточки, запрос цены и КП, загрузка из Excel и 1С, SEO. Без корзины. От 340 000 ₸, 4–6 недель.'
+    ],
+    'internet-magazin' => [
+        'title' => 'Создание интернет-магазина в Алматы — под ключ от 500 000 ₸ | MD Lab',
+        'description' => 'Разработка интернет-магазина в Алматы: корзина, Kaspi Pay и оплата картой, доставка, личный кабинет, обмен с 1С и Kaspi Магазином. От 500 000 ₸, 5–8 недель.'
+    ],
+];
 
-Route::get('/internet-katalog', function () {
-    return view('pages.internet-katalog', [
-        'title' => 'Создание интернет каталога в Алматы, по очень низким ценам.',
-        'description' => 'Создание Интернет-каталога.Студия MD Lab — с нами вы получаете сайт и домен/хостинг на 1 год в подарок!'
-    ]);
-});
+foreach ($sitePages as $slug => $meta) {
+    Route::get("/{$slug}.md", fn () => response(view('pages.site-service-md', ['dataFile' => $slug])->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8'));
 
-Route::get('/internet-magazin', function () {
-    return view('pages.internet-magazin', [
-        'title' => 'Создание интернет-магазина в Алматы - в рассрочку от 60 000 тенге.',
-        'description' => 'Разработка интернет-магазина — быстро и недорого. Профессиональное строительство сайтов в Алматы. Дизайн и адаптация под мобильные телефоны бесплатно.'
-    ]);
-});
+    Route::get("/{$slug}", fn () => view('pages.site-service', $meta + ['dataFile' => $slug]));
+}
+
 Route::get('/razrabotka-logotipa-v-almaty', function () {
     return view('pages.razrabotka-logotipa', [
         'title' => 'Разработка логотипа в Алматы. Индивидуальный дизайн.',

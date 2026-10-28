@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6f3ff"/>
+      <stop offset="1" stop-color="#eefaff"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0098D6"/>
+      <stop offset="1" stop-color="#0a5f8f"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0098D6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="260" r="240" fill="url(#bg)"/>
+
+  <!-- Страницы сайта позади -->
+  <g filter="url(#sh)">
+    <rect x="150" y="40" width="300" height="200" rx="12" fill="#fff" opacity=".7"/>
+    <rect x="120" y="65" width="330" height="210" rx="12" fill="#fff" opacity=".85"/>
+  </g>
+
+  <!-- Главное окно браузера -->
+  <g filter="url(#sh)">
+    <rect x="80" y="95" width="400" height="300" rx="14" fill="#fff"/>
+  </g>
+  <rect x="80" y="95" width="400" height="24" rx="12" fill="#eef3f6"/>
+  <rect x="80" y="107" width="400" height="12" fill="#eef3f6"/>
+  <circle cx="96" cy="107" r="4" fill="#ff6b6b"/>
+  <circle cx="110" cy="107" r="4" fill="#ffc94d"/>
+  <circle cx="124" cy="107" r="4" fill="#22b35e"/>
+  <rect x="150" y="101" width="180" height="12" rx="6" fill="#fff"/>
+
+  <!-- Меню -->
+  <rect x="96" y="132" width="26" height="26" rx="6" fill="#0098D6"/>
+  <rect x="130" y="140" width="60" height="9" rx="4.5" fill="#1a1a2e"/>
+  <rect x="260" y="141" width="38" height="7" rx="3.5" fill="#c3d2dc"/>
+  <rect x="306" y="141" width="38" height="7" rx="3.5" fill="#c3d2dc"/>
+  <rect x="352" y="141" width="38" height="7" rx="3.5" fill="#c3d2dc"/>
+  <rect x="398" y="137" width="66" height="16" rx="8" fill="#22b35e"/>
+
+  <!-- Баннер -->
+  <rect x="96" y="168" width="368" height="100" rx="10" fill="url(#hero)"/>
+  <rect x="114" y="188" width="160" height="12" rx="6" fill="#fff"/>
+  <rect x="114" y="207" width="120" height="12" rx="6" fill="#fff"/>
+  <rect x="114" y="230" width="140" height="6" rx="3" fill="#fff" fill-opacity=".6"/>
+  <rect x="114" y="242" width="80" height="14" rx="7" fill="#fff"/>
+  <g fill="#fff" fill-opacity=".25">
+    <rect x="320" y="200" width="30" height="56" rx="3"/>
+    <rect x="356" y="182" width="36" height="74" rx="3"/>
+    <rect x="398" y="210" width="44" height="46" rx="3"/>
+  </g>
+
+  <!-- Услуги -->
+  <g>
+    <rect x="96" y="282" width="114" height="96" rx="10" fill="#f2f7fa"/>
+    <rect x="223" y="282" width="114" height="96" rx="10" fill="#f2f7fa"/>
+    <rect x="350" y="282" width="114" height="96" rx="10" fill="#f2f7fa"/>
+    <rect x="110" y="296" width="26" height="26" rx="7" fill="#0098D6"/>
+    <rect x="237" y="296" width="26" height="26" rx="7" fill="#0098D6"/>
+    <rect x="364" y="296" width="26" height="26" rx="7" fill="#0098D6"/>
+    <rect x="110" y="334" width="80" height="7" rx="3.5" fill="#1a1a2e" fill-opacity=".75"/>
+    <rect x="110" y="348" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="110" y="360" width="50" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="237" y="334" width="80" height="7" rx="3.5" fill="#1a1a2e" fill-opacity=".75"/>
+    <rect x="237" y="348" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="237" y="360" width="50" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="364" y="334" width="80" height="7" rx="3.5" fill="#1a1a2e" fill-opacity=".75"/>
+    <rect x="364" y="348" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="364" y="360" width="50" height="6" rx="3" fill="#c3d2dc"/>
+  </g>
+
+  <!-- Карточка структуры сайта -->
+  <g filter="url(#sh)">
+    <rect x="400" y="300" width="170" height="150" rx="14" fill="#fff"/>
+    <text x="418" y="326" font-size="13" font-weight="700" fill="#1a1a2e">Структура</text>
+    <g font-size="11" fill="#444">
+      <circle cx="424" cy="346" r="4" fill="#0098D6"/><text x="436" y="350">О компании</text>
+      <circle cx="424" cy="368" r="4" fill="#0098D6"/><text x="436" y="372">Услуги</text>
+      <circle cx="424" cy="390" r="4" fill="#0098D6"/><text x="436" y="394">Проекты</text>
+      <circle cx="424" cy="412" r="4" fill="#0098D6"/><text x="436" y="416">Новости</text>
+      <circle cx="424" cy="434" r="4" fill="#22b35e"/><text x="436" y="438">Контакты</text>
+    </g>
+  </g>
+
+  <!-- Метка поиска -->
+  <g filter="url(#sh)">
+    <rect x="30" y="405" width="210" height="64" rx="14" fill="#fff"/>
+    <circle cx="62" cy="437" r="18" fill="#0098D6"/>
+    <circle cx="59" cy="434" r="7" fill="none" stroke="#fff" stroke-width="3"/>
+    <path d="M64 439 L71 446" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="90" y="432" font-size="13" font-weight="700" fill="#1a1a2e">Топ в Google</text>
+    <text x="90" y="451" font-size="11" fill="#666">и Яндексе по услугам</text>
+  </g>
+</svg>

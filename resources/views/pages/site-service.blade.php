@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
-@php
-    $pageUrl = 'https://mdlab.kz/landing-page';
-    $waUrl = 'https://wa.me/77774333822?text=' . rawurlencode('Здравствуйте! Интересует создание лендинга');
-    $price = fn ($p) => ($p['from'] ? 'от ' : '') . number_format($p['price'], 0, '', ' ');
+{{-- Общий шаблон страниц «создание сайтов» (лендинг, корпоративный, каталог, магазин).
+     Тексты, цены и FAQ — в resources/data/{$dataFile}.php; из них же строится JSON-LD и markdown-версия. --}}
 
-    extract(require resource_path('data/landing-page.php'));
+@php
+    extract(require resource_path('data/' . $dataFile . '.php'));
+
+    $pageUrl = 'https://mdlab.kz/' . $page['slug'];
+    $waUrl = 'https://wa.me/77774333822?text=' . rawurlencode($page['wa_text']);
+    $price = fn ($p) => ($p['from'] ? 'от ' : '') . number_format($p['price'], 0, '', ' ');
+    $h = $page['headings'];
 
     $schemas = [
         [
@@ -23,9 +27,9 @@
             '@context' => 'https://schema.org',
             '@type' => 'Service',
             '@id' => $pageUrl . '#service',
-            'name' => 'Создание Landing Page (лендинга) под ключ',
-            'description' => 'Разработка продающих одностраничных сайтов: анализ конкурентов, структура, тексты, уникальный дизайн, адаптивная вёрстка, формы и WhatsApp, аналитика и цели для рекламы. Срок 5–10 рабочих дней.',
-            'serviceType' => 'Разработка лендинга',
+            'name' => $page['service_name'],
+            'description' => $page['service_desc'],
+            'serviceType' => $page['service_type'],
             'url' => $pageUrl,
             'provider' => [
                 '@type' => 'Organization',
@@ -55,10 +59,10 @@
             ],
             'hasOfferCatalog' => [
                 '@type' => 'OfferCatalog',
-                'name' => 'Пакеты создания Landing Page',
+                'name' => $page['catalog_name'],
                 'itemListElement' => array_map(fn ($p) => [
                     '@type' => 'Offer',
-                    'name' => 'Landing Page «' . $p['name'] . '»',
+                    'name' => $page['offer_prefix'] . ' «' . $p['name'] . '»',
                     'description' => $p['desc'] . ': ' . implode(', ', $p['features']) . '. Срок: ' . $p['days'] . '.',
                     'priceSpecification' => [
                         '@type' => 'PriceSpecification',
@@ -80,8 +84,8 @@
         [
             '@context' => 'https://schema.org',
             '@type' => 'HowTo',
-            'name' => 'Как создаётся Landing Page в MD Lab',
-            'totalTime' => 'P10D',
+            'name' => $page['howto_name'],
+            'totalTime' => $page['howto_time'],
             'step' => array_map(fn ($s, $i) => [
                 '@type' => 'HowToStep',
                 'position' => $i + 1,
@@ -94,7 +98,7 @@
             '@type' => 'BreadcrumbList',
             'itemListElement' => [
                 ['@type' => 'ListItem', 'position' => 1, 'name' => 'Главная', 'item' => 'https://mdlab.kz/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Создание Landing Page', 'item' => $pageUrl],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => $page['crumb'], 'item' => $pageUrl],
             ],
         ],
     ];
@@ -105,7 +109,7 @@
 @endpush
 
 @push('schema')
-<link rel="alternate" type="text/markdown" href="/landing-page.md" title="Markdown-версия страницы для ИИ">
+<link rel="alternate" type="text/markdown" href="/{{ $page['slug'] }}.md" title="Markdown-версия страницы для ИИ">
 @foreach($schemas as $schema)
 <script type="application/ld+json">{!! json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endforeach
@@ -118,7 +122,7 @@
     <div class="container">
         <ol class="breadcrumbs__list">
             <li><a href="https://mdlab.kz">Главная</a></li>
-            <li><span class="breadcrumbs__sep">/</span> <span aria-current="page">Создание Landing Page</span></li>
+            <li><span class="breadcrumbs__sep">/</span> <span aria-current="page">{{ $page['crumb'] }}</span></li>
         </ol>
     </div>
 </nav>
@@ -129,8 +133,8 @@
         <div class="home-hero__wrapper">
             <div class="home-hero__content">
                 <div class="home-hero__top">
-                    <h1 class="home-hero__title">Создание Landing Page в&nbsp;Алматы</h1>
-                    <p class="home-hero__subtitle">Продающий лендинг под рекламу: структура, тексты, дизайн и&nbsp;запуск — от&nbsp;200&nbsp;000&nbsp;₸ за&nbsp;5–10&nbsp;дней</p>
+                    <h1 class="home-hero__title">{!! $page['h1'] !!}</h1>
+                    <p class="home-hero__subtitle">{!! $page['subtitle'] !!}</p>
                 </div>
                 <div class="home-hero__bottom">
                     <div class="home-hero__contact">
@@ -139,12 +143,12 @@
                             <i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp
                         </a>
                     </div>
-                    <p class="home-hero__description">Расскажите о&nbsp;бизнесе и&nbsp;рекламе — предложим структуру лендинга и&nbsp;назовём точную стоимость за&nbsp;15&nbsp;минут.</p>
+                    <p class="home-hero__description">{!! $page['hero_note'] !!}</p>
                 </div>
             </div>
 
             <div class="home-hero__img" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="200">
-                <img src="/assets/img/landing-page/hero.svg" alt="Создание Landing Page: продающий лендинг на компьютере и телефоне с формой заявки и кнопкой WhatsApp" width="600" height="520">
+                <img src="{{ $page['hero_img'] }}" alt="{{ $page['hero_alt'] }}" width="600" height="520">
             </div>
         </div>
     </div>
@@ -154,31 +158,16 @@
 <section class="mobile-summary">
     <div class="container">
         <div class="summary-box">
-            <p>
-                <strong>Landing Page (лендинг)</strong> — одностраничный сайт под одну услугу, товар или акцию, который ведёт посетителя к одному действию: заявке, звонку или сообщению в WhatsApp.
-                Веб-студия MD Lab создаёт лендинги под ключ с 2014 года: анализ конкурентов, структура, продающие тексты, уникальный дизайн, адаптив под телефоны, аналитика и цели для рекламы.
-            </p>
-            <p>
-                <strong>Стоимость — от 200 000 ₸, срок — 5–10 рабочих дней.</strong>
-                Пакеты: «Базовый» 200 000 ₸ (до 5 экранов), «Стандарт» 350 000 ₸ (до 8 экранов), «Премиум» от 500 000 ₸ (до 12 экранов, квиз, CRM). Работаем в Алматы и удалённо по всему Казахстану.
-            </p>
+            @foreach($page['summary'] as $paragraph)
+            <p>{!! $paragraph !!}</p>
+            @endforeach
             <div class="summary-facts">
+                @foreach($page['facts'] as [$value, $label])
                 <div class="summary-fact">
-                    <div class="summary-fact__value">от&nbsp;200&nbsp;000&nbsp;₸</div>
-                    <div class="summary-fact__label">лендинг под ключ</div>
+                    <div class="summary-fact__value">{!! $value !!}</div>
+                    <div class="summary-fact__label">{{ $label }}</div>
                 </div>
-                <div class="summary-fact">
-                    <div class="summary-fact__value">5–10 дней</div>
-                    <div class="summary-fact__label">от брифа до запуска</div>
-                </div>
-                <div class="summary-fact">
-                    <div class="summary-fact__value">Тексты и дизайн</div>
-                    <div class="summary-fact__label">делаем сами, без шаблонов</div>
-                </div>
-                <div class="summary-fact">
-                    <div class="summary-fact__value">30 дней</div>
-                    <div class="summary-fact__label">гарантии после запуска</div>
-                </div>
+                @endforeach
             </div>
             <p class="summary-date">
                 Обновлено: <time datetime="{{ $updated }}">{{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }}</time>
@@ -187,12 +176,12 @@
     </div>
 </section>
 
-<!-- ВИДЫ ЛЕНДИНГОВ -->
+<!-- ВИДЫ -->
 <section class="mobile-types">
     <div class="container">
         <div class="section-header">
-            <h2>Какие лендинги мы делаем</h2>
-            <p>Под рекламу, соцсети, товар, услугу или мероприятие</p>
+            <h2>{!! $h['types'][0] !!}</h2>
+            <p>{{ $h['types'][1] }}</p>
         </div>
 
         <div class="types-grid">
@@ -213,8 +202,8 @@
 <section class="mobile-advantages">
     <div class="container">
         <div class="section-header">
-            <h2>Почему заказывают лендинг у&nbsp;нас</h2>
-            <p>300+ проектов и 10+ лет опыта в разработке сайтов для бизнеса в Казахстане</p>
+            <h2>{!! $h['advantages'][0] !!}</h2>
+            <p>{{ $h['advantages'][1] }}</p>
         </div>
 
         <div class="advantages-grid">
@@ -235,8 +224,8 @@
 <section class="mobile-includes">
     <div class="container">
         <div class="section-header">
-            <h2>Что входит в создание лендинга</h2>
-            <p>Полный цикл под ключ — от анализа конкурентов до запуска</p>
+            <h2>{!! $h['includes'][0] !!}</h2>
+            <p>{{ $h['includes'][1] }}</p>
         </div>
 
         <div class="includes-grid">
@@ -259,8 +248,8 @@
 <section class="mobile-pricing" id="pricing">
     <div class="container">
         <div class="section-header">
-            <h2>Стоимость создания Landing Page</h2>
-            <p>Выберите пакет или закажите индивидуальный расчёт</p>
+            <h2>{!! $h['pricing'][0] !!}</h2>
+            <p>{{ $h['pricing'][1] }}</p>
         </div>
 
         <div class="pricing-grid">
@@ -275,7 +264,7 @@
                     @endforeach
                     <li><i class="fa-solid fa-check"></i> Срок: {{ $p['days'] }}</li>
                 </ul>
-                <a href="https://wa.me/77774333822?text={{ rawurlencode('Здравствуйте! Интересует лендинг «' . $p['name'] . '» (' . $price($p) . ' ₸)') }}" target="_blank" rel="noopener" class="btn-primary-mobile btn-whatsapp">
+                <a href="https://wa.me/77774333822?text={{ rawurlencode('Здравствуйте! Интересует ' . $page['wa_package'] . ' «' . $p['name'] . '» (' . $price($p) . ' ₸)') }}" target="_blank" rel="noopener" class="btn-primary-mobile btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
                 </a>
             </div>
@@ -288,8 +277,8 @@
 <section class="mobile-steps">
     <div class="container">
         <div class="section-header">
-            <h2>Этапы создания лендинга</h2>
-            <p>Прозрачный процесс — вы согласуете каждый шаг</p>
+            <h2>{!! $h['steps'][0] !!}</h2>
+            <p>{{ $h['steps'][1] }}</p>
         </div>
 
         <div class="steps-timeline">
@@ -311,14 +300,14 @@
 <section class="mobile-portfolio">
     <div class="container">
         <div class="section-header">
-            <h2>Примеры наших лендингов</h2>
-            <p>Работы, которые мы сделали для клиентов</p>
+            <h2>{!! $h['portfolio'][0] !!}</h2>
+            <p>{{ $h['portfolio'][1] }}</p>
         </div>
 
         <div class="portfolio-grid">
             @foreach($portfolio as $item)
-            <a class="portfolio-item" data-fancybox="landing-portfolio" data-caption="{{ $item['name'] }}" href="/images/gallery/land/{{ $item['img'] }}big.jpg">
-                <img src="/images/gallery/land/{{ $item['img'] }}.jpg" alt="Пример лендинга: {{ $item['name'] }}" width="319" height="221" loading="lazy">
+            <a class="portfolio-item" data-fancybox="portfolio" data-caption="{{ $item['name'] }}" href="/images/gallery/{{ $item['big'] ?? $item['img'] . 'big' }}.jpg">
+                <img src="/images/gallery/{{ $item['img'] }}.jpg" alt="{{ $page['crumb'] }} — пример: {{ $item['name'] }}" width="319" height="221" loading="lazy">
                 <span class="portfolio-item__caption">{{ $item['name'] }}</span>
             </a>
             @endforeach
@@ -334,8 +323,8 @@
 <section class="mobile-faq">
     <div class="container">
         <div class="section-header">
-            <h2>Частые вопросы о создании лендинга</h2>
-            <p>Цены, сроки, мобильная версия, реклама и поддержка</p>
+            <h2>{!! $h['faq'][0] !!}</h2>
+            <p>{{ $h['faq'][1] }}</p>
         </div>
 
         <div class="faq-list">
@@ -357,8 +346,8 @@
 <!-- CTA -->
 <section class="mobile-cta">
     <div class="container">
-        <h2>Закажите продающий лендинг</h2>
-        <p>Напишите, что продаёте и откуда планируете трафик, — предложим структуру и назовём точную стоимость</p>
+        <h2>{!! $h['cta'][0] !!}</h2>
+        <p>{{ $h['cta'][1] }}</p>
         <div class="mobile-cta__buttons">
             <a href="{{ $waUrl }}" target="_blank" rel="noopener" class="btn-primary-mobile btn-whatsapp">
                 <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
@@ -371,17 +360,14 @@
 <section class="related-services">
     <div class="container">
         <div class="section-header">
-            <h2>Что ещё понадобится для заявок</h2>
-            <p>Реклама, дизайн и сайты, которые работают вместе с лендингом</p>
+            <h2>{!! $h['related'][0] !!}</h2>
+            <p>{{ $h['related'][1] }}</p>
         </div>
 
         <div class="related-grid">
-            <a href="/kontekstnaya-reklama" class="related-link"><i class="fa-brands fa-google"></i> Контекстная реклама</a>
-            <a href="/prodvighenie-v-socialynyh-setyah" class="related-link"><i class="fa-brands fa-instagram"></i> SMM-продвижение Instagram</a>
-            <a href="/korporativnyy-sayt" class="related-link"><i class="fa-solid fa-building"></i> Корпоративный сайт</a>
-            <a href="/internet-magazin" class="related-link"><i class="fa-solid fa-cart-shopping"></i> Интернет-магазин</a>
-            <a href="/razrabotka-logotipa-v-almaty" class="related-link"><i class="fa-solid fa-pen-ruler"></i> Разработка логотипа</a>
-            <a href="/podklyuchenie-ekvayringa" class="related-link"><i class="fa-solid fa-credit-card"></i> Онлайн-оплата на сайте</a>
+            @foreach($page['related'] as [$slug, $icon, $name])
+            <a href="/{{ $slug }}" class="related-link"><i class="{{ $icon }}"></i> {{ $name }}</a>
+            @endforeach
         </div>
     </div>
 </section>
@@ -389,43 +375,20 @@
 <!-- SEO КОНТЕНТ -->
 <section class="seo-content">
     <div class="container">
-        <h2>Создание и разработка лендинга в Алматы</h2>
-        <p>
-            <strong>Landing Page</strong> (лендинг пейдж, посадочная или продающая страница) — одностраничный сайт, на который
-            ведут рекламу. В отличие от многостраничного сайта, лендинг рассказывает об одном предложении и не отвлекает
-            лишними ссылками: посетитель читает оффер, видит выгоды, отзывы и цены и сразу оставляет заявку. Поэтому заказать
-            лендинг — самый быстрый способ начать получать клиентов из Google Ads, Яндекс Директа и Instagram.
-        </p>
+        <h2>{{ $page['seo_title'] }}</h2>
+        <p>{!! $page['seo_intro'] !!}</p>
 
-        <h3>Когда нужен лендинг</h3>
+        <h3>{{ $h['audience'] }}</h3>
         <ul>
             @foreach($audience as $item)
             <li>{{ $item }}</li>
             @endforeach
         </ul>
 
-        <h3>Лендинг или многостраничный сайт</h3>
-        <p>
-            Лендинг дешевле и быстрее в разработке, его проще тестировать в рекламе. Когда услуг становится много и нужен
-            трафик из поиска по десяткам запросов, лучше подходит <a href="/korporativnyy-sayt">корпоративный сайт</a>,
-            а для каталога с корзиной — <a href="/internet-magazin">интернет-магазин</a>. Часто делают и то и другое:
-            основной сайт для поиска и отдельные лендинги под рекламные кампании.
-        </p>
-
-        <h3>Сколько стоит сделать лендинг</h3>
-        <p>
-            Цена зависит от количества экранов, сложности дизайна и интеграций. Создание простого лендинга до 5 экранов —
-            200 000 ₸, лендинг до 8 экранов с уникальным дизайном и текстами — 350 000 ₸, сложный лендинг до 12 экранов
-            с квизом, CRM и онлайн-оплатой — от 500 000 ₸. Срок разработки — от 5 до 10 рабочих дней.
-        </p>
-
-        <h3>Как заказать лендинг в MD Lab</h3>
-        <p>
-            Напишите в WhatsApp или позвоните: расскажите, что продаёте, кто ваши клиенты и где планируете рекламу.
-            Предложим структуру лендинга, назовём стоимость и срок, а после запуска поможем с
-            <a href="/kontekstnaya-reklama">настройкой контекстной рекламы</a>. Работаем с бизнесом из Алматы,
-            Астаны, Шымкента и других городов Казахстана.
-        </p>
+        @foreach($page['seo_sections'] as [$heading, $text])
+        <h3>{{ $heading }}</h3>
+        <p>{!! $text !!}</p>
+        @endforeach
     </div>
 </section>
 
