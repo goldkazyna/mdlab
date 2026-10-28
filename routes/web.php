@@ -12,10 +12,16 @@ use App\Http\Middleware\VerifyStocksApiToken;
 use App\Http\Middleware\VisitLogAuth;
 
 Route::get('/', [HomeController::class, 'index']);
+// Markdown-версия страницы лендинга для ИИ-ассистентов (ссылка в llms.txt)
+Route::get('/landing-page.md', function () {
+    return response(view('pages.landing-page-md')->render())
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+});
+
 Route::get('/landing-page', function () {
     return view('pages.landing-page', [
-        'title' => ' Создание Landing Page в Алматы — от профеccионалов Modern Design Lab',
-        'description' => 'Создание продающей страницы Landing page, конверсия от 10%. От 132 000 тенге. Уникальный дизайн и адаптация под мобильные телефоны в подарок.'
+        'title' => 'Создание Landing Page в Алматы — лендинг под ключ от 200 000 ₸ | MD Lab',
+        'description' => 'Заказать продающий лендинг в Алматы: структура, тексты, уникальный дизайн, адаптив под телефоны и аналитика для рекламы. От 200 000 ₸, срок 5–10 дней.'
     ]);
 });
 Route::get('/korporativnyy-sayt', function () {

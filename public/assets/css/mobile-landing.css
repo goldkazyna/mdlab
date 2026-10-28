@@ -995,3 +995,64 @@
     font-size: 20px;
     flex-shrink: 0;
 }
+
+/* ========================================
+   ПОРТФОЛИО (лендинги и сайты)
+======================================== */
+.mobile-portfolio {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 992px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .mobile-portfolio { padding: 60px 0; }
+    .portfolio-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.portfolio-item {
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--gray-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 152, 214, 0.18);
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-item__caption {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--dark);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.portfolio-more {
+    text-align: center;
+    margin-top: 40px;
+}

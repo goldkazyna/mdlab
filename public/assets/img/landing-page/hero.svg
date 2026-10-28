@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6f3ff"/>
+      <stop offset="1" stop-color="#eefaff"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0098D6"/>
+      <stop offset="1" stop-color="#0a5f8f"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0098D6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="260" r="240" fill="url(#bg)"/>
+
+  <!-- Ноутбук -->
+  <g filter="url(#sh)">
+    <rect x="70" y="95" width="380" height="250" rx="16" fill="#1a1a2e"/>
+    <rect x="82" y="107" width="356" height="226" rx="6" fill="#fff"/>
+    <path d="M40 345 H480 L462 372 H58 Z" fill="#c9d6df"/>
+    <rect x="225" y="345" width="70" height="8" rx="4" fill="#a9bac6"/>
+  </g>
+
+  <!-- Экран лендинга -->
+  <rect x="82" y="107" width="356" height="18" rx="6" fill="#eef3f6"/>
+  <circle cx="94" cy="116" r="3.5" fill="#ff6b6b"/>
+  <circle cx="106" cy="116" r="3.5" fill="#ffc94d"/>
+  <circle cx="118" cy="116" r="3.5" fill="#22b35e"/>
+
+  <rect x="82" y="125" width="356" height="110" fill="url(#hero)"/>
+  <rect x="100" y="145" width="150" height="12" rx="6" fill="#fff"/>
+  <rect x="100" y="164" width="110" height="12" rx="6" fill="#fff"/>
+  <rect x="100" y="186" width="130" height="6" rx="3" fill="#fff" fill-opacity=".6"/>
+  <rect x="100" y="197" width="100" height="6" rx="3" fill="#fff" fill-opacity=".6"/>
+  <rect x="100" y="212" width="78" height="16" rx="8" fill="#22b35e"/>
+  <text x="139" y="223.5" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Оставить заявку</text>
+  <rect x="290" y="140" width="130" height="82" rx="10" fill="#fff" fill-opacity=".18"/>
+  <circle cx="355" cy="181" r="24" fill="#fff" fill-opacity=".85"/>
+  <path d="M347 169 L367 181 L347 193 Z" fill="#0098D6"/>
+
+  <g>
+    <rect x="100" y="250" width="100" height="66" rx="8" fill="#f2f7fa"/>
+    <rect x="210" y="250" width="100" height="66" rx="8" fill="#f2f7fa"/>
+    <rect x="320" y="250" width="100" height="66" rx="8" fill="#f2f7fa"/>
+    <circle cx="122" cy="270" r="9" fill="#0098D6"/>
+    <circle cx="232" cy="270" r="9" fill="#0098D6"/>
+    <circle cx="342" cy="270" r="9" fill="#0098D6"/>
+    <rect x="112" y="288" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="112" y="299" width="50" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="222" y="288" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="222" y="299" width="50" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="332" y="288" width="70" height="6" rx="3" fill="#c3d2dc"/>
+    <rect x="332" y="299" width="50" height="6" rx="3" fill="#c3d2dc"/>
+  </g>
+
+  <!-- Телефон -->
+  <g filter="url(#sh)">
+    <rect x="410" y="170" width="140" height="270" rx="22" fill="#1a1a2e"/>
+    <rect x="420" y="182" width="120" height="246" rx="14" fill="#fff"/>
+    <rect x="460" y="188" width="40" height="6" rx="3" fill="#1a1a2e"/>
+  </g>
+  <rect x="420" y="200" width="120" height="96" fill="url(#hero)"/>
+  <rect x="432" y="216" width="84" height="9" rx="4.5" fill="#fff"/>
+  <rect x="432" y="231" width="62" height="9" rx="4.5" fill="#fff"/>
+  <rect x="432" y="250" width="76" height="5" rx="2.5" fill="#fff" fill-opacity=".6"/>
+  <rect x="432" y="260" width="56" height="5" rx="2.5" fill="#fff" fill-opacity=".6"/>
+  <rect x="432" y="306" width="96" height="40" rx="8" fill="#f2f7fa"/>
+  <rect x="442" y="317" width="60" height="5" rx="2.5" fill="#c3d2dc"/>
+  <rect x="442" y="328" width="44" height="5" rx="2.5" fill="#c3d2dc"/>
+  <rect x="432" y="356" width="96" height="22" rx="11" fill="#25D366"/>
+  <text x="480" y="371" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">WhatsApp</text>
+  <rect x="432" y="386" width="96" height="22" rx="11" fill="none" stroke="#0098D6" stroke-width="2"/>
+  <text x="480" y="401" font-size="9" font-weight="700" fill="#0098D6" text-anchor="middle">Позвонить</text>
+
+  <!-- Карточка заявки -->
+  <g filter="url(#sh)">
+    <rect x="30" y="392" width="200" height="74" rx="14" fill="#fff"/>
+    <circle cx="62" cy="429" r="18" fill="#22b35e"/>
+    <path d="M53 429 L59.5 435.5 L71 423" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="423" font-size="14" font-weight="700" fill="#1a1a2e">Новая заявка</text>
+    <text x="90" y="443" font-size="11" fill="#666">с рекламы Google Ads</text>
+  </g>
+
+  <!-- Метка аналитики -->
+  <g filter="url(#sh)">
+    <rect x="270" y="30" width="170" height="56" rx="14" fill="#fff"/>
+    <rect x="288" y="62" width="10" height="12" rx="2" fill="#a9d9ef"/>
+    <rect x="303" y="54" width="10" height="20" rx="2" fill="#5bbde6"/>
+    <rect x="318" y="44" width="10" height="30" rx="2" fill="#0098D6"/>
+    <text x="342" y="55" font-size="12" font-weight="700" fill="#1a1a2e">Аналитика</text>
+    <text x="342" y="72" font-size="10" fill="#666">цели настроены</text>
+  </g>
+</svg>
