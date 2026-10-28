@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-internet-magazina';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка мобильного приложения для интернет-магазина в Алматы",
-    "description": "Создание мобильного приложения для интернет-магазина под ключ: каталог товаров, корзина, онлайн-оплата Kaspi и Halyk, интеграция с 1С и CRM, синхронизация остатков, программа лояльности. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка мобильного приложения для интернет-магазина",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-internet-magazina",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1250000",
-        "highPrice": "5000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка мобильного приложения для интернет-магазина?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Базовое приложение с каталогом, корзиной и онлайн-оплатой обойдётся от 1 250 000 тенге. Полноценное приложение для iOS и Android с интеграцией 1С, CRM и программой лояльности — от 2 500 000 тенге. Крупные проекты уровня маркетплейса с несколькими продавцами и сложной логикой — от 5 000 000 тенге. Точную смету подготовим после разбора вашего каталога и бизнес-процессов."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли подключить оплату через Kaspi и Halyk?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, мы подключаем оплату через Kaspi (Kaspi Pay, рассрочка Red), Halyk Bank, а также классический эквайринг Visa и Mastercard. Клиент оплачивает заказ прямо в приложении в пару касаний, а деньги поступают на ваш расчётный счёт. Также доступны оплата при получении и безналичный расчёт для B2B-клиентов."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как приложение синхронизируется с 1С и остатками на складе?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Мы настраиваем двустороннюю интеграцию с 1С, МойСклад или вашей CRM через API. Товары, цены, характеристики и остатки подтягиваются автоматически, а новые заказы из приложения сразу попадают в учётную систему. Синхронизация остатков происходит в реальном времени, поэтому покупатель не закажет товар, которого нет на складе."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Будет ли в приложении программа лояльности и push-уведомления?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Мы реализуем накопительные бонусы, персональные скидки, промокоды и уровни клиентов. Push-уведомления помогают сообщать об акциях, новых поступлениях, брошенной корзине и статусе заказа. Это увеличивает повторные продажи и средний чек без затрат на платную рекламу."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Сколько времени занимает разработка приложения интернет-магазина?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Базовое приложение с каталогом и оплатой мы запускаем за 1–1,5 месяца. Приложение с интеграцией 1С, CRM и программой лояльности — за 2,5–3,5 месяца. Проект уровня маркетплейса с личными кабинетами продавцов — от 4 месяцев. Сроки фиксируем в договоре и показываем прогресс на еженедельных демо."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">интеграция и остатки</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Базовый</h3>
-                <div class="pricing-card__price">от 1 250 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Старт продаж в мобильном</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Каталог с фильтрами</li>
-                    <li><i class="fa-solid fa-check"></i> Корзина и оформление заказа</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата Kaspi</li>
-                    <li><i class="fa-solid fa-check"></i> Личный кабинет</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазины</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Базовый%20(от%201%20250%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 2 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Магазин с интеграциями</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Базовый»</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция с 1С и CRM</li>
-                    <li><i class="fa-solid fa-check"></i> Синхронизация остатков</li>
-                    <li><i class="fa-solid fa-check"></i> Оплата Halyk и эквайринг</li>
-                    <li><i class="fa-solid fa-check"></i> Программа лояльности</li>
-                    <li><i class="fa-solid fa-check"></i> История заказов и повтор</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%202%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 5 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Маркетплейс и сложные решения</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Бизнес»</li>
-                    <li><i class="fa-solid fa-check"></i> Несколько продавцов</li>
-                    <li><i class="fa-solid fa-check"></i> Кабинеты и выплаты</li>
-                    <li><i class="fa-solid fa-check"></i> Рекомендации и AI-поиск</li>
-                    <li><i class="fa-solid fa-check"></i> B2B и персональные цены</li>
-                    <li><i class="fa-solid fa-check"></i> Расширенная аналитика</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%205%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -670,55 +543,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка мобильного приложения для интернет-магазина?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Базовое приложение с каталогом, корзиной и онлайн-оплатой обойдётся от 1 250 000 тенге. Полноценное приложение для iOS и Android с интеграцией 1С, CRM и программой лояльности — от 2 500 000 тенге. Крупные проекты уровня маркетплейса с несколькими продавцами и сложной логикой — от 5 000 000 тенге. Точную смету подготовим после разбора вашего каталога и бизнес-процессов.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли подключить оплату через Kaspi и Halyk?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, мы подключаем оплату через Kaspi (Kaspi Pay, рассрочка Red), Halyk Bank, а также классический эквайринг Visa и Mastercard. Клиент оплачивает заказ прямо в приложении в пару касаний, а деньги поступают на ваш расчётный счёт. Также доступны оплата при получении и безналичный расчёт для B2B-клиентов.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как приложение синхронизируется с 1С и остатками на складе?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Мы настраиваем двустороннюю интеграцию с 1С, МойСклад или вашей CRM через API. Товары, цены, характеристики и остатки подтягиваются автоматически, а новые заказы из приложения сразу попадают в учётную систему. Синхронизация остатков происходит в реальном времени, поэтому покупатель не закажет товар, которого нет на складе.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Будет ли в приложении программа лояльности и push-уведомления?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Мы реализуем накопительные бонусы, персональные скидки, промокоды и уровни клиентов. Push-уведомления помогают сообщать об акциях, новых поступлениях, брошенной корзине и статусе заказа. Это увеличивает повторные продажи и средний чек без затрат на платную рекламу.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Сколько времени занимает разработка приложения интернет-магазина?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Базовое приложение с каталогом и оплатой мы запускаем за 1–1,5 месяца. Приложение с интеграцией 1С, CRM и программой лояльности — за 2,5–3,5 месяца. Проект уровня маркетплейса с личными кабинетами продавцов — от 4 месяцев. Сроки фиксируем в договоре и показываем прогресс на еженедельных демо.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -803,7 +628,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

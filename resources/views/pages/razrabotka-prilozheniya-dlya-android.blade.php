@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-android';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложений для Android в Алматы",
-    "description": "Нативная разработка Android-приложений на Kotlin и Jetpack Compose под ключ: Material Design, публикация в Google Play, интеграция Google Pay и push через FCM. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложений для Android",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-android",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "900000",
-        "highPrice": "3500000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения для Android?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от сложности проекта и начинается от 900 000 тенге за простое Android-приложение на Kotlin с базовым функционалом. Приложение среднего уровня с админ-панелью, онлайн-оплатой и интеграциями — от 1 800 000 тенге. Сложные проекты с машинным обучением, картами и микросервисами — от 3 500 000 тенге. Точную смету составим после обсуждения задачи."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Почему вы разрабатываете на Kotlin и Jetpack Compose?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Kotlin — официальный язык Google для Android, он делает код короче, безопаснее и надёжнее, чем Java. Jetpack Compose — современный декларативный UI-фреймворк, который ускоряет разработку интерфейсов и упрощает поддержку. Этот стек обеспечивает высокую производительность, плавные анимации и лёгкое масштабирование приложения в будущем."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как вы адаптируете приложение под разные устройства Android?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Экосистема Android — это тысячи моделей смартфонов и планшетов с разными диагоналями экранов, плотностью пикселей и версиями ОС. Мы проектируем адаптивные интерфейсы по гайдлайнам Material Design, поддерживаем актуальные версии Android и тестируем сборку на реальных устройствах и эмуляторах, чтобы приложение одинаково корректно работало у всех пользователей."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Вы публикуете приложение в Google Play?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, публикацию в Google Play берём на себя полностью. Регистрируем аккаунт разработчика при необходимости, готовим иконку, скриншоты, описание и графические материалы, настраиваем подпись приложения и App Bundle. Помогаем пройти проверку Google с первого раза и соблюсти все требования площадки."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли интегрировать оплату и push-уведомления?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Мы подключаем Google Pay и локальные платёжные шлюзы Казахстана для оплаты внутри приложения, а также настраиваем push-уведомления через Firebase Cloud Messaging (FCM). Дополнительно интегрируем аналитику, карты, авторизацию через Google-аккаунт и API ваших внутренних систем — CRM, 1С, ERP."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">публикация под ключ</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт Android</h3>
-                <div class="pricing-card__price">900 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Простое приложение на Kotlin</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Нативно на Kotlin</li>
-                    <li><i class="fa-solid fa-check"></i> До 10 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Дизайн Material Design</li>
-                    <li><i class="fa-solid fa-check"></i> Авторизация</li>
-                    <li><i class="fa-solid fa-check"></i> Push через FCM</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в Google Play</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20Android%20(900%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес Android</h3>
-                <div class="pricing-card__price">1 800 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Приложение среднего уровня</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Kotlin + Jetpack Compose</li>
-                    <li><i class="fa-solid fa-check"></i> До 25 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Уникальный дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель</li>
-                    <li><i class="fa-solid fa-check"></i> Google Pay и онлайн-оплата</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграции API</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20Android%20(1%20800%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум Android</h3>
-                <div class="pricing-card__price">от 3 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сложные решения</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Android + планшеты</li>
-                    <li><i class="fa-solid fa-check"></i> Неограничено экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Премиум дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Сложная бизнес-логика</li>
-                    <li><i class="fa-solid fa-check"></i> ML/AI функции</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция 1С, CRM, ERP</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20Android%20(от%203%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -670,55 +543,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения для Android?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от сложности проекта и начинается от 900 000 тенге за простое Android-приложение на Kotlin с базовым функционалом. Приложение среднего уровня с админ-панелью, онлайн-оплатой и интеграциями — от 1 800 000 тенге. Сложные проекты с машинным обучением, картами и микросервисами — от 3 500 000 тенге. Точную смету составим после обсуждения задачи.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Почему вы разрабатываете на Kotlin и Jetpack Compose?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Kotlin — официальный язык Google для Android, он делает код короче, безопаснее и надёжнее, чем Java. Jetpack Compose — современный декларативный UI-фреймворк, который ускоряет разработку интерфейсов и упрощает поддержку. Этот стек обеспечивает высокую производительность, плавные анимации и лёгкое масштабирование приложения в будущем.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как вы адаптируете приложение под разные устройства Android?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Экосистема Android — это тысячи моделей смартфонов и планшетов с разными диагоналями экранов, плотностью пикселей и версиями ОС. Мы проектируем адаптивные интерфейсы по гайдлайнам Material Design, поддерживаем актуальные версии Android и тестируем сборку на реальных устройствах и эмуляторах, чтобы приложение одинаково корректно работало у всех пользователей.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Вы публикуете приложение в Google Play?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, публикацию в Google Play берём на себя полностью. Регистрируем аккаунт разработчика при необходимости, готовим иконку, скриншоты, описание и графические материалы, настраиваем подпись приложения и App Bundle. Помогаем пройти проверку Google с первого раза и соблюсти все требования площадки.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли интегрировать оплату и push-уведомления?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Мы подключаем Google Pay и локальные платёжные шлюзы Казахстана для оплаты внутри приложения, а также настраиваем push-уведомления через Firebase Cloud Messaging (FCM). Дополнительно интегрируем аналитику, карты, авторизацию через Google-аккаунт и API ваших внутренних систем — CRM, 1С, ERP.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -791,7 +616,7 @@
         </p>
         <p class="seo-content__source">
             Данные о доле Android приведены по статистике StatCounter GlobalStats.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

@@ -105,7 +105,7 @@
 @endphp
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.4">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
@@ -256,7 +256,7 @@
             @foreach($packages as $p)
             <div class="pricing-card @if(!empty($p['featured'])) featured @endif">
                 <h3>{{ $p['name'] }}</h3>
-                <div class="pricing-card__price">{{ $price($p) }} <span>₸</span></div>
+                <div class="pricing-card__price">{{ ($p['from'] ? 'от ' : '') . number_format($p['price'], 0, '', "\u{A0}") }} <span>₸</span></div>
                 <p class="pricing-card__desc">{{ $p['desc'] }}</p>
                 <ul class="pricing-card__features">
                     @foreach($p['features'] as $feature)

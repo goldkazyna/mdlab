@@ -87,7 +87,7 @@
 @endphp
 
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')

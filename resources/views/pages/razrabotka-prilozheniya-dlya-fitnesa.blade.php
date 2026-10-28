@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-fitnesa';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложения для фитнеса в Алматы",
-    "description": "Создание мобильных приложений для фитнес-клубов, тренеров и спортивных проектов: программы тренировок, онлайн-запись, абонементы, трекинг активности и интеграция с носимыми устройствами. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложений для фитнеса и спорта",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-fitnesa",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1250000",
-        "highPrice": "4500000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения для фитнеса?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от набора функций и начинается от 1 250 000 тенге за приложение с программами тренировок, расписанием и онлайн-записью на одной платформе. Полноценный проект для iOS и Android с подписками, трекингом активности и личным кабинетом клиента — от 2 500 000 тенге. Премиальные решения с интеграцией носимых устройств, видеоуроками, ИИ-подбором нагрузки и геймификацией — от 4 500 000 тенге. Точную смету рассчитаем после обсуждения задач вашего фитнес-проекта."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли подключить оплату абонементов и подписок внутри приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Мы настраиваем продажу абонементов, разовых занятий и рекуррентных подписок с автопродлением. Подключаем локальные платёжные системы (Kaspi, Halyk, ForteBank) и внутренние покупки App Store и Google Play. Клиент оплачивает членство и продлевает его прямо в приложении, а клуб получает автоматический учёт платежей и напоминания об окончании абонемента."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Приложение синхронизируется с Apple Watch и фитнес-браслетами?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, мы интегрируем приложение с Apple Health, Google Fit и популярными носимыми устройствами — Apple Watch, фитнес-браслетами и часами. Приложение получает данные о пульсе, шагах, сожжённых калориях, сне и активности, отображает прогресс в наглядных графиках и учитывает эти показатели при построении тренировочных планов."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Подойдёт ли приложение персональному тренеру, а не только клубу?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Мы разрабатываем решения и для сетей фитнес-клубов, и для отдельных тренеров, нутрициологов и онлайн-студий. Тренер получает панель для ведения клиентов, составления индивидуальных программ, контроля выполнения заданий и общения в чате. Это позволяет масштабировать онлайн-занятия без привязки к залу."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что входит в поддержку после запуска фитнес-приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Гарантийная поддержка включает исправление ошибок, обновление под новые версии iOS и Android, мониторинг работоспособности сервера и консультации. По отдельному договору добавляем новый функционал: свежие тренировочные программы, сезонные челленджи, новые интеграции с носимыми устройствами и ASO-продвижение в магазинах приложений."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">трекинг активности</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт</h3>
-                <div class="pricing-card__price">1 250 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Тренировки и онлайн-запись</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> 1 платформа (iOS или Android)</li>
-                    <li><i class="fa-solid fa-check"></i> Программы и планы тренировок</li>
-                    <li><i class="fa-solid fa-check"></i> Расписание и онлайн-запись</li>
-                    <li><i class="fa-solid fa-check"></i> Личный кабинет клиента</li>
-                    <li><i class="fa-solid fa-check"></i> Push-напоминания</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазин</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20(1%20250%20000%20₸)%20для%20фитнес-приложения" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">2 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Полноценное фитнес-приложение</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Абонементы и подписки</li>
-                    <li><i class="fa-solid fa-check"></i> Трекинг активности и прогресса</li>
-                    <li><i class="fa-solid fa-check"></i> Apple Health и Google Fit</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата (Kaspi, Halyk)</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель клуба</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(2%20500%20000%20₸)%20для%20фитнес-приложения" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 4 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Максимум возможностей</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android + Web</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция Apple Watch и браслетов</li>
-                    <li><i class="fa-solid fa-check"></i> Видеоуроки и стриминг</li>
-                    <li><i class="fa-solid fa-check"></i> ИИ-подбор нагрузки и питания</li>
-                    <li><i class="fa-solid fa-check"></i> Геймификация и челленджи</li>
-                    <li><i class="fa-solid fa-check"></i> Питание и подсчёт калорий</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%204%20500%20000%20₸)%20для%20фитнес-приложения" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения для фитнеса?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от набора функций и начинается от 1 250 000 тенге за приложение с программами тренировок, расписанием и онлайн-записью на одной платформе. Полноценный проект для iOS и Android с подписками, трекингом активности и личным кабинетом клиента — от 2 500 000 тенге. Премиальные решения с интеграцией носимых устройств, видеоуроками, ИИ-подбором нагрузки и геймификацией — от 4 500 000 тенге. Точную смету рассчитаем после обсуждения задач вашего фитнес-проекта.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли подключить оплату абонементов и подписок внутри приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Мы настраиваем продажу абонементов, разовых занятий и рекуррентных подписок с автопродлением. Подключаем локальные платёжные системы (Kaspi, Halyk, ForteBank) и внутренние покупки App Store и Google Play. Клиент оплачивает членство и продлевает его прямо в приложении, а клуб получает автоматический учёт платежей и напоминания об окончании абонемента.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Приложение синхронизируется с Apple Watch и фитнес-браслетами?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, мы интегрируем приложение с Apple Health, Google Fit и популярными носимыми устройствами — Apple Watch, фитнес-браслетами и часами. Приложение получает данные о пульсе, шагах, сожжённых калориях, сне и активности, отображает прогресс в наглядных графиках и учитывает эти показатели при построении тренировочных планов.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Подойдёт ли приложение персональному тренеру, а не только клубу?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Мы разрабатываем решения и для сетей фитнес-клубов, и для отдельных тренеров, нутрициологов и онлайн-студий. Тренер получает панель для ведения клиентов, составления индивидуальных программ, контроля выполнения заданий и общения в чате. Это позволяет масштабировать онлайн-занятия без привязки к залу.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что входит в поддержку после запуска фитнес-приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Гарантийная поддержка включает исправление ошибок, обновление под новые версии iOS и Android, мониторинг работоспособности сервера и консультации. По отдельному договору добавляем новый функционал: свежие тренировочные программы, сезонные челленджи, новые интеграции с носимыми устройствами и ASO-продвижение в магазинах приложений.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -806,7 +631,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

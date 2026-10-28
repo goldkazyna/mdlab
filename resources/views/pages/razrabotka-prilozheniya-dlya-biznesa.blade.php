@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-biznesa';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка корпоративных мобильных приложений в Алматы",
-    "description": "Создание внутренних корпоративных приложений для бизнеса: автоматизация процессов, интеграция с CRM, ERP и 1С, управление задачами, документооборот и HR. Срок от 45 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка корпоративных мобильных приложений",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-biznesa",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "2000000",
-        "highPrice": "7000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит корпоративное мобильное приложение для бизнеса?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от количества бизнес-процессов и глубины интеграций. Базовое корпоративное приложение с одним модулем и авторизацией по ролям — от 2 000 000 тенге. Приложение с несколькими модулями и интеграцией с CRM или 1С — от 3 500 000 тенге. Комплексная энтерпрайз-система с ERP, аналитикой и разграничением прав — от 7 000 000 тенге. Точную смету рассчитаем после аудита ваших процессов."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли интегрировать приложение с нашей 1С, CRM или ERP?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, интеграция с корпоративными системами — наша ключевая специализация. Подключаем 1С (через REST-обмен и OData), Bitrix24, amoCRM, SAP, Microsoft Dynamics и другие ERP-платформы. Настраиваем двусторонний обмен данными в реальном времени: заявки, справочники, документы и остатки синхронизируются автоматически. Если у вас самописная система — подключимся через её API или разработаем шлюз обмена."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как обеспечивается безопасность корпоративных данных?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Данные шифруются при передаче (TLS) и хранении (AES-256). Доступ разграничивается по ролям сотрудников — каждый видит только то, что положено его должности. Поддерживаем двухфакторную аутентификацию, вход по биометрии, удалённую блокировку устройства и журнал действий. По требованию размещаем backend на вашем сервере или в защищённом контуре компании, чтобы данные не покидали периметр организации."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как распространить приложение среди сотрудников без публикации в магазинах?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Для внутренних приложений публикация в App Store и Google Play не обязательна. Мы используем корпоративное распространение: Apple Business Manager и программы для внутренней дистрибуции Android, а также MDM-системы. Сотрудники устанавливают приложение по внутренней ссылке или через корпоративный портал, а обновления прилетают централизованно. При желании оформим и публичную публикацию в магазинах."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Сколько времени занимает разработка корпоративного приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Базовое приложение с одним модулем — 1,5-2,5 месяца. Решение с несколькими модулями и интеграциями с CRM или 1С — 3-5 месяцев. Комплексная энтерпрайз-система с ERP, ролевым доступом и аналитикой — от 6 месяцев. Работаем итерациями: первые рабочие модули вы получаете уже через несколько недель после старта."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">безопасность данных</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Базовый</h3>
-                <div class="pricing-card__price">от 2 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Один процесс под контролем</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> 1 бизнес-модуль</li>
-                    <li><i class="fa-solid fa-check"></i> Авторизация по ролям</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Базовая аналитика</li>
-                    <li><i class="fa-solid fa-check"></i> Корпоративная дистрибуция</li>
-                    <li><i class="fa-solid fa-check"></i> 2 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Базовый%20(от%202%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 3 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Автоматизация с интеграциями</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Несколько модулей</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция с CRM и 1С</li>
-                    <li><i class="fa-solid fa-check"></i> Гибкий ролевой доступ</li>
-                    <li><i class="fa-solid fa-check"></i> Документооборот</li>
-                    <li><i class="fa-solid fa-check"></i> Отчёты и дашборды</li>
-                    <li><i class="fa-solid fa-check"></i> 4 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%203%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Энтерпрайз</h3>
-                <div class="pricing-card__price">от 7 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Комплексная система</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android + Web</li>
-                    <li><i class="fa-solid fa-check"></i> Неограничено модулей</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция с ERP и SAP</li>
-                    <li><i class="fa-solid fa-check"></i> BI-аналитика и отчёты</li>
-                    <li><i class="fa-solid fa-check"></i> Повышенная безопасность</li>
-                    <li><i class="fa-solid fa-check"></i> Backend в контуре компании</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Энтерпрайз%20(от%207%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит корпоративное мобильное приложение для бизнеса?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от количества бизнес-процессов и глубины интеграций. Базовое корпоративное приложение с одним модулем и авторизацией по ролям — от 2 000 000 тенге. Приложение с несколькими модулями и интеграцией с CRM или 1С — от 3 500 000 тенге. Комплексная энтерпрайз-система с ERP, аналитикой и разграничением прав — от 7 000 000 тенге. Точную смету рассчитаем после аудита ваших процессов.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли интегрировать приложение с нашей 1С, CRM или ERP?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, интеграция с корпоративными системами — наша ключевая специализация. Подключаем 1С (через REST-обмен и OData), Bitrix24, amoCRM, SAP, Microsoft Dynamics и другие ERP-платформы. Настраиваем двусторонний обмен данными в реальном времени: заявки, справочники, документы и остатки синхронизируются автоматически. Если у вас самописная система — подключимся через её API или разработаем шлюз обмена.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как обеспечивается безопасность корпоративных данных?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Данные шифруются при передаче (TLS) и хранении (AES-256). Доступ разграничивается по ролям сотрудников — каждый видит только то, что положено его должности. Поддерживаем двухфакторную аутентификацию, вход по биометрии, удалённую блокировку устройства и журнал действий. По требованию размещаем backend на вашем сервере или в защищённом контуре компании, чтобы данные не покидали периметр организации.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как распространить приложение среди сотрудников без публикации в магазинах?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Для внутренних приложений публикация в App Store и Google Play не обязательна. Мы используем корпоративное распространение: Apple Business Manager и программы для внутренней дистрибуции Android, а также MDM-системы. Сотрудники устанавливают приложение по внутренней ссылке или через корпоративный портал, а обновления прилетают централизованно. При желании оформим и публичную публикацию в магазинах.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Сколько времени занимает разработка корпоративного приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Базовое приложение с одним модулем — 1,5-2,5 месяца. Решение с несколькими модулями и интеграциями с CRM или 1С — 3-5 месяцев. Комплексная энтерпрайз-система с ERP, ролевым доступом и аналитикой — от 6 месяцев. Работаем итерациями: первые рабочие модули вы получаете уже через несколько недель после старта.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -808,7 +633,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

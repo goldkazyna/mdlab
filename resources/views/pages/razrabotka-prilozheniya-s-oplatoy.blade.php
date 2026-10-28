@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-s-oplatoy';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложения с онлайн-оплатой в Алматы",
-    "description": "Создание мобильных приложений с приёмом онлайн-оплаты: интеграция Kaspi, Halyk, эквайринг банков, токенизация карт, подписки, электронные чеки. Соответствие PCI DSS и 3D Secure.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложений с онлайн-оплатой",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-s-oplatoy",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1250000",
-        "highPrice": "4500000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения с онлайн-оплатой?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Базовое приложение с приёмом оплаты на одной платформе — от 1 250 000 тенге. Полноценное решение для iOS и Android с несколькими платёжными провайдерами, кошельком и электронными чеками — от 2 500 000 тенге. Финтех-проект с подписками, рекуррентными платежами и антифрод-системой — от 4 500 000 тенге. Итоговую цену рассчитаем после уточнения набора платёжных сценариев."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Какие платёжные системы вы подключаете?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Интегрируем Kaspi Pay и Kaspi QR, Halyk (ePay), эквайринг Jusan, Forte, Freedom и других банков Казахстана, а также международные шлюзы. Настраиваем оплату картой прямо в приложении, оплату по QR, Apple Pay и Google Pay. Подбираем провайдера под ваши комиссии, обороты и требования к выводу средств."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Насколько безопасны платежи в приложении?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Данные карт не хранятся на ваших серверах — используется токенизация на стороне платёжного провайдера, соответствие стандарту PCI DSS и обязательное подтверждение 3D Secure. Трафик шифруется по TLS, применяем защиту от мошенничества (антифрод), проверку устройств и мониторинг подозрительных транзакций."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли реализовать подписки и рекуррентные платежи?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Настраиваем автоматическое списание по подписке, пробные периоды, тарифные планы, продление и отмену. Для сохранённых карт используем токены провайдера, что позволяет списывать оплату без повторного ввода данных. Реализуем уведомления о списаниях и историю платежей в личном кабинете пользователя."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Формируете ли вы электронные чеки и обрабатываете возвраты?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Подключаем фискализацию и выдачу электронных чеков в соответствии с требованиями законодательства РК, отправляем чек покупателю на почту или в приложение. Настраиваем частичные и полные возвраты средств прямо из админ-панели, а также кошелёк с балансом для возвратов и бонусов."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">платёжные сценарии</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите пакет с приёмом оплаты или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Базовый</h3>
-                <div class="pricing-card__price">от 1 250 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Приложение с приёмом оплаты</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> 1 платформа (iOS или Android)</li>
-                    <li><i class="fa-solid fa-check"></i> Оплата картой в приложении</li>
-                    <li><i class="fa-solid fa-check"></i> 1 платёжный провайдер</li>
-                    <li><i class="fa-solid fa-check"></i> 3D Secure и токенизация</li>
-                    <li><i class="fa-solid fa-check"></i> История платежей</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазин</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Базовый%20(от%201%20250%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 2 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Оплата, кошелёк и чеки</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Kaspi, Halyk, эквайринг</li>
-                    <li><i class="fa-solid fa-check"></i> Оплата по QR и Apple/Google Pay</li>
-                    <li><i class="fa-solid fa-check"></i> Кошелёк и баланс</li>
-                    <li><i class="fa-solid fa-check"></i> Электронные чеки и возвраты</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель платежей</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%202%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 4 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Финтех и подписки</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android + Web</li>
-                    <li><i class="fa-solid fa-check"></i> Подписки и рекуррентные платежи</li>
-                    <li><i class="fa-solid fa-check"></i> Мультипровайдерная маршрутизация</li>
-                    <li><i class="fa-solid fa-check"></i> Антифрод и защита от мошенничества</li>
-                    <li><i class="fa-solid fa-check"></i> Соответствие PCI DSS</li>
-                    <li><i class="fa-solid fa-check"></i> Мониторинг транзакций</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%204%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения с онлайн-оплатой?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Базовое приложение с приёмом оплаты на одной платформе — от 1 250 000 тенге. Полноценное решение для iOS и Android с несколькими платёжными провайдерами, кошельком и электронными чеками — от 2 500 000 тенге. Финтех-проект с подписками, рекуррентными платежами и антифрод-системой — от 4 500 000 тенге. Итоговую цену рассчитаем после уточнения набора платёжных сценариев.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Какие платёжные системы вы подключаете?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Интегрируем Kaspi Pay и Kaspi QR, Halyk (ePay), эквайринг Jusan, Forte, Freedom и других банков Казахстана, а также международные шлюзы. Настраиваем оплату картой прямо в приложении, оплату по QR, Apple Pay и Google Pay. Подбираем провайдера под ваши комиссии, обороты и требования к выводу средств.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Насколько безопасны платежи в приложении?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Данные карт не хранятся на ваших серверах — используется токенизация на стороне платёжного провайдера, соответствие стандарту PCI DSS и обязательное подтверждение 3D Secure. Трафик шифруется по TLS, применяем защиту от мошенничества (антифрод), проверку устройств и мониторинг подозрительных транзакций.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли реализовать подписки и рекуррентные платежи?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Настраиваем автоматическое списание по подписке, пробные периоды, тарифные планы, продление и отмену. Для сохранённых карт используем токены провайдера, что позволяет списывать оплату без повторного ввода данных. Реализуем уведомления о списаниях и историю платежей в личном кабинете пользователя.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Формируете ли вы электронные чеки и обрабатываете возвраты?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Подключаем фискализацию и выдачу электронных чеков в соответствии с требованиями законодательства РК, отправляем чек покупателю на почту или в приложение. Настраиваем частичные и полные возвраты средств прямо из админ-панели, а также кошелёк с балансом для возвратов и бонусов.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>

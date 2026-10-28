@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-dostavki';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложения для доставки еды в Алматы",
-    "description": "Разработка мобильного приложения для доставки еды и курьерских сервисов под ключ. GPS-трекинг курьера, статусы заказа, отдельное приложение для курьера, онлайн-оплата. Срок от 45 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложения для доставки",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-dostavki",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1500000",
-        "highPrice": "6000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения для доставки еды?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от набора функций и начинается от 1 500 000 тенге за стартовое приложение с корзиной, оплатой и базовым отслеживанием заказа. Полноценный сервис с отдельным приложением для курьера, GPS-трекингом и картами — от 3 000 000 тенге. Агрегатор доставки с личными кабинетами ресторанов и панелью диспетчера — от 6 000 000 тенге. Точную смету составим после обсуждения вашей бизнес-модели."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как работает GPS-трекинг курьера в приложении?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Курьер использует отдельное приложение, которое передаёт его геопозицию на сервер каждые несколько секунд. Клиент видит движущуюся метку курьера на карте в реальном времени, построенный маршрут до адреса и расчётное время прибытия. Мы используем карты 2ГИС, Яндекс.Карты или Google Maps в зависимости от ваших задач и зоны работы."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Нужно ли отдельное приложение для курьеров?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, для полноценного сервиса доставки мы делаем два клиентских приложения: одно для покупателей, второе для курьеров. В приложении курьера отображаются назначенные заказы, маршрут, кнопки смены статуса (принял, забрал, доставил), а также заработок за смену. Это разделение ускоряет доставку и снижает число ошибок."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли подключить онлайн-оплату и интеграцию с кухней?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Мы подключаем эквайринг Kaspi Pay, Halyk, Cloudpayments и другие платёжные системы Казахстана, а также оплату картой в приложении. Заказы автоматически передаются на кухню через интеграцию с POS-системами (iiko, r_keeper) или в вашу учётную систему, чтобы персонал сразу видел новый заказ без ручного ввода."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как настраиваются зоны доставки и расчёт стоимости?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "В админ-панели вы задаёте зоны доставки на карте, для каждой зоны — стоимость и минимальную сумму заказа, бесплатную доставку от определённой суммы и время работы. Приложение автоматически определяет, попадает ли адрес клиента в зону, и рассчитывает стоимость доставки. Так вы полностью контролируете географию и экономику сервиса."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">для клиента и курьера</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт</h3>
-                <div class="pricing-card__price">от 1 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Приложение доставки для одного заведения</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android для клиента</li>
-                    <li><i class="fa-solid fa-check"></i> Меню, корзина, заказ</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата</li>
-                    <li><i class="fa-solid fa-check"></i> Статусы заказа</li>
-                    <li><i class="fa-solid fa-check"></i> Зоны доставки и расчёт</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20(от%201%20500%20000%20₸)%20—%20приложение%20для%20доставки" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 3 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сервис с приложением курьера</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Приложения клиента и курьера</li>
-                    <li><i class="fa-solid fa-check"></i> GPS-трекинг в реальном времени</li>
-                    <li><i class="fa-solid fa-check"></i> Карты и построение маршрута</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель и диспетчер</li>
-                    <li><i class="fa-solid fa-check"></i> Рейтинги и отзывы</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция с POS кухни</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%203%20000%20000%20₸)%20—%20сервис%20доставки" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 6 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Агрегатор доставки</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Множество заведений</li>
-                    <li><i class="fa-solid fa-check"></i> Кабинеты ресторанов</li>
-                    <li><i class="fa-solid fa-check"></i> Панель диспетчера</li>
-                    <li><i class="fa-solid fa-check"></i> Распределение курьеров</li>
-                    <li><i class="fa-solid fa-check"></i> Комиссионная модель и биллинг</li>
-                    <li><i class="fa-solid fa-check"></i> Аналитика и отчёты</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%206%20000%20000%20₸)%20—%20агрегатор%20доставки" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения для доставки еды?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от набора функций и начинается от 1 500 000 тенге за стартовое приложение с корзиной, оплатой и базовым отслеживанием заказа. Полноценный сервис с отдельным приложением для курьера, GPS-трекингом и картами — от 3 000 000 тенге. Агрегатор доставки с личными кабинетами ресторанов и панелью диспетчера — от 6 000 000 тенге. Точную смету составим после обсуждения вашей бизнес-модели.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как работает GPS-трекинг курьера в приложении?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Курьер использует отдельное приложение, которое передаёт его геопозицию на сервер каждые несколько секунд. Клиент видит движущуюся метку курьера на карте в реальном времени, построенный маршрут до адреса и расчётное время прибытия. Мы используем карты 2ГИС, Яндекс.Карты или Google Maps в зависимости от ваших задач и зоны работы.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Нужно ли отдельное приложение для курьеров?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, для полноценного сервиса доставки мы делаем два клиентских приложения: одно для покупателей, второе для курьеров. В приложении курьера отображаются назначенные заказы, маршрут, кнопки смены статуса (принял, забрал, доставил), а также заработок за смену. Это разделение ускоряет доставку и снижает число ошибок.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли подключить онлайн-оплату и интеграцию с кухней?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Мы подключаем эквайринг Kaspi Pay, Halyk, Cloudpayments и другие платёжные системы Казахстана, а также оплату картой в приложении. Заказы автоматически передаются на кухню через интеграцию с POS-системами (iiko, r_keeper) или в вашу учётную систему, чтобы персонал сразу видел новый заказ без ручного ввода.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как настраиваются зоны доставки и расчёт стоимости?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>В админ-панели вы задаёте зоны доставки на карте, для каждой зоны — стоимость и минимальную сумму заказа, бесплатную доставку от определённой суммы и время работы. Приложение автоматически определяет, попадает ли адрес клиента в зону, и рассчитывает стоимость доставки. Так вы полностью контролируете географию и экономику сервиса.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -805,7 +630,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

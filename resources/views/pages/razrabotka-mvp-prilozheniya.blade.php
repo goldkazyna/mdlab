@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-mvp-prilozheniya';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка MVP мобильного приложения в Алматы",
-    "description": "Создание MVP мобильного приложения для стартапов: быстрый запуск за 4-8 недель, проверка бизнес-гипотезы с минимальным бюджетом, только ключевые функции. Кроссплатформа для экономии.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка MVP мобильного приложения",
-    "url": "https://mdlab.kz/razrabotka-mvp-prilozheniya",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "750000",
-        "highPrice": "2000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Что такое MVP мобильного приложения и зачем он нужен стартапу?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "MVP (минимально жизнеспособный продукт) — это первая версия приложения только с ключевыми функциями, необходимыми для проверки бизнес-гипотезы. Стартапу MVP нужен, чтобы протестировать идею на реальных пользователях, собрать обратную связь и привлечь инвесторов, не вкладывая весь бюджет в полноценную разработку. Так вы снижаете риски и понимаете, стоит ли развивать проект дальше."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка MVP приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость MVP начинается от 750 000 тенге за пакет MVP Lite с базовым набором функций на кроссплатформе. Пакет MVP Standard с расширенным функционалом и админ-панелью — от 1 250 000 тенге. MVP Pro для сложных гипотез с интеграциями и онлайн-оплатой — от 2 000 000 тенге. Точную смету составим после обсуждения вашей идеи."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "За сколько недель можно запустить MVP?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "MVP мы разрабатываем за 4-8 недель — это в разы быстрее полноценного приложения. Простой MVP Lite готов за 4-5 недель, MVP Standard — за 6-7 недель, MVP Pro — за 7-8 недель. Мы работаем короткими спринтами и фокусируемся только на ключевых функциях, поэтому сроки измеряются неделями, а не месяцами."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Почему для MVP лучше выбрать кроссплатформу?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Для MVP кроссплатформенная разработка на React Native или Flutter оптимальна: одно приложение работает сразу на iOS и Android, что экономит до 40% бюджета и времени. Для стартапа на этапе проверки гипотезы важно запуститься быстро и дёшево, охватив максимум пользователей. Когда гипотеза подтвердится, MVP можно итеративно развивать или переписать на нативные технологии."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что происходит с MVP после запуска и сбора обратной связи?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "После запуска MVP мы помогаем собрать обратную связь от первых пользователей через аналитику и обратную связь в приложении. На основе данных мы планируем итеративное развитие: добавляем востребованные функции, улучшаем то, что нравится аудитории, и отказываемся от ненужного. Такой подход помогает эффективно расходовать бюджет и уверенно привлекать инвесторов на следующих раундах."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">проверка гипотезы</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>MVP Lite</h3>
-                <div class="pricing-card__price">750 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Быстрая проверка идеи</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Кроссплатформа iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> До 8 ключевых экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Лаконичный дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Авторизация</li>
-                    <li><i class="fa-solid fa-check"></i> Базовая аналитика</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазины</li>
-                    <li><i class="fa-solid fa-check"></i> Запуск за 4-5 недель</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20MVP%20Lite%20(750%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>MVP Standard</h3>
-                <div class="pricing-card__price">1 250 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Расширенный MVP для роста</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Кроссплатформа iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> До 15 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Индивидуальный дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Сбор обратной связи</li>
-                    <li><i class="fa-solid fa-check"></i> Запуск за 6-7 недель</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20MVP%20Standard%20(1%20250%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>MVP Pro</h3>
-                <div class="pricing-card__price">от 2 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сложная гипотеза под инвестора</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Кроссплатформа iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Расширенный функционал</li>
-                    <li><i class="fa-solid fa-check"></i> Премиум UX/UI</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграции API</li>
-                    <li><i class="fa-solid fa-check"></i> Продвинутая аналитика</li>
-                    <li><i class="fa-solid fa-check"></i> Запуск за 7-8 недель</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20MVP%20Pro%20(от%202%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Что такое MVP мобильного приложения и зачем он нужен стартапу?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>MVP (минимально жизнеспособный продукт) — это первая версия приложения только с ключевыми функциями, необходимыми для проверки бизнес-гипотезы. Стартапу MVP нужен, чтобы протестировать идею на реальных пользователях, собрать обратную связь и привлечь инвесторов, не вкладывая весь бюджет в полноценную разработку. Так вы снижаете риски и понимаете, стоит ли развивать проект дальше.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка MVP приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость MVP начинается от 750 000 тенге за пакет MVP Lite с базовым набором функций на кроссплатформе. Пакет MVP Standard с расширенным функционалом и админ-панелью — от 1 250 000 тенге. MVP Pro для сложных гипотез с интеграциями и онлайн-оплатой — от 2 000 000 тенге. Точную смету составим после обсуждения вашей идеи.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>За сколько недель можно запустить MVP?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>MVP мы разрабатываем за 4-8 недель — это в разы быстрее полноценного приложения. Простой MVP Lite готов за 4-5 недель, MVP Standard — за 6-7 недель, MVP Pro — за 7-8 недель. Мы работаем короткими спринтами и фокусируемся только на ключевых функциях, поэтому сроки измеряются неделями, а не месяцами.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Почему для MVP лучше выбрать кроссплатформу?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Для MVP кроссплатформенная разработка на React Native или Flutter оптимальна: одно приложение работает сразу на iOS и Android, что экономит до 40% бюджета и времени. Для стартапа на этапе проверки гипотезы важно запуститься быстро и дёшево, охватив максимум пользователей. Когда гипотеза подтвердится, MVP можно итеративно развивать или переписать на нативные технологии.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что происходит с MVP после запуска и сбора обратной связи?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>После запуска MVP мы помогаем собрать обратную связь от первых пользователей через аналитику и обратную связь в приложении. На основе данных мы планируем итеративное развитие: добавляем востребованные функции, улучшаем то, что нравится аудитории, и отказываемся от ненужного. Такой подход помогает эффективно расходовать бюджет и уверенно привлекать инвесторов на следующих раундах.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -803,7 +628,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

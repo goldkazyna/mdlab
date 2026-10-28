@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-restorana';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложения для ресторана и кафе в Алматы",
-    "description": "Создание мобильного приложения для ресторана, кафе и доставки еды: электронное меню с фото, онлайн-заказ, бронирование столика, программа лояльности и push-акции. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложения для ресторана",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-restorana",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1000000",
-        "highPrice": "4000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения для ресторана?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от набора функций. Базовое приложение с электронным меню и онлайн-заказом обойдётся от 1 000 000 тенге. Приложение для сети кафе с программой лояльности, бронированием и оплатой в приложении — от 2 000 000 тенге. Премиум-решение с интеграцией POS-системы (iiko, r_keeper), кухней и аналитикой — от 4 000 000 тенге. Точную смету рассчитаем после обсуждения вашего заведения."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Можно ли подключить приложение к моей POS-системе iiko или r_keeper?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, мы настраиваем интеграцию с популярными POS-системами и учётом ресторана: iiko, r_keeper, Poster. Заказы из приложения автоматически попадают на кухню и в кассу, меню и остатки синхронизируются, а бонусы клиента учитываются в единой базе. Это исключает ручной перенос заказов и ошибки персонала."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как приложение помогает увеличить средний чек и число повторных визитов?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Приложение показывает блюда с аппетитными фото, рекомендует дополнения и комбо, что повышает средний чек. Программа лояльности с бонусами и персональные push-акции возвращают гостя снова: напоминания о спецпредложениях, скидки в день рождения, накопительные баллы. По нашему опыту, повторные заказы через приложение растут заметно быстрее, чем через сайт или звонок."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Поддерживает ли приложение доставку, самовывоз и бронирование столика?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да. Гость выбирает удобный формат: доставка по адресу с расчётом стоимости и зоны, самовывоз к назначенному времени или бронирование столика на нужную дату и число персон. Все заявки поступают администратору и на кухню в реальном времени, статус заказа отображается клиенту в приложении."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Нужно ли отдельное QR-меню и как оно работает?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Мы делаем электронное меню, доступное как в приложении, так и по QR-коду на столе — гость сканирует код и сразу видит актуальное меню с фото, ценами и описанием, может оформить заказ без официанта. Меню обновляется из единой панели: изменили цену или добавили блюдо — оно моментально появляется у всех гостей."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">интеграция с POS</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт</h3>
-                <div class="pricing-card__price">от 1 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Меню и онлайн-заказ</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Электронное меню с фото</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-заказ и самовывоз</li>
-                    <li><i class="fa-solid fa-check"></i> QR-меню для столов</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Панель управления меню</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазины</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20(от%201%20000%20000%20₸)%20—%20приложение%20для%20ресторана" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 2 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Лояльность и оплата</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Старт»</li>
-                    <li><i class="fa-solid fa-check"></i> Доставка с расчётом зоны</li>
-                    <li><i class="fa-solid fa-check"></i> Бронирование столика</li>
-                    <li><i class="fa-solid fa-check"></i> Программа лояльности и бонусы</li>
-                    <li><i class="fa-solid fa-check"></i> Оплата в приложении</li>
-                    <li><i class="fa-solid fa-check"></i> Отзывы и оценки</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%202%20000%20000%20₸)%20—%20приложение%20для%20ресторана" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 4 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сеть и интеграция POS</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Бизнес»</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция iiko / r_keeper</li>
-                    <li><i class="fa-solid fa-check"></i> Передача заказов на кухню</li>
-                    <li><i class="fa-solid fa-check"></i> Несколько заведений (сеть)</li>
-                    <li><i class="fa-solid fa-check"></i> Расширенная аналитика</li>
-                    <li><i class="fa-solid fa-check"></i> Сегментированные push-кампании</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%204%20000%20000%20₸)%20—%20приложение%20для%20ресторана" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения для ресторана?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от набора функций. Базовое приложение с электронным меню и онлайн-заказом обойдётся от 1 000 000 тенге. Приложение для сети кафе с программой лояльности, бронированием и оплатой в приложении — от 2 000 000 тенге. Премиум-решение с интеграцией POS-системы (iiko, r_keeper), кухней и аналитикой — от 4 000 000 тенге. Точную смету рассчитаем после обсуждения вашего заведения.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Можно ли подключить приложение к моей POS-системе iiko или r_keeper?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, мы настраиваем интеграцию с популярными POS-системами и учётом ресторана: iiko, r_keeper, Poster. Заказы из приложения автоматически попадают на кухню и в кассу, меню и остатки синхронизируются, а бонусы клиента учитываются в единой базе. Это исключает ручной перенос заказов и ошибки персонала.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как приложение помогает увеличить средний чек и число повторных визитов?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Приложение показывает блюда с аппетитными фото, рекомендует дополнения и комбо, что повышает средний чек. Программа лояльности с бонусами и персональные push-акции возвращают гостя снова: напоминания о спецпредложениях, скидки в день рождения, накопительные баллы. По нашему опыту, повторные заказы через приложение растут заметно быстрее, чем через сайт или звонок.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Поддерживает ли приложение доставку, самовывоз и бронирование столика?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да. Гость выбирает удобный формат: доставка по адресу с расчётом стоимости и зоны, самовывоз к назначенному времени или бронирование столика на нужную дату и число персон. Все заявки поступают администратору и на кухню в реальном времени, статус заказа отображается клиенту в приложении.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Нужно ли отдельное QR-меню и как оно работает?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Мы делаем электронное меню, доступное как в приложении, так и по QR-коду на столе — гость сканирует код и сразу видит актуальное меню с фото, ценами и описанием, может оформить заказ без официанта. Меню обновляется из единой панели: изменили цену или добавили блюдо — оно моментально появляется у всех гостей.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>

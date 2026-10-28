@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-taksi';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложения для такси в Алматы",
-    "description": "Создание приложения для такси и сервиса заказа поездок под ключ: приложение пассажира и водителя, геолокация, расчёт стоимости, онлайн-оплата, админ-панель диспетчерской. Срок от 45 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложения для такси",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-taksi",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1500000",
-        "highPrice": "6000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка приложения для такси?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от набора функций и начинается от 1 500 000 тенге за стартовый комплект (приложение пассажира и водителя с базовой геолокацией и заказом поездки). Полноценный сервис с онлайн-оплатой, рейтингами и админ-панелью диспетчерской — от 3 000 000 тенге. Масштабный агрегатор с несколькими тарифами, аналитикой и высокой нагрузкой — от 6 000 000 тенге. Точную смету подготовим после обсуждения вашей задачи."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Из чего состоит приложение для такси?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Полноценный сервис заказа поездок включает три части: приложение пассажира для вызова машины и оплаты, приложение водителя для приёма заказов и навигации, а также веб-панель диспетчерской для управления заказами, водителями и тарифами. Все компоненты работают через единый сервер с картами, расчётом стоимости и подбором ближайшего водителя."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Какие карты и геолокация используются?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Мы интегрируем Google Maps, 2GIS или Mapbox — выбираем оптимальный вариант под ваш регион и бюджет. Реализуем построение маршрута, отслеживание автомобиля в реальном времени, определение адреса подачи по GPS и расчёт расстояния для тарификации. Карты покрывают Алматы, Астану и другие города Казахстана."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Как работает онлайн-оплата и расчёт стоимости поездки?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость рассчитывается автоматически по тарифу: базовая подача, цена за километр и минуту, повышающий коэффициент в час пик. Подключаем платёжные системы (Kaspi, банковские карты, эквайринг) для безналичной оплаты прямо в приложении. Поддерживаем и оплату наличными водителю — пассажир выбирает удобный способ при заказе."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что входит в поддержку после запуска сервиса?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Гарантийная поддержка включает: исправление ошибок, обновление под новые версии iOS и Android, мониторинг работы сервера и карт, консультации по работе диспетчерской. По отдельному договору добавляем новые тарифы и функции, масштабируем систему под рост числа заказов, настраиваем маркетинг и продвижение."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">под ключ</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт</h3>
-                <div class="pricing-card__price">от 1 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Базовый сервис заказа поездок</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Приложение пассажира и водителя</li>
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> Геолокация и карты</li>
-                    <li><i class="fa-solid fa-check"></i> Заказ и подбор водителя</li>
-                    <li><i class="fa-solid fa-check"></i> Расчёт стоимости по тарифу</li>
-                    <li><i class="fa-solid fa-check"></i> Оплата наличными</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20(от%201%20500%20000%20₸)%20для%20приложения%20такси" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 3 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Полноценный сервис с диспетчерской</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Старт»</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата и эквайринг</li>
-                    <li><i class="fa-solid fa-check"></i> Рейтинги водителей и пассажиров</li>
-                    <li><i class="fa-solid fa-check"></i> История поездок</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель диспетчерской</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%203%20000%20000%20₸)%20для%20приложения%20такси" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 6 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Агрегатор такси под нагрузкой</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Всё из пакета «Бизнес»</li>
-                    <li><i class="fa-solid fa-check"></i> Несколько тарифов и классов авто</li>
-                    <li><i class="fa-solid fa-check"></i> Работа с парками и диспетчерами</li>
-                    <li><i class="fa-solid fa-check"></i> Аналитика и отчёты</li>
-                    <li><i class="fa-solid fa-check"></i> Высоконагруженный сервер</li>
-                    <li><i class="fa-solid fa-check"></i> Программы лояльности и промокоды</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%206%20000%20000%20₸)%20для%20приложения%20такси" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка приложения для такси?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от набора функций и начинается от 1 500 000 тенге за стартовый комплект (приложение пассажира и водителя с базовой геолокацией и заказом поездки). Полноценный сервис с онлайн-оплатой, рейтингами и админ-панелью диспетчерской — от 3 000 000 тенге. Масштабный агрегатор с несколькими тарифами, аналитикой и высокой нагрузкой — от 6 000 000 тенге. Точную смету подготовим после обсуждения вашей задачи.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Из чего состоит приложение для такси?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Полноценный сервис заказа поездок включает три части: приложение пассажира для вызова машины и оплаты, приложение водителя для приёма заказов и навигации, а также веб-панель диспетчерской для управления заказами, водителями и тарифами. Все компоненты работают через единый сервер с картами, расчётом стоимости и подбором ближайшего водителя.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Какие карты и геолокация используются?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Мы интегрируем Google Maps, 2GIS или Mapbox — выбираем оптимальный вариант под ваш регион и бюджет. Реализуем построение маршрута, отслеживание автомобиля в реальном времени, определение адреса подачи по GPS и расчёт расстояния для тарификации. Карты покрывают Алматы, Астану и другие города Казахстана.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Как работает онлайн-оплата и расчёт стоимости поездки?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость рассчитывается автоматически по тарифу: базовая подача, цена за километр и минуту, повышающий коэффициент в час пик. Подключаем платёжные системы (Kaspi, банковские карты, эквайринг) для безналичной оплаты прямо в приложении. Поддерживаем и оплату наличными водителю — пассажир выбирает удобный способ при заказе.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что входит в поддержку после запуска сервиса?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Гарантийная поддержка включает: исправление ошибок, обновление под новые версии iOS и Android, мониторинг работы сервера и карт, консультации по работе диспетчерской. По отдельному договору добавляем новые тарифы и функции, масштабируем систему под рост числа заказов, настраиваем маркетинг и продвижение.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -806,7 +631,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

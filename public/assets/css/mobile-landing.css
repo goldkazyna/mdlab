@@ -500,7 +500,8 @@
 }
 
 .pricing-card__price {
-    font-size: 42px;
+    font-size: clamp(30px, 2.8vw, 42px);
+    line-height: 1.15;
     font-weight: 800;
     color: var(--primary);
     margin-bottom: 5px;

@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'krossplatformennaya-razrabotka';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Кроссплатформенная разработка мобильных приложений в Алматы",
-    "description": "Кроссплатформенная разработка приложений на Flutter и React Native: одна кодовая база сразу для iOS и Android. Экономия бюджета и времени до 40%. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Кроссплатформенная разработка мобильных приложений",
-    "url": "https://mdlab.kz/krossplatformennaya-razrabotka",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "750000",
-        "highPrice": "3000000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Что такое кроссплатформенная разработка приложений?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Кроссплатформенная разработка — это создание одного приложения, которое работает сразу на iOS и Android из единой кодовой базы. Вместо двух отдельных нативных проектов на Swift и Kotlin мы пишем код один раз на Flutter или React Native. Это экономит до 40% бюджета и времени, а обновления выходят одновременно на обеих платформах."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что выбрать: Flutter или React Native?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Flutter (от Google) даёт максимально плавную анимацию и единый пиксель-в-пиксель дизайн на обеих платформах, отлично подходит для приложений с насыщенным интерфейсом. React Native (от Meta) удобен, если у вас уже есть команда на JavaScript или веб-часть на React, и позволяет переиспользовать наработки. Мы подбираем стек под вашу задачу и покажем плюсы каждого варианта."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Насколько кроссплатформа дешевле нативной разработки?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "В среднем кроссплатформенное приложение обходится на 30–40% дешевле, чем две отдельные нативные версии для iOS и Android. Экономия достигается за счёт единой кодовой базы: одна команда, один код, одно тестирование бизнес-логики. Дополнительно вы экономите на поддержке — правки и новые функции вносятся один раз для обеих платформ."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Когда кроссплатформа не подходит и нужна нативная разработка?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Нативная разработка предпочтительнее для тяжёлых 3D-игр, сложного AR/VR, приложений с интенсивной обработкой видео и графики или максимальной нагрузкой на процессор. В таких случаях важен прямой доступ к возможностям платформы. Для большинства бизнес-приложений, магазинов, сервисов и MVP кроссплатформа полностью закрывает задачи без потери качества."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Приложение будет выглядеть одинаково на iPhone и Android?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, при кроссплатформенной разработке дизайн создаётся один раз и работает единообразно на обеих платформах, что упрощает поддержку бренда. При необходимости мы адаптируем отдельные элементы под нативные гайдлайны Apple и Google, чтобы приложение ощущалось привычным для пользователей каждой платформы."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">одна кодовая база</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Старт</h3>
-                <div class="pricing-card__price">от 750 000 <span>₸</span></div>
-                <p class="pricing-card__desc">MVP сразу для iOS и Android</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android из одного кода</li>
-                    <li><i class="fa-solid fa-check"></i> До 12 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Единый базовый дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Авторизация</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в оба магазина</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Старт%20(от%20750%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">от 1 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Приложение с интеграциями</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android из одного кода</li>
-                    <li><i class="fa-solid fa-check"></i> До 30 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Уникальный единый дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграции 1С, CRM, API</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(от%201%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум</h3>
-                <div class="pricing-card__price">от 3 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сложные кроссплатформенные решения</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android + Web</li>
-                    <li><i class="fa-solid fa-check"></i> Неограничено экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Премиум дизайн и анимация</li>
-                    <li><i class="fa-solid fa-check"></i> Сложная бизнес-логика</li>
-                    <li><i class="fa-solid fa-check"></i> Маркетплейс и роли</li>
-                    <li><i class="fa-solid fa-check"></i> Глубокие интеграции</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20(от%203%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Что такое кроссплатформенная разработка приложений?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Кроссплатформенная разработка — это создание одного приложения, которое работает сразу на iOS и Android из единой кодовой базы. Вместо двух отдельных нативных проектов на Swift и Kotlin мы пишем код один раз на Flutter или React Native. Это экономит до 40% бюджета и времени, а обновления выходят одновременно на обеих платформах.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что выбрать: Flutter или React Native?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Flutter (от Google) даёт максимально плавную анимацию и единый пиксель-в-пиксель дизайн на обеих платформах, отлично подходит для приложений с насыщенным интерфейсом. React Native (от Meta) удобен, если у вас уже есть команда на JavaScript или веб-часть на React, и позволяет переиспользовать наработки. Мы подбираем стек под вашу задачу и покажем плюсы каждого варианта.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Насколько кроссплатформа дешевле нативной разработки?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>В среднем кроссплатформенное приложение обходится на 30–40% дешевле, чем две отдельные нативные версии для iOS и Android. Экономия достигается за счёт единой кодовой базы: одна команда, один код, одно тестирование бизнес-логики. Дополнительно вы экономите на поддержке — правки и новые функции вносятся один раз для обеих платформ.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Когда кроссплатформа не подходит и нужна нативная разработка?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Нативная разработка предпочтительнее для тяжёлых 3D-игр, сложного AR/VR, приложений с интенсивной обработкой видео и графики или максимальной нагрузкой на процессор. В таких случаях важен прямой доступ к возможностям платформы. Для большинства бизнес-приложений, магазинов, сервисов и MVP кроссплатформа полностью закрывает задачи без потери качества.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Приложение будет выглядеть одинаково на iPhone и Android?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, при кроссплатформенной разработке дизайн создаётся один раз и работает единообразно на обеих платформах, что упрощает поддержку бренда. При необходимости мы адаптируем отдельные элементы под нативные гайдлайны Apple и Google, чтобы приложение ощущалось привычным для пользователей каждой платформы.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -810,7 +635,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

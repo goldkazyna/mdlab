@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-mobilnyh-prilozheniy';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка мобильных приложений в Алматы",
-    "description": "Профессиональная разработка мобильных приложений для iOS и Android под ключ. Нативные и кроссплатформенные решения. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка мобильных приложений",
-    "url": "https://mdlab.kz/razrabotka-mobilnyh-prilozheniy",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "750000",
-        "highPrice": "3500000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработка мобильного приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость зависит от сложности проекта и начинается от 750 000 тенге за простое приложение (MVP) на одну платформу. Приложение для iOS и Android с уникальным дизайном и интеграциями — от 1 250 000 тенге. Сложные проекты с ML, геолокацией, видео — от 3 500 000 тенге. Точную стоимость рассчитаем после обсуждения вашей задачи."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Сколько времени занимает разработка?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "MVP или простое приложение — 1-2 месяца. Приложение средней сложности с админ-панелью — 3-4 месяца. Сложный проект с множеством интеграций — 5-6 месяцев. Сроки обсуждаем на старте и фиксируем в договоре."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что лучше: нативное или кроссплатформенное приложение?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Нативная разработка (Swift, Kotlin) даёт максимальную производительность и доступ ко всем функциям устройства. Подходит для игр, AR/VR, сложных анимаций. Кроссплатформа (React Native, Flutter) экономит до 40% бюджета и времени при сохранении качества. Подходит для большинства бизнес-приложений. Поможем выбрать оптимальный вариант для вашего проекта."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Вы публикуете приложение в магазины?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, полностью берём на себя публикацию в App Store и Google Play. Регистрируем аккаунты разработчика (если нужно), готовим описания, скриншоты, иконки. Помогаем пройти модерацию Apple и Google с первого раза."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Что входит в поддержку после запуска?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Гарантийная поддержка включает: исправление багов, обновление под новые версии iOS и Android, мониторинг работоспособности, консультации. По отдельному договору: добавление нового функционала, маркетинговая поддержка, ASO-оптимизация."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -269,6 +191,7 @@
                     <div class="summary-fact__label">публикация под ключ</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -556,57 +479,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Стартап</h3>
-                <div class="pricing-card__price">750 000 <span>₸</span></div>
-                <p class="pricing-card__desc">MVP для проверки идеи</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> 1 платформа (iOS или Android)</li>
-                    <li><i class="fa-solid fa-check"></i> До 10 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Базовый дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Авторизация</li>
-                    <li><i class="fa-solid fa-check"></i> Push-уведомления</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в магазин</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Стартап%20(750%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес</h3>
-                <div class="pricing-card__price">1 250 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Полноценное приложение</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android</li>
-                    <li><i class="fa-solid fa-check"></i> До 25 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Уникальный дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Админ-панель</li>
-                    <li><i class="fa-solid fa-check"></i> Онлайн-оплата</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграции API</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20(1%20250%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Энтерпрайз</h3>
-                <div class="pricing-card__price">от 3 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сложные решения</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iOS + Android + Web</li>
-                    <li><i class="fa-solid fa-check"></i> Неограничено экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Премиум дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Сложная логика</li>
-                    <li><i class="fa-solid fa-check"></i> ML/AI функции</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция 1С, CRM</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Энтерпрайз%20(от%203%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -669,55 +542,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработка мобильного приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость зависит от сложности проекта и начинается от 750 000 тенге за простое приложение (MVP) на одну платформу. Приложение для iOS и Android с уникальным дизайном и интеграциями — от 1 250 000 тенге. Сложные проекты с ML, геолокацией, видео — от 3 500 000 тенге. Точную стоимость рассчитаем после обсуждения вашей задачи.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Сколько времени занимает разработка?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>MVP или простое приложение — 1-2 месяца. Приложение средней сложности с админ-панелью — 3-4 месяца. Сложный проект с множеством интеграций — 5-6 месяцев. Сроки обсуждаем на старте и фиксируем в договоре.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что лучше: нативное или кроссплатформенное приложение?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Нативная разработка (Swift, Kotlin) даёт максимальную производительность и доступ ко всем функциям устройства. Подходит для игр, AR/VR, сложных анимаций. Кроссплатформа (React Native, Flutter) экономит до 40% бюджета и времени при сохранении качества. Подходит для большинства бизнес-приложений. Поможем выбрать оптимальный вариант для вашего проекта.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Вы публикуете приложение в магазины?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, полностью берём на себя публикацию в App Store и Google Play. Регистрируем аккаунты разработчика (если нужно), готовим описания, скриншоты, иконки. Помогаем пройти модерацию Apple и Google с первого раза.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Что входит в поддержку после запуска?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Гарантийная поддержка включает: исправление багов, обновление под новые версии iOS и Android, мониторинг работоспособности, консультации. По отдельному договору: добавление нового функционала, маркетинговая поддержка, ASO-оптимизация.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -819,7 +644,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>

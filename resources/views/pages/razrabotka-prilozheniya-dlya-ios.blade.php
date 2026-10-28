@@ -1,94 +1,16 @@
 @extends('layouts.app')
 
+@php
+    $slug = 'razrabotka-prilozheniya-dlya-ios';
+    extract(require resource_path('data/apps/' . $slug . '.php'));
+@endphp
+
 @push('styles')
-<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.3">
+<link rel="stylesheet" href="/assets/css/mobile-landing.css?v=1.5">
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Service",
-    "name": "Разработка приложений для iOS в Алматы",
-    "description": "Разработка нативных iOS-приложений для iPhone и iPad на Swift и SwiftUI под ключ. Публикация в App Store, интеграции Apple Pay, Sign in with Apple, push через APNs. Срок от 30 дней.",
-    "provider": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "url": "https://mdlab.kz",
-        "logo": "https://mdlab.kz/assets/img/logo.png",
-        "telephone": "+77774333822",
-        "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "ул. Назарбаева 50, офис 209",
-            "addressLocality": "Алматы",
-            "postalCode": "050030",
-            "addressCountry": "KZ"
-        }
-    },
-    "areaServed": {
-        "@@type": "City",
-        "name": "Алматы"
-    },
-    "serviceType": "Разработка приложений для iOS",
-    "url": "https://mdlab.kz/razrabotka-prilozheniya-dlya-ios",
-    "offers": {
-        "@@type": "AggregateOffer",
-        "lowPrice": "1000000",
-        "highPrice": "3500000",
-        "priceCurrency": "KZT",
-        "offerCount": "3"
-    }
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@@type": "Question",
-            "name": "Сколько стоит разработать приложение для iOS?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Стоимость iOS-приложения начинается от 1 000 000 тенге за простое приложение для iPhone на Swift. Приложение среднего уровня с поддержкой iPhone и iPad и интеграциями (Apple Pay, Sign in with Apple) — от 2 000 000 тенге. Сложные проекты с CoreML, синхронизацией через iCloud и приложением для Apple Watch — от 3 500 000 тенге. Точную смету составим после обсуждения задачи."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "На каком языке вы разрабатываете iOS-приложения?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Мы разрабатываем нативные приложения на Swift и современном фреймворке SwiftUI, что даёт максимальную производительность и полный доступ к возможностям iPhone и iPad. При поддержке и доработке legacy-проектов используем Objective-C. Для хранения данных применяем Core Data, для сетевого слоя — URLSession и современные async/await."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Вы публикуете приложение в App Store?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, мы полностью берём на себя публикацию в App Store. Помогаем оформить аккаунт Apple Developer, готовим иконки, скриншоты и описание, настраиваем App Store Connect. Приложение проектируем строго по Human Interface Guidelines, поэтому оно проходит модерацию Apple с первого раза. Перед релизом организуем закрытое тестирование через TestFlight."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Работает ли приложение на iPhone и iPad одновременно?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Да, мы создаём универсальные приложения, которые адаптируются под экраны iPhone и iPad с помощью адаптивной вёрстки SwiftUI и Auto Layout. Для iPad реализуем расширенные сценарии: многооконность, Split View, поддержку Apple Pencil и трекпада. Это тарифицируется по пакету «Бизнес iOS» и выше."
-            }
-        },
-        {
-            "@@type": "Question",
-            "name": "Почему стоит делать приложение именно под iOS?",
-            "acceptedAnswer": {
-                "@@type": "Answer",
-                "text": "Аудитория iOS отличается высокой платёжеспособностью: пользователи iPhone чаще совершают покупки внутри приложений и оформляют подписки. Экосистема Apple предлагает удобные и безопасные инструменты монетизации — Apple Pay, In-App Purchase, Sign in with Apple. Если ваш продукт ориентирован на премиум-сегмент, старт с iOS обычно даёт лучшую окупаемость."
-            }
-        }
-    ]
-}
-</script>
+@include('partials.apps.schema')
 
 <script type="application/ld+json">
 {
@@ -276,6 +198,7 @@
                     <div class="summary-fact__label">публикация под ключ</div>
                 </div>
             </div>
+            @include('partials.apps.updated')
         </div>
     </div>
 </section>
@@ -563,57 +486,7 @@
             <p>Выберите подходящий пакет или закажите индивидуальный расчёт</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Базовый iOS</h3>
-                <div class="pricing-card__price">1 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Простое приложение для iPhone</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> Только iPhone</li>
-                    <li><i class="fa-solid fa-check"></i> До 10 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Дизайн по HIG</li>
-                    <li><i class="fa-solid fa-check"></i> Sign in with Apple</li>
-                    <li><i class="fa-solid fa-check"></i> Push через APNs</li>
-                    <li><i class="fa-solid fa-check"></i> Публикация в App Store</li>
-                    <li><i class="fa-solid fa-check"></i> 1 месяц поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Базовый%20iOS%20(1%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Бизнес iOS</h3>
-                <div class="pricing-card__price">2 000 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Универсальное для iPhone и iPad</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iPhone + iPad</li>
-                    <li><i class="fa-solid fa-check"></i> До 25 экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Уникальный дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> Apple Pay и In-App Purchase</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграции API и Core Data</li>
-                    <li><i class="fa-solid fa-check"></i> Тестирование в TestFlight</li>
-                    <li><i class="fa-solid fa-check"></i> 3 месяца поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Бизнес%20iOS%20(2%20000%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
-            <div class="pricing-card">
-                <h3>Премиум iOS</h3>
-                <div class="pricing-card__price">от 3 500 000 <span>₸</span></div>
-                <p class="pricing-card__desc">Сложные решения для экосистемы Apple</p>
-                <ul class="pricing-card__features">
-                    <li><i class="fa-solid fa-check"></i> iPhone + iPad + Apple Watch</li>
-                    <li><i class="fa-solid fa-check"></i> Неограничено экранов</li>
-                    <li><i class="fa-solid fa-check"></i> Премиум дизайн</li>
-                    <li><i class="fa-solid fa-check"></i> CoreML и Vision</li>
-                    <li><i class="fa-solid fa-check"></i> Синхронизация через iCloud</li>
-                    <li><i class="fa-solid fa-check"></i> Интеграция 1С, CRM</li>
-                    <li><i class="fa-solid fa-check"></i> 6 месяцев поддержки</li>
-                </ul>
-                <a href="https://wa.me/77774333822?text=Здравствуйте!%20Интересует%20пакет%20Премиум%20iOS%20(от%203%20500%20000%20₸)" target="_blank" class="btn-primary-mobile btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-            </div>
+            @include('partials.apps.pricing')
         </div>
     </div>
 </section>
@@ -676,55 +549,7 @@
         </div>
 
         <div class="faq-list">
-            <div class="faq-item active">
-                <div class="faq-item__question">
-                    <h4>Сколько стоит разработать приложение для iOS?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Стоимость iOS-приложения начинается от 1 000 000 тенге за простое приложение для iPhone на Swift. Приложение среднего уровня с поддержкой iPhone и iPad и интеграциями (Apple Pay, Sign in with Apple) — от 2 000 000 тенге. Сложные проекты с CoreML, синхронизацией через iCloud и приложением для Apple Watch — от 3 500 000 тенге. Точную смету составим после обсуждения задачи.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>На каком языке вы разрабатываете iOS-приложения?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Мы разрабатываем нативные приложения на Swift и современном фреймворке SwiftUI, что даёт максимальную производительность и полный доступ к возможностям iPhone и iPad. При поддержке и доработке legacy-проектов используем Objective-C. Для хранения данных применяем Core Data, для сетевого слоя — URLSession и современные async/await.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Вы публикуете приложение в App Store?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, мы полностью берём на себя публикацию в App Store. Помогаем оформить аккаунт Apple Developer, готовим иконки, скриншоты и описание, настраиваем App Store Connect. Приложение проектируем строго по Human Interface Guidelines, поэтому оно проходит модерацию Apple с первого раза. Перед релизом организуем закрытое тестирование через TestFlight.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Работает ли приложение на iPhone и iPad одновременно?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Да, мы создаём универсальные приложения, которые адаптируются под экраны iPhone и iPad с помощью адаптивной вёрстки SwiftUI и Auto Layout. Для iPad реализуем расширенные сценарии: многооконность, Split View, поддержку Apple Pencil и трекпада. Это тарифицируется по пакету «Бизнес iOS» и выше.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-item__question">
-                    <h4>Почему стоит делать приложение именно под iOS?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="faq-item__answer">
-                    <p>Аудитория iOS отличается высокой платёжеспособностью: пользователи iPhone чаще совершают покупки внутри приложений и оформляют подписки. Экосистема Apple предлагает удобные и безопасные инструменты монетизации — Apple Pay, In-App Purchase, Sign in with Apple. Если ваш продукт ориентирован на премиум-сегмент, старт с iOS обычно даёт лучшую окупаемость.</p>
-                </div>
-            </div>
+            @include('partials.apps.faq')
         </div>
     </div>
 </section>
@@ -804,7 +629,7 @@
         <p class="seo-content__source">
             Источник статистики: Sensor Tower (ранее data.ai / App Annie),
             <a href="https://sensortower.com/state-of-mobile-2025" target="_blank" rel="nofollow noopener">отчёт «State of Mobile»</a>.
-            Материал обновлён 14 июля 2026 года.
+            Материал обновлён {{ \Illuminate\Support\Carbon::parse($updated)->locale('ru')->translatedFormat('j F Y') }} года.
         </p>
     </div>
 </section>
