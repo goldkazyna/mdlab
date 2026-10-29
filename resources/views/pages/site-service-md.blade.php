@@ -22,7 +22,7 @@
 ## {!! $h['types'][2] !!}
 
 @foreach($types as $item)
-- **{!! $item['name'] !!}** — {!! $item['text'] !!}
+- **{!! $item['name'] !!}** — {!! $item['text'] !!}{{ !empty($item['url']) ? ' Подробнее: https://mdlab.kz/' . $item['url'] : '' }}
 @endforeach
 
 ## {!! $h['includes'][2] !!}

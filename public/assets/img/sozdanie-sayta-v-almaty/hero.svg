@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6f3ff"/>
+      <stop offset="1" stop-color="#eefaff"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0098D6"/>
+      <stop offset="1" stop-color="#0a5f8f"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0098D6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="260" r="240" fill="url(#bg)"/>
+
+  <!-- Окно браузера с сайтом -->
+  <g filter="url(#sh)">
+    <rect x="40" y="70" width="420" height="320" rx="16" fill="#fff"/>
+  </g>
+  <rect x="40" y="70" width="420" height="34" rx="16" fill="#f6f9fb"/>
+  <rect x="40" y="90" width="420" height="14" fill="#f6f9fb"/>
+  <circle cx="62" cy="87" r="5" fill="#ff5f57"/>
+  <circle cx="78" cy="87" r="5" fill="#febc2e"/>
+  <circle cx="94" cy="87" r="5" fill="#28c840"/>
+  <rect x="120" y="79" width="200" height="16" rx="8" fill="#fff"/>
+  <text x="132" y="91" font-size="9" fill="#666">https://ваш-сайт.kz</text>
+
+  <!-- Меню -->
+  <rect x="60" y="118" width="60" height="10" rx="5" fill="#1a1a2e"/>
+  <g fill="#c3d2dc">
+    <rect x="250" y="120" width="34" height="6" rx="3"/>
+    <rect x="292" y="120" width="34" height="6" rx="3"/>
+    <rect x="334" y="120" width="34" height="6" rx="3"/>
+  </g>
+  <rect x="384" y="114" width="58" height="18" rx="9" fill="#22b35e"/>
+
+  <!-- Первый экран -->
+  <rect x="60" y="144" width="380" height="120" rx="12" fill="url(#core)"/>
+  <rect x="78" y="166" width="170" height="14" rx="7" fill="#fff"/>
+  <rect x="78" y="188" width="130" height="14" rx="7" fill="#fff"/>
+  <rect x="78" y="214" width="150" height="7" rx="3.5" fill="#fff" fill-opacity=".6"/>
+  <rect x="78" y="236" width="86" height="18" rx="9" fill="#ff5c7a"/>
+  <circle cx="370" cy="204" r="40" fill="#fff" fill-opacity=".15"/>
+  <path d="M352 204 L366 218 L392 190" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Карточки услуг -->
+  <g>
+    <rect x="60" y="278" width="118" height="92" rx="10" fill="#f2f7fa"/>
+    <rect x="191" y="278" width="118" height="92" rx="10" fill="#f2f7fa"/>
+    <rect x="322" y="278" width="118" height="92" rx="10" fill="#f2f7fa"/>
+    <circle cx="82" cy="300" r="10" fill="#0098D6" fill-opacity=".25"/>
+    <circle cx="213" cy="300" r="10" fill="#0098D6" fill-opacity=".25"/>
+    <circle cx="344" cy="300" r="10" fill="#0098D6" fill-opacity=".25"/>
+    <g fill="#c3d2dc">
+      <rect x="72" y="320" width="90" height="7" rx="3.5"/>
+      <rect x="72" y="334" width="70" height="6" rx="3"/>
+      <rect x="203" y="320" width="90" height="7" rx="3.5"/>
+      <rect x="203" y="334" width="70" height="6" rx="3"/>
+      <rect x="334" y="320" width="90" height="7" rx="3.5"/>
+      <rect x="334" y="334" width="70" height="6" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Телефон с мобильной версией -->
+  <g filter="url(#sh)">
+    <rect x="430" y="150" width="140" height="270" rx="22" fill="#1a1a2e"/>
+  </g>
+  <rect x="438" y="158" width="124" height="254" rx="16" fill="#fff"/>
+  <rect x="482" y="164" width="36" height="6" rx="3" fill="#1a1a2e"/>
+  <rect x="448" y="182" width="104" height="80" rx="10" fill="url(#core)"/>
+  <rect x="458" y="198" width="70" height="9" rx="4.5" fill="#fff"/>
+  <rect x="458" y="213" width="54" height="9" rx="4.5" fill="#fff"/>
+  <rect x="458" y="236" width="50" height="14" rx="7" fill="#ff5c7a"/>
+  <g fill="#c3d2dc">
+    <rect x="448" y="274" width="104" height="7" rx="3.5"/>
+    <rect x="448" y="288" width="80" height="7" rx="3.5"/>
+    <rect x="448" y="306" width="104" height="40" rx="8" fill="#f2f7fa"/>
+    <rect x="448" y="354" width="104" height="40" rx="8" fill="#f2f7fa"/>
+  </g>
+  <rect x="448" y="372" width="104" height="22" rx="11" fill="#22b35e"/>
+  <text x="500" y="387" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">WhatsApp</text>
+
+  <!-- Плашка: сайт запущен -->
+  <g filter="url(#sh)">
+    <rect x="70" y="414" width="250" height="64" rx="14" fill="#fff"/>
+    <circle cx="102" cy="446" r="18" fill="#22b35e"/>
+    <path d="M93 446 L99.5 452.5 L111 440" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="130" y="441" font-size="13" font-weight="700" fill="#1a1a2e">Сайт запущен</text>
+    <text x="130" y="460" font-size="11" fill="#666">SEO · адаптив · аналитика</text>
+  </g>
+</svg>

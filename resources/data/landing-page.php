@@ -8,6 +8,7 @@ $updated = '2026-10-28';
 // Тексты страницы: заголовки, блок ответа, SEO-текст
 $page = [
     'slug' => 'landing-page',
+    'parent' => ['sozdanie-sayta-v-almaty', 'Создание сайтов'],
     'crumb' => 'Создание Landing Page',
     'h1' => 'Создание Landing Page в&nbsp;Алматы',
     'subtitle' => 'Продающий лендинг под рекламу: структура, тексты, дизайн и&nbsp;запуск — от&nbsp;200&nbsp;000&nbsp;₸ за&nbsp;5–10&nbsp;дней',

@@ -11,6 +11,13 @@
     $price = fn ($p) => ($p['from'] ? 'от ' : '') . number_format($p['price'], 0, '', ' ');
     $h = $page['headings'];
 
+    // Родительский раздел для хлебных крошек: [slug, название], например лендинг → «Создание сайтов»
+    $crumbs = [['Главная', 'https://mdlab.kz/']];
+    if (!empty($page['parent'])) {
+        $crumbs[] = [$page['parent'][1], 'https://mdlab.kz/' . $page['parent'][0]];
+    }
+    $crumbs[] = [$page['crumb'], $pageUrl];
+
     $schemas = [
         [
             '@context' => 'https://schema.org',
@@ -96,10 +103,12 @@
         [
             '@context' => 'https://schema.org',
             '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Главная', 'item' => 'https://mdlab.kz/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => $page['crumb'], 'item' => $pageUrl],
-            ],
+            'itemListElement' => array_map(fn ($c, $i) => [
+                '@type' => 'ListItem',
+                'position' => $i + 1,
+                'name' => $c[0],
+                'item' => $c[1],
+            ], $crumbs, array_keys($crumbs)),
         ],
     ];
 @endphp
@@ -122,6 +131,9 @@
     <div class="container">
         <ol class="breadcrumbs__list">
             <li><a href="https://mdlab.kz">Главная</a></li>
+            @if(!empty($page['parent']))
+            <li><span class="breadcrumbs__sep">/</span> <a href="/{{ $page['parent'][0] }}">{{ $page['parent'][1] }}</a></li>
+            @endif
             <li><span class="breadcrumbs__sep">/</span> <span aria-current="page">{{ $page['crumb'] }}</span></li>
         </ol>
     </div>
@@ -190,7 +202,7 @@
                 <div class="type-card__icon">
                     <i class="{{ $item['icon'] }}"></i>
                 </div>
-                <h3>{{ $item['name'] }}</h3>
+                <h3>@if(!empty($item['url']))<a href="/{{ $item['url'] }}">{{ $item['name'] }}</a>@else{{ $item['name'] }}@endif</h3>
                 <p>{{ $item['text'] }}</p>
             </div>
             @endforeach

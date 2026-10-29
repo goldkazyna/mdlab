@@ -14,6 +14,7 @@
 <!-- Основные услуги (высокий приоритет) -->
 <url>
 	<loc>https://mdlab.kz/sozdanie-sayta-v-almaty</loc>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
 </url>
