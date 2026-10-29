@@ -83,6 +83,7 @@
                         </a>
                         <ul class="nav-main__submenu">
                             <li class="nav-main__subitem"><a itemprop="url" href="/kontekstnaya-reklama" class="nav-main__sublink">Контекстная реклама</a></li>
+                            <li class="nav-main__subitem"><a itemprop="url" href="/nastroyka-yandeks-direkt" class="nav-main__sublink">Яндекс Директ</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/reklama-v-chatgpt" class="nav-main__sublink">Реклама в ChatGPT</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/prodvighenie-v-socialynyh-setyah" class="nav-main__sublink">Продвижение в социальных сетях</a></li>
                             <li class="nav-main__subitem"><a itemprop="url" href="/seo-prodvighenie" class="nav-main__sublink">SEO - продвижение</a></li>

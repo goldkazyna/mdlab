@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" font-family="Montserrat, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6f3ff"/>
+      <stop offset="1" stop-color="#eefaff"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0098D6" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="260" r="240" fill="url(#bg)"/>
+
+  <!-- Окно поисковой выдачи -->
+  <g filter="url(#sh)">
+    <rect x="40" y="50" width="355" height="410" rx="16" fill="#fff"/>
+  </g>
+  <rect x="40" y="50" width="355" height="34" rx="16" fill="#f6f9fb"/>
+  <rect x="40" y="70" width="355" height="14" fill="#f6f9fb"/>
+  <circle cx="62" cy="67" r="5" fill="#ff5f57"/>
+  <circle cx="78" cy="67" r="5" fill="#febc2e"/>
+  <circle cx="94" cy="67" r="5" fill="#28c840"/>
+
+  <!-- Строка поиска -->
+  <rect x="60" y="100" width="315" height="38" rx="10" fill="#fff" stroke="#fc3f1d" stroke-width="2"/>
+  <text x="76" y="124" font-size="12" fill="#1a1a2e">ремонт кондиционеров алматы</text>
+  <rect x="311" y="104" width="60" height="30" rx="8" fill="#fc3f1d"/>
+  <text x="341" y="123" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">Найти</text>
+
+  <!-- Рекламное объявление 1 -->
+  <rect x="60" y="154" width="315" height="96" rx="12" fill="#fffaf0" stroke="#ffd36b" stroke-width="1.5"/>
+  <rect x="72" y="166" width="54" height="16" rx="8" fill="#1a1a2e" fill-opacity=".08"/>
+  <text x="99" y="178" font-size="9" font-weight="700" fill="#1a1a2e" text-anchor="middle">Реклама</text>
+  <text x="72" y="200" font-size="13" font-weight="700" fill="#0a5f8f">Ремонт кондиционеров за 1 день</text>
+  <text x="72" y="216" font-size="10" fill="#22b35e">cool-service.kz › remont</text>
+  <text x="72" y="230" font-size="10" fill="#666">Выезд мастера по Алматы за 1 час</text>
+  <g font-size="9" fill="#0a5f8f">
+    <text x="72" y="244">Цены</text>
+    <text x="106" y="244">Заправка</text>
+    <text x="156" y="244">Контакты</text>
+  </g>
+
+  <!-- Рекламное объявление 2 -->
+  <rect x="60" y="262" width="315" height="74" rx="12" fill="#fff" stroke="#e3ebf0" stroke-width="1.5"/>
+  <rect x="72" y="274" width="54" height="16" rx="8" fill="#1a1a2e" fill-opacity=".08"/>
+  <text x="99" y="286" font-size="9" font-weight="700" fill="#1a1a2e" text-anchor="middle">Реклама</text>
+  <rect x="72" y="298" width="220" height="9" rx="4.5" fill="#0098D6" fill-opacity=".55"/>
+  <rect x="72" y="316" width="250" height="7" rx="3.5" fill="#c3d2dc"/>
+
+  <!-- Органические результаты -->
+  <g fill="#c3d2dc">
+    <rect x="72" y="356" width="240" height="9" rx="4.5" fill="#0098D6" fill-opacity=".3"/>
+    <rect x="72" y="374" width="280" height="7" rx="3.5"/>
+    <rect x="72" y="388" width="270" height="7" rx="3.5"/>
+    <rect x="72" y="412" width="200" height="9" rx="4.5" fill="#0098D6" fill-opacity=".3"/>
+    <rect x="72" y="430" width="270" height="7" rx="3.5"/>
+  </g>
+
+  <!-- Статистика кампании -->
+  <g filter="url(#sh)">
+    <rect x="410" y="110" width="160" height="160" rx="14" fill="#fff"/>
+  </g>
+  <text x="426" y="136" font-size="12" font-weight="700" fill="#1a1a2e">Кампания</text>
+  <g font-size="10" fill="#666">
+    <text x="426" y="158">Клики</text>
+    <text x="426" y="180">CTR</text>
+    <text x="426" y="202">Заявки</text>
+  </g>
+  <g font-size="11" font-weight="700" fill="#1a1a2e" text-anchor="end">
+    <text x="554" y="158">2 316</text>
+    <text x="554" y="180">7,8%</text>
+    <text x="554" y="202" fill="#22b35e">142</text>
+  </g>
+  <path d="M426 252 L452 244 L478 246 L504 232 L530 228 L554 216" fill="none" stroke="#fc3f1d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Новая заявка -->
+  <g filter="url(#sh)">
+    <rect x="330" y="420" width="240" height="64" rx="14" fill="#fff"/>
+    <circle cx="362" cy="452" r="18" fill="#22b35e"/>
+    <path d="M353 452 L359.5 458.5 L371 446" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="390" y="447" font-size="13" font-weight="700" fill="#1a1a2e">Новая заявка</text>
+    <text x="390" y="466" font-size="11" fill="#666">источник: yandex / cpc</text>
+  </g>
+</svg>

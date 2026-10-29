@@ -154,6 +154,12 @@
     <changefreq>weekly</changefreq>
 </url>
 <url>
+	<loc>https://mdlab.kz/nastroyka-yandeks-direkt</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
 	<loc>https://mdlab.kz/reklama-v-chatgpt</loc>
     <lastmod>2026-10-28</lastmod>
     <priority>0.8</priority>

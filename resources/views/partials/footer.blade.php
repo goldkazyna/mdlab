@@ -49,6 +49,8 @@
                     <ul class="nav-footer__list">
                         <li class="nav-footer__item"><a href="/kontekstnaya-reklama" class="nav-footer__link"><i
                                         class="fa-solid fa-angle-right"></i>Контекстная реклама</a></li>
+                        <li class="nav-footer__item"><a href="/nastroyka-yandeks-direkt" class="nav-footer__link"><i
+                                        class="fa-solid fa-angle-right"></i>Яндекс Директ</a></li>
                         <li class="nav-footer__item"><a href="/reklama-v-chatgpt" class="nav-footer__link"><i
                                         class="fa-solid fa-angle-right"></i>Реклама в ChatGPT</a></li>
                         <li class="nav-footer__item"><a href="/seo-prodvighenie" class="nav-footer__link"><i
