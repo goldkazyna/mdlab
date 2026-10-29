@@ -85,7 +85,7 @@ Route::get('/dorabotka-sayta', function () {
 
 Route::get('/podderghka-sayta', function () {
     return view('pages.podderghka-sayta', [
-        'title' => 'Поддержка сайта',
+        'title' => 'Техническая поддержка сайта в Алматы — обновления, бэкапы, доработки | MD Lab',
         'description' => 'Техническая поддержка сайта в Алматы — обеспечим круглосуточную корректную работу вашего ресурса. Пользуемся только актуальными IT-инструментами.'
     ]);
 });
@@ -246,6 +246,7 @@ foreach ($appPages as $slug => $meta) {
 }
 
 
+Route::get('/sitemap-articles.xml', [ArticleController::class, 'sitemap']);
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/articles/{slug}', [ArticleController::class, 'show']);
 

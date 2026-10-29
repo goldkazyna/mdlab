@@ -210,7 +210,7 @@
             <div class="error-page__links-list">
                 <a href="/landing-page">Landing Page</a>
                 <a href="/internet-magazin">Интернет-магазин</a>
-                <a href="/smm">SMM продвижение</a>
+                <a href="/prodvighenie-v-socialynyh-setyah">SMM продвижение</a>
                 <a href="/articles">Статьи</a>
             </div>
         </div>

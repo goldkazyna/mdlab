@@ -309,28 +309,26 @@
 @endpush
 
 @push('schema')
-<script type="application/ld+json">
-{
-    "@@context": "https://schema.org",
-    "@@type": "Article",
-    "headline": "{{ $article->title }}",
-    "description": "{{ $article->description }}",
-    "datePublished": "{{ $article->published_at->toIso8601String() }}",
-    "dateModified": "{{ $article->updated_at->toIso8601String() }}",
-    "author": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab"
-    },
-    "publisher": {
-        "@@type": "Organization",
-        "name": "Modern Design Lab",
-        "logo": {
-            "@@type": "ImageObject",
-            "url": "https://mdlab.kz/assets/img/logo.png"
-        }
-    }
-}
-</script>
+@php
+    $articleSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Article',
+        'headline' => $article->title,
+        'description' => trim(preg_replace('/\s+/u', ' ', strip_tags($article->meta_description ?? $article->description))),
+        'datePublished' => $article->published_at->toIso8601String(),
+        'dateModified' => $article->updated_at->toIso8601String(),
+        'mainEntityOfPage' => url()->current(),
+        'inLanguage' => 'ru',
+        'author' => ['@type' => 'Organization', 'name' => 'Modern Design Lab', 'url' => 'https://mdlab.kz/'],
+        'publisher' => [
+            '@type' => 'Organization',
+            '@id' => 'https://mdlab.kz/#organization',
+            'name' => 'Modern Design Lab',
+            'logo' => ['@type' => 'ImageObject', 'url' => 'https://mdlab.kz/assets/img/logo.png'],
+        ],
+    ];
+@endphp
+<script type="application/ld+json">{!! json_encode($articleSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
 @endpush
 
 @section('content')

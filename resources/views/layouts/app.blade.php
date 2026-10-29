@@ -17,7 +17,7 @@
     <meta name="author" content="MD Lab">
     <meta name="copyright" content="mdlab.kz">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mdlab.kz{{ request()->getPathInfo() }}">
+    <link rel="canonical" href="{{ $canonical ?? 'https://mdlab.kz' . request()->getPathInfo() }}">
 
     <!-- ========================================
          3. SEO: ВЕРИФИКАЦИЯ ПОИСКОВИКОВ
@@ -28,8 +28,8 @@
     <!-- ========================================
          4. SEO: OPEN GRAPH (Facebook, Instagram, LinkedIn)
     ======================================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mdlab.kz{{ request()->getPathInfo() }}">
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+    <meta property="og:url" content="{{ $canonical ?? 'https://mdlab.kz' . request()->getPathInfo() }}">
     <meta property="og:title" content="{{ $title ?? '' }}">
     <meta property="og:description" content="{{ $description ?? '' }}">
     <meta property="og:image" content="https://mdlab.kz/assets/img/og-image.jpg">
@@ -54,17 +54,18 @@
 	{
 		"@@context": "https://schema.org",
 		"@@type": "Organization",
+		"@@id": "https://mdlab.kz/#organization",
 		"name": "Modern Design Lab",
 		"alternateName": "MD Lab",
 		"url": "https://mdlab.kz/",
 		"logo": "https://mdlab.kz/assets/img/logo.png",
 		"description": "Профессиональная разработка сайтов и веб-дизайн в Алматы. 10+ лет опыта, 300+ проектов.",
 		"foundingDate": "2014",
-		"email": "info@@mdlab.kz",
+		"email": "info{{ '@' }}mdlab.kz",
 		"telephone": "+77774333822",
 		"address": {
 			"@@type": "PostalAddress",
-			"streetAddress": "ул. Назарбаева 50, 2 эт. 209 оф.",
+			"streetAddress": "ул. Назарбаева 50, офис 209",
 			"addressLocality": "Алматы",
 			"postalCode": "050030",
 			"addressCountry": "KZ"
@@ -89,6 +90,7 @@
 		"name": "Modern Design Lab - Разработка сайтов в Алматы",
 		"image": "https://mdlab.kz/assets/img/logo.png",
 		"@@id": "https://mdlab.kz",
+		"parentOrganization": {"@@id": "https://mdlab.kz/#organization"},
 		"url": "https://mdlab.kz",
 		"telephone": "+77774333822",
 		"priceRange": "$$",

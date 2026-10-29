@@ -76,8 +76,6 @@ Allow: /
 
 # Указываем sitemap
 Sitemap: https://mdlab.kz/sitemap.xml
+Sitemap: https://mdlab.kz/sitemap-articles.xml
 
 # LLM-описание сайта для ИИ: https://mdlab.kz/llms.txt
-
-# Дополнительно для Яндекса
-Host: mdlab.kz

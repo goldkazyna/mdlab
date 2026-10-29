@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -8,7 +8,7 @@
 	<loc>https://mdlab.kz/</loc>
 	<priority>1.0</priority>
     <changefreq>daily</changefreq>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-10-15</lastmod>
 </url>
 
 <!-- Основные услуги (высокий приоритет) -->
@@ -50,6 +50,7 @@
 </url>
 <url>
 	<loc>https://mdlab.kz/razrabotka-telegram-botov</loc>
+    <lastmod>2026-10-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
 </url>
@@ -151,6 +152,7 @@
 <!-- Продвижение -->
 <url>
 	<loc>https://mdlab.kz/kontekstnaya-reklama</loc>
+    <lastmod>2026-10-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
 </url>
@@ -168,6 +170,7 @@
 </url>
 <url>
 	<loc>https://mdlab.kz/seo-prodvighenie</loc>
+    <lastmod>2026-01-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
 </url>
@@ -197,6 +200,7 @@
 </url>
 <url>
 	<loc>https://mdlab.kz/raskrutka-saytov-v-almaty</loc>
+    <lastmod>2026-01-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
 </url>
@@ -204,99 +208,43 @@
 <!-- Дополнительные услуги -->
 <url>
 	<loc>https://mdlab.kz/dorabotka-sayta</loc>
+    <lastmod>2026-01-15</lastmod>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
 </url>
 <url>
 	<loc>https://mdlab.kz/podderghka-sayta</loc>
+    <lastmod>2026-01-15</lastmod>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
 </url>
 <url>
 	<loc>https://mdlab.kz/tehnicheskoe-zadaniya</loc>
+    <lastmod>2026-01-15</lastmod>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
 </url>
 
-<!-- Раздел статей -->
+<!-- Контакты и портфолио -->
+<url>
+	<loc>https://mdlab.kz/kontakty</loc>
+    <lastmod>2026-10-20</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://mdlab.kz/gallery</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+
+<!-- Раздел статей (сами статьи — в sitemap-articles.xml, строится из базы) -->
 <url>
 	<loc>https://mdlab.kz/articles</loc>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
-</url>
-
-<!-- Статьи (средний приоритет) -->
-<url>
-	<loc>https://mdlab.kz/articles/kontekstnaya-reklama-v-almaty-v-2025-godu:-chto-eto-i-kak-rabotaet</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/landing-page--zachem-on-nughen</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/preimuschestva-korporativnogo-sayta</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/kak-pravilyno-sozdavaty-dizayn-sayta</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/prodaghi-cherez-sayt</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/dlya-chego-nughna-kontekstnaya-reklama</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-</url>
-
-<!-- Старые статьи (низкий приоритет) -->
-<url>
-	<loc>https://mdlab.kz/articles/raskruchivaem-internet-magazin--nichego-ne-zabyli</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/osobennosti-optimizacii-sayta-pod-yandeks</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/professionalynaya-optimizaciya-veb-saytov</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/psihologiya-cveta-i-dizayn-kontenta-sayta</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/kachestvennoe-sozdanie-saytov-v-kazahstane-nedorogo</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/usluga-sozdaniya-saytov-v-kazahstane</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/kachestvennoe-sozdanie-saytov-v-almaty</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
-</url>
-<url>
-	<loc>https://mdlab.kz/articles/sozdanie-prodayuschih-saytov-v-kazahstane-nedorogo</loc>
-    <priority>0.4</priority>
-    <changefreq>yearly</changefreq>
 </url>
 
 </urlset>

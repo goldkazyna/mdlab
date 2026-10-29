@@ -75,7 +75,7 @@
                      data-aos-duration="1000" data-aos-delay="200"><img src="assets/img/bots/bots-hero.png" alt="">
                 </div>
                 <div class="bots-hero__content">
-                    <h1 class="bots-hero__title">Разработка<br>Telegram-ботов&nbsp;в&nbsp;Алматы</h1>
+                    <h1 class="bots-hero__title">Разработка <br>Telegram-ботов&nbsp;в&nbsp;Алматы</h1>
                     <p class="bots-hero__subtitle">автоматизация бизнеса с mdlab</p>
 
                     <div class="bots-hero__contact">
