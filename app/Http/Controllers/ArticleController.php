@@ -52,10 +52,25 @@ class ArticleController extends Controller
         $articles = Article::active()
             ->published()
             ->orderBy('published_at', 'desc')
-            ->get(['slug', 'updated_at', 'published_at']);
+            ->get();
 
-        return response()
-            ->view('sitemap-articles', ['articles' => $articles])
+        $lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
+
+        foreach ($articles as $article) {
+            $date = $article->updated_at ?? $article->published_at;
+            $lines[] = '<url>';
+            $lines[] = '    <loc>' . htmlspecialchars('https://mdlab.kz/articles/' . $article->slug, ENT_XML1) . '</loc>';
+            if ($date) {
+                $lines[] = '    <lastmod>' . $date->toDateString() . '</lastmod>';
+            }
+            $lines[] = '    <changefreq>monthly</changefreq>';
+            $lines[] = '    <priority>0.6</priority>';
+            $lines[] = '</url>';
+        }
+
+        $lines[] = '</urlset>';
+
+        return response(implode(PHP_EOL, $lines) . PHP_EOL)
             ->header('Content-Type', 'application/xml; charset=UTF-8');
     }
 
