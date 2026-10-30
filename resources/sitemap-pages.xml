@@ -46,7 +46,7 @@
 	<loc>https://mdlab.kz/razrabotka-mobilnyh-prilozheniy</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
 </url>
 <url>
 	<loc>https://mdlab.kz/razrabotka-telegram-botov</loc>
@@ -239,12 +239,13 @@
     <changefreq>monthly</changefreq>
 </url>
 
-<!-- Раздел статей (сами статьи — в sitemap-articles.xml, строится из базы) -->
+<!-- Раздел статей; сами статьи дописывает ArticleController::sitemapIndex из базы и resources/articles -->
 <url>
 	<loc>https://mdlab.kz/articles</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
 </url>
 
+<!-- ARTICLES -->
 </urlset>

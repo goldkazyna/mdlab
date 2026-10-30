@@ -54,14 +54,33 @@ class ArticleController extends Controller
         ]);
     }
 
-    // Карта сайта статей /sitemap-articles.xml — строится из базы, поэтому новые статьи попадают в неё сами
+    // Основная карта сайта /sitemap.xml: страницы услуг из resources/sitemap-pages.xml + все статьи,
+    // поэтому новые статьи (из базы и из resources/articles) попадают в неё сами
+    public function sitemapMain()
+    {
+        $xml = str_replace('<!-- ARTICLES -->', implode(PHP_EOL, self::articleUrls()), file_get_contents(resource_path('sitemap-pages.xml')));
+
+        return response($xml)->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    // Отдельная карта статей /sitemap-articles.xml — оставлена, т.к. могла быть добавлена в вебмастерах
     public function sitemap()
     {
-        $articles = self::allArticles();
+        $lines = array_merge(
+            ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'],
+            self::articleUrls(),
+            ['</urlset>']
+        );
 
-        $lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
+        return response(implode(PHP_EOL, $lines) . PHP_EOL)
+            ->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
 
-        foreach ($articles as $article) {
+    private static function articleUrls(): array
+    {
+        $lines = [];
+
+        foreach (self::allArticles() as $article) {
             $date = $article->updated_at ?? $article->published_at;
             $lines[] = '<url>';
             $lines[] = '    <loc>' . htmlspecialchars('https://mdlab.kz/articles/' . $article->slug, ENT_XML1) . '</loc>';
@@ -73,10 +92,7 @@ class ArticleController extends Controller
             $lines[] = '</url>';
         }
 
-        $lines[] = '</urlset>';
-
-        return response(implode(PHP_EOL, $lines) . PHP_EOL)
-            ->header('Content-Type', 'application/xml; charset=UTF-8');
+        return $lines;
     }
 
     // Статьи из базы и из кода вместе, новые сверху

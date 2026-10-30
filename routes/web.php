@@ -246,6 +246,7 @@ foreach ($appPages as $slug => $meta) {
 }
 
 
+Route::get('/sitemap.xml', [ArticleController::class, 'sitemapMain']);
 Route::get('/sitemap-articles.xml', [ArticleController::class, 'sitemap']);
 Route::get('/articles', [ArticleController::class, 'index']);
 // Markdown-версия для ИИ-ассистентов — только у статей из кода (resources/articles)
