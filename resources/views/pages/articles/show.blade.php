@@ -225,6 +225,20 @@
     font-weight: 600;
 }
 
+@media (max-width: 576px) {
+    .article-content table {
+        display: block;
+        overflow-x: auto;
+        font-size: 14px;
+    }
+
+    .article-content table th,
+    .article-content table td {
+        padding: 10px;
+        min-width: 120px;
+    }
+}
+
 .article-content code {
     background: #f0f0f0;
     padding: 3px 8px;
@@ -327,8 +341,36 @@
             'logo' => ['@type' => 'ImageObject', 'url' => 'https://mdlab.kz/assets/img/logo.png'],
         ],
     ];
+    if ($article->image) {
+        $articleSchema['image'] = 'https://mdlab.kz' . $article->image_url;
+    }
+    $breadcrumbSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'Главная', 'item' => 'https://mdlab.kz/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => 'Статьи', 'item' => 'https://mdlab.kz/articles'],
+            ['@type' => 'ListItem', 'position' => 3, 'name' => $article->title, 'item' => url()->current()],
+        ],
+    ];
+    $faq = $article->faq ?: [];
 @endphp
 <script type="application/ld+json">{!! json_encode($articleSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
+<script type="application/ld+json">{!! json_encode($breadcrumbSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
+@if($faq)
+<script type="application/ld+json">{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => array_map(fn ($item) => [
+        '@type' => 'Question',
+        'name' => $item['q'],
+        'acceptedAnswer' => ['@type' => 'Answer', 'text' => $item['a']],
+    ], $faq),
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}</script>
+@endif
+@if($article->fromFile)
+<link rel="alternate" type="text/markdown" href="https://mdlab.kz/articles/{{ $article->slug }}.md">
+@endif
 @endpush
 
 @section('content')
@@ -349,12 +391,20 @@
 
             @if($article->image)
             <div class="article-image">
-                <img src="{{ $article->image_url }}" alt="{{ $article->title }}">
+                <img src="{{ $article->image_url }}" alt="{{ $article->title }}" fetchpriority="high">
             </div>
             @endif
 
             <div class="article-content">
                 {!! $article->content !!}
+
+                @if($faq)
+                <h2>Частые вопросы</h2>
+                @foreach($faq as $item)
+                <h3>{{ $item['q'] }}</h3>
+                <p>{{ $item['a'] }}</p>
+                @endforeach
+                @endif
             </div>
 
             <div class="article-bottom">

@@ -248,6 +248,15 @@ foreach ($appPages as $slug => $meta) {
 
 Route::get('/sitemap-articles.xml', [ArticleController::class, 'sitemap']);
 Route::get('/articles', [ArticleController::class, 'index']);
+// Markdown-версия для ИИ-ассистентов — только у статей из кода (resources/articles)
+Route::get('/articles/{slug}.md', function (string $slug) {
+    $article = App\Support\FileArticles::find($slug) ?? abort(404);
+    $html = view('pages.articles.show', ['title' => $article->title, 'description' => $article->description, 'article' => $article])
+        ->renderSections()['content'];
+
+    return response(PageMarkdown::fromHtml($html, "https://mdlab.kz/articles/{$slug}", $article->updated_at->toDateString()))
+        ->header('Content-Type', 'text/markdown; charset=UTF-8');
+})->where('slug', '[a-z0-9-]+');
 Route::get('/articles/{slug}', [ArticleController::class, 'show']);
 
 Route::post('/api/rating', [RatingController::class, 'store']);

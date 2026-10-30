@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Support\FileArticles;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class ArticleController extends Controller
@@ -10,10 +13,15 @@ class ArticleController extends Controller
     // Список статей
     public function index()
     {
-        $articles = Article::active()
-            ->published()
-            ->orderBy('published_at', 'desc')
-            ->paginate(10);
+        $all = self::allArticles();
+        $current = LengthAwarePaginator::resolveCurrentPage();
+        $articles = new LengthAwarePaginator(
+            $all->forPage($current, 10)->values(),
+            $all->count(),
+            10,
+            $current,
+            ['path' => '/articles']
+        );
 
         // Несуществующая страница пагинации — 404, а не пустой дубль списка
         if ($articles->currentPage() > max(1, $articles->lastPage())) {
@@ -33,7 +41,7 @@ class ArticleController extends Controller
     // Отдельная статья
     public function show($slug)
     {
-        $article = Article::where('slug', $slug)
+        $article = FileArticles::find($slug) ?? Article::where('slug', $slug)
             ->active()
             ->published()
             ->firstOrFail();
@@ -49,10 +57,7 @@ class ArticleController extends Controller
     // Карта сайта статей /sitemap-articles.xml — строится из базы, поэтому новые статьи попадают в неё сами
     public function sitemap()
     {
-        $articles = Article::active()
-            ->published()
-            ->orderBy('published_at', 'desc')
-            ->get();
+        $articles = self::allArticles();
 
         $lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
 
@@ -72,6 +77,15 @@ class ArticleController extends Controller
 
         return response(implode(PHP_EOL, $lines) . PHP_EOL)
             ->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    // Статьи из базы и из кода вместе, новые сверху
+    private static function allArticles(): Collection
+    {
+        return Article::active()->published()->get()
+            ->concat(FileArticles::all())
+            ->sortByDesc('published_at')
+            ->values();
     }
 
     // Description из базы бывает началом текста статьи, обрезанным посреди слова: убираем теги и переносы

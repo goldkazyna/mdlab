@@ -570,6 +570,24 @@
     </div>
 </section>
 
+<!-- Статьи о разработке приложений (resources/articles) -->
+<section class="related-services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Полезные статьи о разработке приложений</h2>
+            <p>Отвечаем на вопросы, которые задают перед стартом проекта</p>
+        </div>
+        <div class="related-grid">
+            <a href="https://mdlab.kz/articles/skolko-stoit-razrabotka-mobilnogo-prilozheniya" class="related-link"><i class="fa-solid fa-calculator"></i> Сколько стоит разработка приложения</a>
+            <a href="https://mdlab.kz/articles/etapy-razrabotki-mobilnogo-prilozheniya" class="related-link"><i class="fa-solid fa-list-check"></i> Этапы разработки приложения</a>
+            <a href="https://mdlab.kz/articles/nativnaya-ili-krossplatformennaya-razrabotka" class="related-link"><i class="fa-solid fa-code"></i> Нативная или кроссплатформенная</a>
+            <a href="https://mdlab.kz/articles/chto-takoe-mvp-prilozheniya" class="related-link"><i class="fa-solid fa-rocket"></i> Что такое MVP приложения</a>
+            <a href="https://mdlab.kz/articles/kak-opublikovat-prilozhenie-v-app-store-i-google-play" class="related-link"><i class="fa-solid fa-store"></i> Публикация в App Store и Google Play</a>
+            <a href="https://mdlab.kz/articles/sayt-ili-mobilnoe-prilozhenie" class="related-link"><i class="fa-solid fa-scale-balanced"></i> Сайт или мобильное приложение</a>
+        </div>
+    </div>
+</section>
+
 <!-- CTA -->
 <section class="mobile-cta">
     <div class="container">

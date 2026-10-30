@@ -35,8 +35,11 @@ class Article extends Model
 
     public function getImageUrlAttribute()
     {
-        return $this->image 
-            ? '/uploads/articles/' . $this->image 
-            : '/assets/img/logo.png';
+        if (! $this->image) {
+            return '/assets/img/logo.png';
+        }
+
+        // У статей из кода (App\Support\FileArticles) картинка лежит в public/assets и задаётся полным путём
+        return str_starts_with($this->image, '/') ? $this->image : '/uploads/articles/' . $this->image;
     }
 }

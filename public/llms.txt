@@ -22,6 +22,15 @@
 - [Приложение для ресторана и кафе](https://mdlab.kz/razrabotka-prilozheniya-dlya-restorana): Меню, онлайн-заказ, бронирование, программа лояльности. От 1 000 000 ₸. Пакеты: Старт от 1 000 000 ₸, Бизнес от 2 000 000 ₸, Премиум от 4 000 000 ₸. Полное описание и FAQ в markdown: https://mdlab.kz/razrabotka-prilozheniya-dlya-restorana.md
 - [Приложение с онлайн-оплатой](https://mdlab.kz/razrabotka-prilozheniya-s-oplatoy): Интеграция Kaspi, Halyk, эквайринг, безопасные платежи, подписки. От 1 250 000 ₸. Пакеты: Базовый от 1 250 000 ₸, Бизнес от 2 500 000 ₸, Премиум от 4 500 000 ₸. Полное описание и FAQ в markdown: https://mdlab.kz/razrabotka-prilozheniya-s-oplatoy.md
 
+Статьи о разработке приложений (у каждой есть markdown-версия: добавьте .md к адресу):
+
+- [Сколько стоит разработка мобильного приложения в Казахстане](https://mdlab.kz/articles/skolko-stoit-razrabotka-mobilnogo-prilozheniya): Цены от 750 000 ₸ за MVP до 3 500 000 ₸ и выше, из чего складывается стоимость, скрытые расходы.
+- [Этапы разработки мобильного приложения](https://mdlab.kz/articles/etapy-razrabotki-mobilnogo-prilozheniya): Аналитика и ТЗ, прототип, дизайн, разработка, тестирование, публикация, поддержка; сроки 1–6 месяцев.
+- [Нативная или кроссплатформенная разработка](https://mdlab.kz/articles/nativnaya-ili-krossplatformennaya-razrabotka): Swift и Kotlin против Flutter и React Native: стоимость, производительность, когда что выбирать.
+- [Что такое MVP приложения](https://mdlab.kz/articles/chto-takoe-mvp-prilozheniya): Как выбрать функции для минимальной версии, стоимость MVP от 750 000 ₸, типичные ошибки.
+- [Как опубликовать приложение в App Store и Google Play из Казахстана](https://mdlab.kz/articles/kak-opublikovat-prilozhenie-v-app-store-i-google-play): Аккаунты разработчика (99 $ в год и 25 $ разово), D-U-N-S, модерация, закрытое тестирование, причины отказа.
+- [Сайт или мобильное приложение](https://mdlab.kz/articles/sayt-ili-mobilnoe-prilozhenie): Когда бизнесу достаточно сайта, а когда нужно приложение; сравнение задач и стоимости.
+
 ## Создание сайтов
 
 - [Создание сайтов в Алматы](https://mdlab.kz/sozdanie-sayta-v-almaty): Обзор всех видов сайтов под ключ и цен: лендинг и сайт-визитка от 200 000 ₸ (5–10 дней), корпоративный сайт от 260 000 ₸ (3–6 недель), сайт-каталог от 340 000 ₸ (4–6 недель), интернет-магазин от 500 000 ₸ (5–8 недель), веб-сервис от 800 000 ₸. В стоимость входят структура под SEO, тексты, уникальный дизайн, адаптив, панель управления, аналитика и базовая SEO-настройка. Полное описание и FAQ в markdown: https://mdlab.kz/sozdanie-sayta-v-almaty.md

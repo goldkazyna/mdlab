@@ -17,6 +17,7 @@ class PageMarkdown
     private const SKIP_CLASSES = [
         'breadcrumbs', 'home-hero__contact', 'home-hero__img', 'particle-container', 'home-info',
         'mobile-cta__buttons', 'rating-section', 'btn', 'btn-primary-mobile', 'btn-outline-mobile', 'summary-date',
+        'article-top', 'article-bottom',
     ];
 
     private const SKIP_TAGS = ['script', 'style', 'svg', 'img', 'button', 'form', 'noscript', 'nav'];
@@ -63,6 +64,8 @@ class PageMarkdown
                 $this->push($this->inline($child));
             } elseif ($tag === 'li') {
                 $this->pushItem('- ' . $this->inline($child));
+            } elseif ($tag === 'table') {
+                $this->push($this->table($child));
             } elseif (str_contains($class, ' summary-fact ')) {
                 $value = $this->inline($this->byClass($child, 'summary-fact__value'));
                 $label = $this->inline($this->byClass($child, 'summary-fact__label'));
@@ -134,6 +137,26 @@ class PageMarkdown
         }
 
         return trim(preg_replace('/\s+/u', ' ', str_replace("\u{00A0}", ' ', $out)));
+    }
+
+    // Таблица в статьях: первая строка — заголовок
+    private function table(DOMElement $table): string
+    {
+        $rows = [];
+        foreach ($table->getElementsByTagName('tr') as $tr) {
+            $cells = [];
+            foreach ($tr->childNodes as $cell) {
+                if ($cell instanceof DOMElement && in_array(strtolower($cell->tagName), ['th', 'td'], true)) {
+                    $cells[] = str_replace('|', '/', $this->inline($cell));
+                }
+            }
+            $rows[] = '| ' . implode(' | ', $cells) . ' |';
+            if (count($rows) === 1) {
+                $rows[] = '|' . str_repeat(' --- |', count($cells));
+            }
+        }
+
+        return implode("\n", $rows);
     }
 
     private function push(string $text): void
