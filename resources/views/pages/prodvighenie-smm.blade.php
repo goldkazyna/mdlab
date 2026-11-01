@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+{{-- WhatsApp с готовым текстом: так проще написать и видно, что сообщение пришло с сайта. Используют и шапка, и плавающая кнопка --}}
+@section('wa_url', 'https://wa.me/77774333822?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20mdlab.kz%2C%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D0%BE%D1%86%D1%81%D0%B5%D1%82%D1%8F%D1%85')
+
 @push('styles')
 <link rel="stylesheet" href="/assets/css/smm.css?v=1.6">
 @endpush
@@ -164,7 +167,7 @@
                             </div>
                         </div>
                         <div class="for-btn fs-xl-30 fs-md-25 fs-20 fw-semi d-none d-md-block">
-                            <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">
+                            <a class="cl-btn" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">
                                 Получить предложение
                             </a>
                         </div>
@@ -179,7 +182,7 @@
             <div class="txt fs-14 d-md-none text-center fw-bold">
                 <p>Заказать SMM c конверсией до 150% <br> Получите первых клиентов уже на следующий день</p>
                 <div class="for-btn fs-17 mt-3">
-                    <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">Получить предложение</a>
+                    <a class="cl-btn" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">Получить предложение</a>
                 </div>
                 <div class="line"></div>
             </div>
@@ -259,7 +262,7 @@
                                     <div class="price">{{ $packet['price'] }}</div>
                                 </div>
                                 <div class="for-btn">
-                                    <a class="cl-btn" href="https://wa.me/77774333822" target="_blank" rel="noopener">
+                                    <a class="cl-btn" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">
                                         Написать нам
                                     </a>
                                 </div>
@@ -311,7 +314,7 @@
                                     <div class="for-price">
                                         <div class="price">от 25 000 тг</div>
                                         <div class="link">
-                                            <a class="bd-link" href="https://wa.me/77774333822" target="_blank" rel="noopener">Заказать</a>
+                                            <a class="bd-link" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">Заказать</a>
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +334,7 @@
                                     <div class="for-price">
                                         <div class="price">от 20 000 тг</div>
                                         <div class="link">
-                                            <a class="bd-link" href="https://wa.me/77774333822" target="_blank" rel="noopener">Заказать</a>
+                                            <a class="bd-link" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">Заказать</a>
                                         </div>
                                     </div>
                                 </div>
@@ -369,7 +372,7 @@
                             или <br> напишите <br> в WhatsApp
                         </div>
                         <div class="flex-grow-1">
-                            <a class="cl-btn wa-btn w-100" href="https://wa.me/77774333822" target="_blank" rel="noopener">
+                            <a class="cl-btn wa-btn w-100" href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
                             </a>
                         </div>
@@ -400,7 +403,7 @@
                 </div>
             </div>
             <div class="link text-center d-none d-md-block">
-                <a href="https://wa.me/77774333822" target="_blank" rel="noopener" class="bd-link">Заказать аналитику бесплатно</a>
+                <a href="{{ $__env->yieldContent('wa_url') }}" target="_blank" rel="noopener" class="bd-link">Заказать аналитику бесплатно</a>
             </div>
         </div>
     </section>

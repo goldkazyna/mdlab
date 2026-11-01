@@ -10,7 +10,7 @@
         <li><i class="fa-solid fa-check"></i> {{ $feature }}</li>
         @endforeach
     </ul>
-    <a href="https://wa.me/77774333822?text={{ rawurlencode('Здравствуйте! Интересует пакет ' . $p['name'] . ' (' . $packagePrice . ' ₸)') }}" target="_blank" rel="noopener" class="btn-primary-mobile btn-whatsapp">
+    <a href="https://wa.me/77774333822?text={{ rawurlencode('Здравствуйте! Пишу с сайта mdlab.kz, интересует пакет ' . $p['name'] . ' (' . $packagePrice . ' ₸)') }}" target="_blank" rel="noopener" class="btn-primary-mobile btn-whatsapp">
         <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
     </a>
 </div>

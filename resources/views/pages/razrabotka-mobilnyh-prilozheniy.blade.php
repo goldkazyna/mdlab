@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+{{-- WhatsApp с готовым текстом: так проще написать и видно, что сообщение пришло с сайта. Используют и шапка, и плавающая кнопка --}}
+@section('wa_url', 'https://wa.me/77774333822?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20mdlab.kz%2C%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F')
+
 @php
     $slug = 'razrabotka-mobilnyh-prilozheniy';
     extract(require resource_path('data/apps/' . $slug . '.php'));
@@ -100,7 +103,7 @@
                 <div class="home-hero__bottom">
                     <div class="home-hero__contact">
                         <a href="tel:+77774333822" class="btn btn_accent">Позвонить</a>
-                        <a href="https://wa.me/77774333822" class="btn btn_accent btn_whatsapp1">
+                        <a href="{{ $__env->yieldContent('wa_url') }}" class="btn btn_accent btn_whatsapp1">
                             <i class="fa-brands fa-whatsapp"></i>Написать в WhatsApp
                         </a>
                     </div>
@@ -597,7 +600,7 @@
             <a href="https://t.me/Mdlabkz" target="_blank" class="btn btn_accent btn_telegram">
 				<i class="fa-brands fa-telegram"></i>Написать в Telegram
 			</a>
-            <a href="https://wa.me/77774333822" target="_blank" class="btn-primary-mobile btn-whatsapp">
+            <a href="{{ $__env->yieldContent('wa_url') }}" target="_blank" class="btn-primary-mobile btn-whatsapp">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
         </div>
