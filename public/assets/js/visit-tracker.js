@@ -160,6 +160,17 @@
         if (pct > state.scroll) state.scroll = Math.min(pct, 100);
     }, {passive: true});
 
+    // События для Google Tag Manager → конверсии Google Ads (lead_whatsapp, lead_phone, lead_telegram, lead_form).
+    // Одно событие каждого типа за просмотр страницы, чтобы повторные нажатия не завышали конверсии.
+    var leads = {};
+    var LEAD_EVENTS = {wa: 'lead_whatsapp', ph: 'lead_phone', tg: 'lead_telegram', form: 'lead_form'};
+    function lead(type) {
+        if (leads[type]) return;
+        leads[type] = 1;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event: LEAD_EVENTS[type], lead_page: location.pathname});
+    }
+
     document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('a[href]');
         if (!a) return;
@@ -169,12 +180,14 @@
             : /t\.me|telegram/i.test(href) ? 'tg' : null;
         if (flag) {
             state[flag] = 1;
+            lead(flag);
             send();
         }
     }, true);
 
     document.addEventListener('submit', function () {
         state.form = 1;
+        lead('form');
         send();
     }, true);
 
