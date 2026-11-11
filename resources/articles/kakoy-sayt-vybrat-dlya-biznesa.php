@@ -25,6 +25,15 @@ return [
     </tbody>
 </table>
 
+<div class="ig">
+    <div class="ig__title">Цена и срок по видам сайтов</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Лендинг</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:18%"></span><span class="ig-bars__value">от 200 000 ₸<br><small>5–10 дней · 1 страница</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Сайт-визитка</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:18%"></span><span class="ig-bars__value">от 200 000 ₸<br><small>1–2 недели · 3–5 страниц</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Корпоративный сайт</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:23%"></span><span class="ig-bars__value">от 260 000 ₸<br><small>3–6 недель · 10–25+ страниц</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Сайт-каталог</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:31%"></span><span class="ig-bars__value">от 340 000 ₸<br><small>4–6 недель · сотни товаров</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Интернет-магазин</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:45%"></span><span class="ig-bars__value">от 500 000 ₸<br><small>5–8 недель · корзина и оплата</small></span></span></div>
+</div>
+
 <h2>Лендинг: одна услуга и реклама</h2>
 <p>Одностраничный сайт, который ведёт посетителя к одному действию — заявке, звонку или сообщению в WhatsApp. Подходит для рекламы в Google Ads, Яндекс Директ и Instagram, для запуска новой услуги или проверки спроса. Минус — одна страница плохо собирает трафик из поиска по разным запросам.</p>
 <p>Подробнее — на странице <a href="/landing-page">создания лендинга</a>.</p>

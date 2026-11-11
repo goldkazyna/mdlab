@@ -57,6 +57,17 @@ return [
 </table>
 <p>Пропорции ориентировочные: в проектах с большим количеством интеграций доля разработки и тестирования выше.</p>
 
+<div class="ig">
+    <div class="ig__title">Пример графика: приложение средней сложности за 4 месяца</div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Аналитика и ТЗ</b><small>около 10% срока</small></span><span class="ig-gantt__track" style="--cols:4"><span class="ig-gantt__seg" style="left:0.0%;width:10.0%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Прототип и дизайн</b><small>15–20%</small></span><span class="ig-gantt__track" style="--cols:4"><span class="ig-gantt__seg" style="left:10.0%;width:17.5%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Разработка</b><small>50–60%</small></span><span class="ig-gantt__track" style="--cols:4"><span class="ig-gantt__seg" style="left:25.0%;width:57.5%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Тестирование</b><small>10–15%</small></span><span class="ig-gantt__track" style="--cols:4"><span class="ig-gantt__seg" style="left:72.5%;width:17.5%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Публикация</b><small>от нескольких дней</small></span><span class="ig-gantt__track" style="--cols:4"><span class="ig-gantt__seg" style="left:90.0%;width:10.0%"></span></span></div>
+    <div class="ig-gantt__row"><span></span><span class="ig-gantt__scale"><span>1 мес.</span><span>2 мес.</span><span>3 мес.</span><span>4 мес.</span></span></div>
+    <div class="ig__note">Тестирование начинается до конца разработки: проверяем промежуточные сборки.</div>
+</div>
+
 <h2>Что чаще всего затягивает сроки</h2>
 <ul>
     <li>изменение требований в процессе разработки;</li>

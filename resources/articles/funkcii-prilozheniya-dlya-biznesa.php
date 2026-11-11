@@ -36,6 +36,13 @@ return [
 <h3>Повтор заказа</h3>
 <p>Для доставки воды, еды, продуктов и товаров для дома кнопка «Повторить заказ» экономит клиенту минуты и делает приложение удобнее любого сайта.</p>
 
+<div class="ig">
+    <div class="ig__title">Что делать в первой версии, а что потом</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Основа</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:50%"></span><span class="ig-bars__value">обязательно в первой версии<br><small>вход по телефону, каталог, заказ, оплата, личный кабинет, админ-панель</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Удержание</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:33%"></span><span class="ig-bars__value">желательно сразу<br><small>push-уведомления, бонусы, повтор заказа</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Развитие</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:16%"></span><span class="ig-bars__value">во второй версии<br><small>чат, ИИ-рекомендации, несколько языков, отзывы</small></span></span></div>
+</div>
+
 <h2>Функции под отрасль</h2>
 <ul>
     <li><strong><a href="/razrabotka-prilozheniya-dlya-dostavki">Доставка</a>:</strong> отслеживание курьера на карте, выбор времени, приложение курьера.</li>

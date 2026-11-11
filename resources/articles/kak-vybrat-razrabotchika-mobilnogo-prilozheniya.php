@@ -34,6 +34,16 @@ return [
     <li><strong>Отзывы клиентов.</strong> Попросите контакт одного-двух клиентов и спросите, уложились ли в срок и бюджет.</li>
 </ul>
 
+<div class="ig">
+    <div class="ig__title">Проверка разработчика за 4 шага</div>
+    <div class="ig-steps">
+        <div class="ig-steps__item"><b>Установите их приложения</b><small>App Store и Google Play, оценки, обновления</small></div>
+        <div class="ig-steps__item"><b>Поговорите с клиентами</b><small>сроки и бюджет соблюдали?</small></div>
+        <div class="ig-steps__item"><b>Спросите про процесс</b><small>демо раз в неделю, кто в команде</small></div>
+        <div class="ig-steps__item"><b>Проверьте договор</b><small>цена, этапы, код и аккаунты — ваши</small></div>
+    </div>
+</div>
+
 <h2>Что должно быть в договоре</h2>
 <ul>
     <li>Фиксированная стоимость и срок, привязанные к ТЗ или смете.</li>

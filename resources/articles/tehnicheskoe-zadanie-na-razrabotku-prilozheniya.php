@@ -36,6 +36,18 @@ return [
     </tbody>
 </table>
 
+<div class="ig">
+    <div class="ig__title">Как появляется ТЗ на приложение</div>
+    <div class="ig-steps">
+        <div class="ig-steps__item"><b>Идея и цели</b><small>описывает заказчик</small></div>
+        <div class="ig-steps__item"><b>Бриф с аналитиком</b><small>вопросы о процессах и клиентах</small></div>
+        <div class="ig-steps__item"><b>Сценарии и экраны</b><small>роли, путь пользователя, админ-панель</small></div>
+        <div class="ig-steps__item"><b>Прототип</b><small>кликабельная схема всех экранов</small></div>
+        <div class="ig-steps__item"><b>Смета и договор</b><small>цена и срок по каждой функции</small></div>
+    </div>
+    <div class="ig__note">Для MVP этот этап обычно занимает 1–2 недели.</div>
+</div>
+
 <h2>Что заказчик может подготовить сам</h2>
 <ul>
     <li>Описание бизнеса и того, какую проблему клиента решает приложение.</li>

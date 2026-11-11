@@ -30,6 +30,15 @@ return [
     </tbody>
 </table>
 
+<div class="ig">
+    <div class="ig__title">iOS + Android: нативно или кроссплатформенно</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Нативно: iOS (Swift)</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:29%"></span><span class="ig-bars__value">от 1 000 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Нативно: Android (Kotlin)</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:26%"></span><span class="ig-bars__value">от 900 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Нативно: обе платформы</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:55%"></span><span class="ig-bars__value">от 1 900 000 ₸<br><small>два отдельных приложения</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Кроссплатформа: обе</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:22%"></span><span class="ig-bars__value">от 750 000 ₸<br><small>одно приложение на Flutter или React Native</small></span></span></div>
+    <div class="ig__note">Цены «от» в MD Lab за минимальный состав функций. На одинаковом объёме кроссплатформа экономит до 40%.</div>
+</div>
+
 <h2>Когда выбирать кроссплатформу</h2>
 <ul>
     <li>Нужно приложение сразу для iOS и Android при ограниченном бюджете.</li>

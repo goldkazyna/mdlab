@@ -29,6 +29,13 @@ return [
     <li><strong>Заложите аналитику.</strong> Без событий и воронок MVP ничего не проверит.</li>
 </ol>
 
+<div class="ig">
+    <div class="ig__title">Сколько функций попадает в MVP</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Все идеи</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:55%"></span><span class="ig-bars__value">30–50 функций<br><small>всё, что хочется сделать</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">MVP</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:8%"></span><span class="ig-bars__value">5–7 функций<br><small>каталог, корзина, адрес, оплата, статус заказа</small></span></span></div>
+    <div class="ig__note">Пример — приложение доставки воды. Бонусы, отзывы, чат и рефералы — во второй версии.</div>
+</div>
+
 <h2>Этапы разработки MVP</h2>
 <table>
     <thead>
@@ -43,6 +50,17 @@ return [
         <tr><td>Сбор данных</td><td>Смотрим аналитику, общаемся с пользователями, планируем следующую версию</td></tr>
     </tbody>
 </table>
+
+<div class="ig">
+    <div class="ig__title">Цикл MVP</div>
+    <div class="ig-steps">
+        <div class="ig-steps__item"><b>Гипотеза</b><small>кому и какую задачу решаем</small></div>
+        <div class="ig-steps__item"><b>Разработка</b><small>4–8 недель, от 750 000 ₸</small></div>
+        <div class="ig-steps__item"><b>Публикация</b><small>App Store и Google Play</small></div>
+        <div class="ig-steps__item"><b>Данные</b><small>установки, заказы, возвраты</small></div>
+        <div class="ig-steps__item"><b>Версия 2</b><small>только то, что доказало пользу</small></div>
+    </div>
+</div>
 
 <h2>Сколько стоит MVP</h2>
 <p>В MD Lab MVP мобильного приложения стоит от 750 000 ₸: пакет MVP Lite — 750 000 ₸, MVP Standard — 1 250 000 ₸, MVP Pro — от 2 000 000 ₸. Чтобы получить приложение сразу для iOS и Android за этот бюджет, MVP обычно делают на кроссплатформенных технологиях — подробнее в статье <a href="/articles/nativnaya-ili-krossplatformennaya-razrabotka">«Нативная или кроссплатформенная разработка»</a>. Общие ориентиры по ценам — в статье <a href="/articles/skolko-stoit-razrabotka-mobilnogo-prilozheniya">«Сколько стоит разработка мобильного приложения»</a>.</p>

@@ -13,24 +13,21 @@ return [
     'content' => <<<'HTML'
 <p><strong>Коротко:</strong> разработка мобильного приложения в Казахстане стоит от 750 000 ₸ за MVP на одной платформе, от 1 250 000 ₸ за приложение для iOS и Android с уникальным дизайном и от 3 500 000 ₸ за сложные проекты с геолокацией, платежами и интеграциями. Срок — от 1 до 6 месяцев. Главное, что влияет на цену, — количество экранов и функций, число платформ и серверная часть.</p>
 
-<h2>Цены на разработку приложений: таблица</h2>
+<h2>Цены на разработку приложений</h2>
 <p>Ниже — ориентиры по стоимости в студии MD Lab в Алматы. Точная сумма фиксируется в договоре после составления технического задания.</p>
-<table>
-    <thead>
-        <tr><th>Тип приложения</th><th>Стоимость</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>MVP на одной платформе</td><td>от 750 000 ₸</td></tr>
-        <tr><td>Кроссплатформенное приложение (iOS + Android)</td><td>от 750 000 ₸</td></tr>
-        <tr><td>Нативное приложение для Android (Kotlin)</td><td>от 900 000 ₸</td></tr>
-        <tr><td>Нативное приложение для iOS (Swift)</td><td>от 1 000 000 ₸</td></tr>
-        <tr><td>Приложение для ресторана или кафе</td><td>от 1 000 000 ₸</td></tr>
-        <tr><td>Приложение для интернет-магазина</td><td>от 1 250 000 ₸</td></tr>
-        <tr><td>Приложение для доставки или такси</td><td>от 1 500 000 ₸</td></tr>
-        <tr><td>Корпоративное приложение с 1С, CRM, ERP</td><td>от 2 000 000 ₸</td></tr>
-        <tr><td>Сложный проект: ML, видео, много ролей</td><td>от 3 500 000 ₸</td></tr>
-    </tbody>
-</table>
+<div class="ig">
+    <div class="ig__title">Стоимость разработки приложения в MD Lab</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">MVP на одной платформе</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:12%"></span><span class="ig-bars__value">от 750 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Кроссплатформа (iOS + Android)</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:12%"></span><span class="ig-bars__value">от 750 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Нативное Android (Kotlin)</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:14%"></span><span class="ig-bars__value">от 900 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Нативное iOS (Swift)</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:16%"></span><span class="ig-bars__value">от 1 000 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Для ресторана или кафе</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:16%"></span><span class="ig-bars__value">от 1 000 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Для интернет-магазина</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:20%"></span><span class="ig-bars__value">от 1 250 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Доставка или такси</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:24%"></span><span class="ig-bars__value">от 1 500 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Корпоративное с 1С, CRM</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:31%"></span><span class="ig-bars__value">от 2 000 000 ₸</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Сложный проект: ML, видео</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:55%"></span><span class="ig-bars__value">от 3 500 000 ₸</span></span></div>
+    <div class="ig__note">Точная сумма фиксируется в договоре после ТЗ. Сроки: MVP — 1–2 месяца, средняя сложность — 3–4, сложный проект — 5–6 месяцев.</div>
+</div>
 
 <p>Сроки: MVP или простое приложение — 1–2 месяца, приложение средней сложности с админ-панелью — 3–4 месяца, сложный проект с множеством интеграций — 5–6 месяцев.</p>
 
@@ -44,6 +41,21 @@ return [
     <li><strong>Тестирование.</strong> Проверка на реальных устройствах разных размеров и версий системы.</li>
     <li><strong>Публикация.</strong> Подготовка описаний, скриншотов и прохождение модерации в App Store и Google Play.</li>
 </ol>
+
+<div class="ig">
+    <div class="ig__title">На что уходит бюджет приложения</div>
+    <div class="ig-stack__bar">
+        <span style="width:10%;background:#0b4f73">10%</span><span style="width:18%;background:#1a6f99">18%</span><span style="width:55%;background:#0098D6">55%</span><span style="width:12%;background:#7fcbeb;color:#1a1a2e">12%</span><span style="width:5%;background:#a9dcf2;color:#1a1a2e"></span>
+    </div>
+    <div class="ig-stack__legend">
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#0b4f73"></span><span><b>10%</b> — аналитика и ТЗ</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#1a6f99"></span><span><b>18%</b> — прототип и дизайн</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#0098D6"></span><span><b>55%</b> — разработка: приложение, сервер, админ-панель</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#7fcbeb"></span><span><b>12%</b> — тестирование</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#a9dcf2"></span><span><b>5%</b> — публикация</span></div>
+    </div>
+    <div class="ig__note">Ориентировочные доли. В проектах с интеграциями больше доля разработки и тестирования.</div>
+</div>
 
 <h2>Что сильнее всего влияет на цену</h2>
 <h3>Количество платформ</h3>

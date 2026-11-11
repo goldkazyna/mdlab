@@ -34,6 +34,16 @@ return [
     <li><strong>Пользователи находят ошибки.</strong> На тысячах разных телефонов всегда находятся случаи, которые не встретились при тестировании.</li>
 </ul>
 
+<div class="ig">
+    <div class="ig__title">Жизнь приложения после запуска</div>
+    <div class="ig-steps">
+        <div class="ig-steps__item"><b>Запуск</b><small>публикация в магазинах</small></div>
+        <div class="ig-steps__item"><b>Гарантия</b><small>1–6 месяцев: ошибки, мониторинг</small></div>
+        <div class="ig-steps__item"><b>Каждый год</b><small>обновления под новые iOS и Android</small></div>
+        <div class="ig-steps__item"><b>Развитие</b><small>новые функции по аналитике и отзывам</small></div>
+    </div>
+</div>
+
 <h2>Что входит в поддержку</h2>
 <ul>
     <li>Исправление ошибок в приложении, на сервере и в админ-панели.</li>

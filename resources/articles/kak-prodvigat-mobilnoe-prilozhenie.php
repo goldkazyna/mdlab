@@ -58,6 +58,15 @@ return [
 </ul>
 <p>Какие функции помогают удерживать клиентов — в статье <a href="/articles/funkcii-prilozheniya-dlya-biznesa">«Какие функции нужны приложению для бизнеса»</a>.</p>
 
+<div class="ig">
+    <div class="ig__title">Воронка приложения: где теряются пользователи</div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Установили</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:70%"></span><span class="ig-bars__value">1 000</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Зарегистрировались</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:49%"></span><span class="ig-bars__value">700</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Сделали первый заказ</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:24%"></span><span class="ig-bars__value">350</span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Вернулись через месяц</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:10%"></span><span class="ig-bars__value">150</span></span></div>
+    <div class="ig__note">Условный пример. Мало регистраций — упрощайте вход, мало повторных заказов — работайте с push и бонусами.</div>
+</div>
+
 <h2>5. Что измерять</h2>
 <ul>
     <li>Установки по источникам: QR, сайт, реклама, поиск в магазине.</li>
