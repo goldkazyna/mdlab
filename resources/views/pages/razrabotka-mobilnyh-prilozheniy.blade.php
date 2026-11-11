@@ -587,6 +587,11 @@
             <a href="https://mdlab.kz/articles/chto-takoe-mvp-prilozheniya" class="related-link"><i class="fa-solid fa-rocket"></i> Что такое MVP приложения</a>
             <a href="https://mdlab.kz/articles/kak-opublikovat-prilozhenie-v-app-store-i-google-play" class="related-link"><i class="fa-solid fa-store"></i> Публикация в App Store и Google Play</a>
             <a href="https://mdlab.kz/articles/sayt-ili-mobilnoe-prilozhenie" class="related-link"><i class="fa-solid fa-scale-balanced"></i> Сайт или мобильное приложение</a>
+            <a href="https://mdlab.kz/articles/kak-vybrat-razrabotchika-mobilnogo-prilozheniya" class="related-link"><i class="fa-solid fa-user-check"></i> Как выбрать разработчика</a>
+            <a href="https://mdlab.kz/articles/tehnicheskoe-zadanie-na-razrabotku-prilozheniya" class="related-link"><i class="fa-solid fa-file-lines"></i> ТЗ на разработку приложения</a>
+            <a href="https://mdlab.kz/articles/funkcii-prilozheniya-dlya-biznesa" class="related-link"><i class="fa-solid fa-mobile-screen"></i> Функции приложения для бизнеса</a>
+            <a href="https://mdlab.kz/articles/podderzhka-mobilnogo-prilozheniya-posle-zapuska" class="related-link"><i class="fa-solid fa-screwdriver-wrench"></i> Поддержка после запуска</a>
+            <a href="https://mdlab.kz/articles/kak-prodvigat-mobilnoe-prilozhenie" class="related-link"><i class="fa-solid fa-bullhorn"></i> Как продвигать приложение</a>
         </div>
     </div>
 </section>

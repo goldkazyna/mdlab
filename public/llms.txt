@@ -30,6 +30,11 @@
 - [Что такое MVP приложения](https://mdlab.kz/articles/chto-takoe-mvp-prilozheniya): Как выбрать функции для минимальной версии, стоимость MVP от 750 000 ₸, типичные ошибки.
 - [Как опубликовать приложение в App Store и Google Play из Казахстана](https://mdlab.kz/articles/kak-opublikovat-prilozhenie-v-app-store-i-google-play): Аккаунты разработчика (99 $ в год и 25 $ разово), D-U-N-S, модерация, закрытое тестирование, причины отказа.
 - [Сайт или мобильное приложение](https://mdlab.kz/articles/sayt-ili-mobilnoe-prilozhenie): Когда бизнесу достаточно сайта, а когда нужно приложение; сравнение задач и стоимости.
+- [Как выбрать разработчика мобильного приложения](https://mdlab.kz/articles/kak-vybrat-razrabotchika-mobilnogo-prilozheniya): Студия или фрилансер, что проверить, что прописать в договоре (исходный код, аккаунты), тревожные признаки.
+- [Техническое задание на разработку приложения](https://mdlab.kz/articles/tehnicheskoe-zadanie-na-razrabotku-prilozheniya): Разделы ТЗ, роли и сценарии, админ-панель, интеграции, что заказчик готовит сам.
+- [Какие функции нужны приложению для бизнеса](https://mdlab.kz/articles/funkcii-prilozheniya-dlya-biznesa): Заказ, оплата Kaspi Pay и картой, push, бонусы, личный кабинет, админ-панель; что отложить на вторую версию.
+- [Поддержка мобильного приложения после запуска](https://mdlab.kz/articles/podderzhka-mobilnogo-prilozheniya-posle-zapuska): Обновления iOS и Android, сервер, аккаунты 99 $/25 $, что входит в поддержку, гарантия 1–6 месяцев.
+- [Как продвигать мобильное приложение](https://mdlab.kz/articles/kak-prodvigat-mobilnoe-prilozhenie): Перевод текущих клиентов, ASO, реклама установок, удержание и метрики.
 - [Сколько стоит создание сайта в Казахстане](https://mdlab.kz/articles/skolko-stoit-sozdanie-sayta): Лендинг от 200 000 ₸, корпоративный сайт от 260 000 ₸, каталог от 340 000 ₸, магазин от 500 000 ₸; из чего складывается цена, расходы после запуска.
 - [Какой сайт выбрать бизнесу](https://mdlab.kz/articles/kakoy-sayt-vybrat-dlya-biznesa): Лендинг, сайт-визитка, корпоративный сайт, каталог или интернет-магазин — отличия и как выбрать.
 - [Этапы создания сайта](https://mdlab.kz/articles/etapy-sozdaniya-sayta): Бриф, структура и прототипы, дизайн, разработка, тестирование и запуск; сроки от 5 дней до 8 недель.
