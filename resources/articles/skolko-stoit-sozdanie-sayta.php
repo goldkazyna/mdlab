@@ -12,22 +12,34 @@ return [
 <p><strong>Коротко:</strong> в MD Lab лендинг и сайт-визитка стоят от 200 000 ₸, корпоративный сайт — от 260 000 ₸, сайт-каталог — от 340 000 ₸, интернет-магазин — от 500 000 ₸, веб-сервис — от 800 000 ₸. Цена зависит от количества страниц, дизайна, текстов и интеграций. После запуска нужно оплачивать домен и хостинг, а при желании — поддержку и продвижение.</p>
 
 <h2>Цены по видам сайтов</h2>
-<table>
-    <thead>
-        <tr><th>Вид сайта</th><th>Стоимость</th><th>Срок</th><th>Для чего</th></tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="/landing-page">Лендинг</a></td><td>от 200 000 ₸</td><td>5–10 рабочих дней</td><td>Одна услуга, реклама</td></tr>
-        <tr><td>Сайт-визитка</td><td>от 200 000 ₸</td><td>1–2 недели</td><td>Показать компанию и контакты</td></tr>
-        <tr><td><a href="/korporativnyy-sayt">Корпоративный сайт</a></td><td>от 260 000 ₸</td><td>3–6 недель</td><td>Несколько услуг, клиенты из поиска</td></tr>
-        <tr><td><a href="/internet-katalog">Сайт-каталог</a></td><td>от 340 000 ₸</td><td>4–6 недель</td><td>Много товаров, цена по запросу</td></tr>
-        <tr><td><a href="/internet-magazin">Интернет-магазин</a></td><td>от 500 000 ₸</td><td>5–8 недель</td><td>Продажи с корзиной и оплатой</td></tr>
-        <tr><td>Веб-сервис</td><td>от 800 000 ₸</td><td>от 2 месяцев</td><td>Личные кабинеты, запись, расчёты</td></tr>
-    </tbody>
-</table>
+<div class="ig">
+    <div class="ig__title">Сколько стоит сайт в MD Lab и сколько делается</div>
+    <div class="ig-bars__row"><span class="ig-bars__label"><a href="/landing-page">Лендинг</a></span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:13%"></span><span class="ig-bars__value">от 200 000 ₸<br><small>5–10 рабочих дней · одна услуга, реклама</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Сайт-визитка</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:13%"></span><span class="ig-bars__value">от 200 000 ₸<br><small>1–2 недели · показать компанию</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label"><a href="/korporativnyy-sayt">Корпоративный сайт</a></span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:17%"></span><span class="ig-bars__value">от 260 000 ₸<br><small>3–6 недель · несколько услуг, поиск</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label"><a href="/internet-katalog">Сайт-каталог</a></span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:22%"></span><span class="ig-bars__value">от 340 000 ₸<br><small>4–6 недель · много товаров, цена по запросу</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label"><a href="/internet-magazin">Интернет-магазин</a></span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:33%"></span><span class="ig-bars__value">от 500 000 ₸<br><small>5–8 недель · корзина и оплата</small></span></span></div>
+    <div class="ig-bars__row"><span class="ig-bars__label">Веб-сервис</span><span class="ig-bars__track"><span class="ig-bars__fill" style="width:52%"></span><span class="ig-bars__value">от 800 000 ₸<br><small>от 2 месяцев · кабинеты, запись, расчёты</small></span></span></div>
+    <div class="ig__note">Цены «от» — за минимальную комплектацию. Домен и хостинг оплачиваются отдельно.</div>
+</div>
 <p>Цена «от» — за минимальную комплектацию. Например, лендинг до 5 экранов стоит 200 000 ₸, до 8 экранов с уникальным дизайном и текстами — 350 000 ₸, до 12 экранов с квизом и CRM — от 500 000 ₸. Корпоративный сайт до 10 страниц — 260 000 ₸, до 25 страниц с SEO-структурой — 450 000 ₸.</p>
 
 <h2>Из чего складывается стоимость</h2>
+<div class="ig">
+    <div class="ig__title">На что уходит бюджет корпоративного сайта</div>
+    <div class="ig-stack__bar">
+        <span style="width:10%;background:#0b4f73">10%</span><span style="width:15%;background:#1a6f99">15%</span><span style="width:25%;background:#0098D6">25%</span><span style="width:35%;background:#33ADE0">35%</span><span style="width:5%;background:#7fcbeb"></span><span style="width:10%;background:#a9dcf2;color:#1a1a2e">10%</span>
+    </div>
+    <div class="ig-stack__legend">
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#0b4f73"></span><span><b>10%</b> — анализ и структура</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#1a6f99"></span><span><b>15%</b> — тексты</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#0098D6"></span><span><b>25%</b> — дизайн</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#33ADE0"></span><span><b>35%</b> — вёрстка и программирование</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#7fcbeb"></span><span><b>5%</b> — SEO-настройка и аналитика</span></div>
+        <div class="ig-stack__item"><span class="ig-stack__dot" style="background:#a9dcf2"></span><span><b>10%</b> — тестирование и запуск</span></div>
+    </div>
+    <div class="ig__note">Примерное распределение для сайта на 10–25 страниц. В интернет-магазине больше доля программирования и интеграций.</div>
+</div>
 <ul>
     <li><strong>Анализ и структура.</strong> Изучаем конкурентов и то, как клиенты ищут ваши услуги, и по этим данным строим разделы сайта. Чем больше услуг и товаров, тем больше работы.</li>
     <li><strong>Тексты.</strong> Продающие тексты под каждую страницу — заметная часть бюджета, но именно они приводят клиентов из поиска.</li>

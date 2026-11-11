@@ -11,6 +11,17 @@ return [
     'content' => <<<'HTML'
 <p><strong>Коротко:</strong> сайт создаётся в пять этапов — бриф и анализ (1–3 дня), структура и прототипы (2–5 дней), дизайн (от 3 дней до 2 недель), вёрстка, программирование и тексты (от 3 дней до 3 недель), тестирование и запуск (1–3 дня). Лендинг проходит этот путь за 5–10 рабочих дней, корпоративный сайт — за 3–6 недель, интернет-магазин — за 5–8 недель.</p>
 
+<div class="ig">
+    <div class="ig__title">Пример графика: корпоративный сайт за 6 недель</div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Бриф и анализ</b><small>1–3 дня</small></span><span class="ig-gantt__track"><span class="ig-gantt__seg" style="left:0.0%;width:6.7%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Структура и прототипы</b><small>2–5 дней</small></span><span class="ig-gantt__track"><span class="ig-gantt__seg" style="left:6.7%;width:13.3%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Дизайн</b><small>3 дня — 2 недели</small></span><span class="ig-gantt__track"><span class="ig-gantt__seg" style="left:20.0%;width:23.3%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Вёрстка, программирование, тексты</b><small>3 дня — 3 недели</small></span><span class="ig-gantt__track"><span class="ig-gantt__seg" style="left:43.3%;width:43.3%"></span></span></div>
+    <div class="ig-gantt__row"><span class="ig-gantt__label"><b>Тестирование и запуск</b><small>1–3 дня</small></span><span class="ig-gantt__track"><span class="ig-gantt__seg" style="left:86.7%;width:6.7%"></span></span></div>
+    <div class="ig-gantt__row"><span></span><span class="ig-gantt__scale"><span>1 нед.</span><span>2 нед.</span><span>3 нед.</span><span>4 нед.</span><span>5 нед.</span><span>6 нед.</span></span></div>
+    <div class="ig__note">Рабочие недели. Под каждым этапом — его обычная длительность для разных видов сайтов. Сроки сдвигаются, если согласования затягиваются.</div>
+</div>
+
 <h2>1. Бриф и анализ</h2>
 <p>Всё начинается с разговора: чем занимается компания, кто клиенты, какие услуги приносят больше денег, чем вы лучше конкурентов. Затем мы изучаем сайты конкурентов и поисковые запросы — как люди ищут ваши услуги в Google и Яндексе. По итогам фиксируем задачи сайта, состав работ, стоимость и срок.</p>
 <p><strong>Что нужно от вас:</strong> ответить на вопросы брифа и показать 2–3 сайта, которые нравятся. Для сложных проектов составляем <a href="/tehnicheskoe-zadaniya">техническое задание</a>.</p>

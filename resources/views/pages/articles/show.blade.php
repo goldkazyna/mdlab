@@ -261,6 +261,217 @@
     color: inherit;
 }
 
+/* Инфографика в статьях: HTML-графики вместо картинок — точные цифры, читаемо на телефоне, текст виден поиску.
+   ig-bars — столбики, ig-stack — доли целого, ig-gantt — график сроков, ig-steps — схема шагов */
+.article-content .ig {
+    margin: 35px 0;
+    padding: 26px 28px;
+    background: #f4fafd;
+    border: 1px solid #d9eef8;
+    border-radius: 16px;
+    line-height: 1.45;
+    font-size: 15px;
+    color: #1a1a2e;
+}
+
+.article-content .ig__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.article-content .ig__note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.ig-bars__row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.ig-bars__label {
+    font-weight: 600;
+}
+
+.ig-bars__track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ig-bars__fill {
+    height: 26px;
+    min-width: 8px;
+    background: linear-gradient(90deg, #0098D6, #33b4e6);
+    border-radius: 6px;
+    flex: none;
+}
+
+.ig-bars__value {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.ig-bars__value small {
+    font-weight: 400;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.ig-stack__bar {
+    display: flex;
+    height: 34px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.ig-stack__bar span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ig-stack__legend {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 24px;
+}
+
+.ig-stack__item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.ig-stack__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex: none;
+    transform: translateY(1px);
+}
+
+.ig-gantt__row {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.ig-gantt__label b {
+    display: block;
+    font-weight: 600;
+}
+
+.ig-gantt__label small {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.ig-gantt__track {
+    position: relative;
+    height: 26px;
+    background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / var(--cols, 6) - 1px), #d9eef8 calc(100% / var(--cols, 6) - 1px), #d9eef8 calc(100% / var(--cols, 6)));
+    border-radius: 6px;
+}
+
+.ig-gantt__seg {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    background: #0098D6;
+    border-radius: 5px;
+}
+
+.ig-gantt__scale {
+    display: flex;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.ig-gantt__scale span {
+    flex: 1;
+    padding-left: 4px;
+}
+
+.ig-steps {
+    display: flex;
+    gap: 12px;
+    counter-reset: ig-step;
+}
+
+.ig-steps__item {
+    flex: 1;
+    position: relative;
+    padding: 16px 14px;
+    background: #fff;
+    border: 1px solid #d9eef8;
+    border-radius: 12px;
+    counter-increment: ig-step;
+}
+
+.ig-steps__item::before {
+    content: counter(ig-step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 10px;
+    background: #0098D6;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.ig-steps__item b {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.ig-steps__item small {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+@media (max-width: 576px) {
+    .article-content .ig {
+        padding: 20px 16px;
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .ig-bars__row,
+    .ig-gantt__row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        margin-bottom: 16px;
+    }
+
+    .ig-gantt__scale {
+        margin-left: 0 !important;
+    }
+
+    .ig-stack__legend {
+        grid-template-columns: 1fr;
+    }
+
+    .ig-steps {
+        flex-direction: column;
+    }
+}
+
 /* Нижняя навигация */
 .article-bottom {
     margin-top: 50px;
