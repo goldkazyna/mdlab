@@ -386,6 +386,24 @@
     </div>
 </section>
 
+@if(!empty($page['articles']))
+<!-- СТАТЬИ (resources/articles) -->
+<section class="related-services">
+    <div class="container">
+        <div class="section-header">
+            <h2>{!! $h['articles'][0] !!}</h2>
+            <p>{{ $h['articles'][1] }}</p>
+        </div>
+
+        <div class="related-grid">
+            @foreach($page['articles'] as [$slug, $icon, $name])
+            <a href="/articles/{{ $slug }}" class="related-link"><i class="{{ $icon }}"></i> {{ $name }}</a>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
 <!-- SEO КОНТЕНТ -->
 <section class="seo-content">
     <div class="container">
